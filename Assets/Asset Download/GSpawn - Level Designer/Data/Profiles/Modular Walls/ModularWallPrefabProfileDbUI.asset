@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 3700260019162784764, guid: e556c8cc4702aa042914a8ba3a6411c5, type: 2}
   - {fileID: 7728249000084765230, guid: e556c8cc4702aa042914a8ba3a6411c5, type: 2}
   - {fileID: 5605084338852587628, guid: e556c8cc4702aa042914a8ba3a6411c5, type: 2}
-  _ruleUIContainerWidth: 284
+  _ruleUIContainerWidth: 245
   _prefabPreviewScale: 0.5
   _ruleUIScrollOffset: {x: 0, y: 0}
   _prefabSettingsScrollPos: {x: 0, y: 0}

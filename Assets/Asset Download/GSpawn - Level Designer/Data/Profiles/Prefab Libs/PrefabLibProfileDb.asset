@@ -63,5 +63,5 @@ MonoBehaviour:
     _guidString: db5b7064-2bd5-4de1-a48e-15eeb88e4840
   hasSelectRange: 1
   scrollOffset: {x: 0, y: 2556}
-  vertScrollHighValue: 22071
+  vertScrollHighValue: NaN
   vertScrollLowValue: 0
