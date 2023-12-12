@@ -8,12 +8,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Leaf
-  m_Shader: {fileID: -6465566751694194690, guid: 61f151b13d8e4cc45b0c827c0a4b3b3b,
-    type: 3}
-  m_ValidKeywords:
+  m_Shader: {fileID: -6465566751694194690, guid: 61f151b13d8e4cc45b0c827c0a4b3b3b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _ALPHATEST_ON
   - _DISABLE_SSR_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -27,6 +28,7 @@ Material:
   - TransparentBackface
   - RayTracingPrepass
   - MOTIONVECTORS
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -34,7 +36,15 @@ Material:
         m_Texture: {fileID: 2800000, guid: 9c33e865606632c4b87c146890ab7215, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_86f8307fff6f4d8287ec66345ba22d59_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 9c33e865606632c4b87c146890ab7215, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_e39d16830dc1438ca607d7c2dbe9f8fb_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 06810ccd26d171d469525e1b1ea10870, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_e39d16830dc1438ca607d7c2dbe9f8fb_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 06810ccd26d171d469525e1b1ea10870, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}

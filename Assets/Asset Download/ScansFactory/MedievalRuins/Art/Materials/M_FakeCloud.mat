@@ -8,15 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_FakeCloud
-  m_Shader: {fileID: -6465566751694194690, guid: 93df32a12ed78e94da10d63eed0f0c0b,
-    type: 3}
-  m_ValidKeywords:
+  m_Shader: {fileID: -6465566751694194690, guid: 93df32a12ed78e94da10d63eed0f0c0b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _ALPHATEST_ON
   - _DISABLE_DECALS
   - _DISABLE_SSR_TRANSPARENT
   - _DOUBLESIDED_ON
   - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
@@ -30,6 +31,7 @@ Material:
   - TransparentBackface
   - RayTracingPrepass
   - DepthOnly
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -38,6 +40,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_aacf2c6352ed4f56b497eb5ca078107e_Texture_1:
+        m_Texture: {fileID: 2800000, guid: abc00000000007786217463468289236, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_aacf2c6352ed4f56b497eb5ca078107e_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: abc00000000007786217463468289236, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -123,8 +129,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - Color_63d7c3d86ae846c696c58a8d1ef2ae42: {r: 0.5764706, g: 0.67058825, b: 0.6095116,
-        a: 0.9411765}
+    - Color_63d7c3d86ae846c696c58a8d1ef2ae42: {r: 0.5764706, g: 0.67058825, b: 0.6095116, a: 0.9411765}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
