@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: FoliageDiffusionProfile_SF
   m_EditorClassIdentifier: 
   profile:
-    scatteringDistance: {r: 0.17435546, g: 0.6981132, b: 0.0032929946, a: 1}
+    scatteringDistance: {r: 0.18706946, g: 0.7490196, b: 0.0035331198, a: 1}
+    scatteringDistanceMultiplier: 0.9320359
     transmissionTint: {r: 1, g: 1, b: 1, a: 1}
     texturingMode: 0
     transmissionMode: 1
@@ -21,4 +22,4 @@ MonoBehaviour:
     worldScale: 1
     ior: 1.4
     hash: 1074185864
-  m_Version: 1
+  m_Version: 2
