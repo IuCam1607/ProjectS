@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/My Game/Scenes/Menu.unity
+    guid: b66394c1acab99147abe1dc4525eda71
+  - enabled: 1
+    path: Assets/My Game/Scenes/Character Movement Test.unity
+    guid: 06533daa9a323954d86ec869520db4ad
   m_configObjects: {}
