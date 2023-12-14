@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/My Game/Scenes/Menu.unity
     guid: b66394c1acab99147abe1dc4525eda71
   - enabled: 1
-    path: Assets/My Game/Scenes/Character Movement Test.unity
-    guid: 06533daa9a323954d86ec869520db4ad
+    path: Assets/Asset Download/ScansFactory/MedievalRuins/Demo/MedievalRuins_01_P.unity
+    guid: 6ce5e61eed4887e438f1e60520e654ca
   m_configObjects: {}
