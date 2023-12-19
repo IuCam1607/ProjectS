@@ -56,12 +56,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedItems:
     _serializedList:
-    - _guidString: f24b7eae-8e98-4f96-89cf-fdabbeaaa529
+    - _guidString: d46de40b-a319-4047-918d-083f1bed6802
   selectRangeBeginId:
     _guidString: f24b7eae-8e98-4f96-89cf-fdabbeaaa529
   selectRangeEndId:
     _guidString: f24b7eae-8e98-4f96-89cf-fdabbeaaa529
   hasSelectRange: 1
   scrollOffset: {x: 0, y: 7308}
-  vertScrollHighValue: 8131
+  vertScrollHighValue: NaN
   vertScrollLowValue: 0
