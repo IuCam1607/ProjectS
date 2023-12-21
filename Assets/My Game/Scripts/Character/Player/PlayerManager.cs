@@ -17,6 +17,31 @@ public class PlayerManager : CharacterManager
     {
         base.Update();
 
+        if (!IsOwner)
+            return;
+
         playerLocomotionManager.HandleAllMovement();
+    }
+    protected override void LateUpdate()
+    {
+        if(!IsOwner)
+            return;
+        if (IsOwner)
+        {
+            PlayerCamera.instance.player = this;
+        }
+
+        base.LateUpdate();
+
+        PlayerCamera.instance.HandleAllCameraActions();
+    }
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+
+        if(IsOwner)
+        {
+            PlayerCamera.instance.player = this;
+        }
     }
 }
