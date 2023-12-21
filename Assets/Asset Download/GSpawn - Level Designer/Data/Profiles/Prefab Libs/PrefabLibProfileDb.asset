@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedItems:
     _serializedList:
-    - _guidString: 069c7cd4-c062-46e9-aba5-3211864161ce
+    - _guidString: e5cfd023-19cd-4d0a-8d92-cc9312b1f5b6
   collapsedItems:
-    _serializedList: []
+    _serializedList:
+    - _guidString: 03318cd1-1acf-4e13-b6c1-314387dfe4f3
+    - _guidString: 27208dc2-1bf3-4b84-8a33-770252c620a5
   selectRangeBeginId:
-    _guidString: 069c7cd4-c062-46e9-aba5-3211864161ce
+    _guidString: e5cfd023-19cd-4d0a-8d92-cc9312b1f5b6
   selectRangeEndId:
-    _guidString: 069c7cd4-c062-46e9-aba5-3211864161ce
+    _guidString: e5cfd023-19cd-4d0a-8d92-cc9312b1f5b6
   hasSelectRange: 1
   scrollOffset: {x: 0, y: 0}
   vertScrollHighValue: 0
@@ -40,7 +42,7 @@ MonoBehaviour:
   _profiles:
   - {fileID: 11400000, guid: 80ef07ee8a7f3b142b1ce34fdd34098d, type: 2}
   _activeProfile: {fileID: 11400000, guid: 80ef07ee8a7f3b142b1ce34fdd34098d, type: 2}
-  _prefabCreationSettingsUI: {fileID: 0}
+  _prefabCreationSettingsUI: {fileID: 11400000, guid: 110b0672d0a0c4a49b6bc3964683af7e, type: 2}
   _objectGroupCreationSettingsUI: {fileID: 0}
 --- !u!114 &5439751041903997008
 MonoBehaviour:
@@ -56,12 +58,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedItems:
     _serializedList:
-    - _guidString: 3cb2a47b-4c93-4ebc-a62f-179d27708e3c
+    - _guidString: a99d3f39-c72c-49c2-b14a-e5918be3865a
   selectRangeBeginId:
-    _guidString: 3cb2a47b-4c93-4ebc-a62f-179d27708e3c
+    _guidString: a99d3f39-c72c-49c2-b14a-e5918be3865a
   selectRangeEndId:
-    _guidString: 3cb2a47b-4c93-4ebc-a62f-179d27708e3c
+    _guidString: a99d3f39-c72c-49c2-b14a-e5918be3865a
   hasSelectRange: 1
-  scrollOffset: {x: 0, y: 108}
-  vertScrollHighValue: 567
+  scrollOffset: {x: 0, y: 0}
+  vertScrollHighValue: 1383
   vertScrollLowValue: 0
