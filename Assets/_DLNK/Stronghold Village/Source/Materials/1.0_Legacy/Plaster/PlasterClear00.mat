@@ -2,21 +2,37 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: PlasterClear00
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _CUSTOMDETAILNORMAL_ON _CUSTOMDETAILTEX_ON _DETAILCOLOR_ON _DETAILSPEC_ON
-    _DETAIL_MULX2 _LIGHTWRAP_ON _METALLICGLOSSMAP _NORMALDETAIL_ON _NORMALMAP _PARALLAXMAP
-    _SPECDETAIL_ON _SPECULARIBL_ON
-  m_LightmapFlags: 5
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _DETAIL_MULX2
+  - _EMISSION
+  - _METALLICGLOSSMAP
+  - _NORMALMAP
+  - _PARALLAXMAP
+  m_InvalidKeywords:
+  - _CUSTOMDETAILNORMAL_ON
+  - _CUSTOMDETAILTEX_ON
+  - _DETAILCOLOR_ON
+  - _DETAILSPEC_ON
+  - _LIGHTWRAP_ON
+  - _NORMALDETAIL_ON
+  - _SPECDETAIL_ON
+  - _SPECULARIBL_ON
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -88,6 +104,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 1021d53ef06aa6944a67aff1d907d4d2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AOPower: 0.1
     - _BumpDetailPower: 0.5
@@ -105,7 +122,9 @@ Material:
     - _DstBlend: 0
     - _EmissionScaleUI: 0
     - _Gloss: 0.45
+    - _GlossMapScale: 1
     - _Glossiness: 0.5
+    - _GlossyReflections: 1
     - _IBLPower: 2
     - _LightWrap: 1
     - _LightWrapPower: 1
@@ -118,7 +137,9 @@ Material:
     - _RimFresnel: 1
     - _RimPower: 1
     - _Shininess: 0.5
+    - _SmoothnessTextureChannel: 0
     - _SpecDetail: 1
+    - _SpecularHighlights: 1
     - _SpecularIBL: 1
     - _SpecularLevel: 0.5
     - _SpecularPower: 0.2
@@ -136,3 +157,4 @@ Material:
     - _RimLightColor: {r: 0.50735295, g: 0.48301443, b: 0.3469399, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

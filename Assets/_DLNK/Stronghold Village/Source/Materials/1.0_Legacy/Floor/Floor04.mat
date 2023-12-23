@@ -2,20 +2,34 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Floor04
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _CUSTOMDETAILNORMAL_ON _CUSTOMDETAILTEX_ON _DETAILCOLOR_ON _NORMALDETAIL_ON
-    _NORMALMAP _PARALLAXMAP _SPECDETAIL_ON _SPECULARIBL_ON _USEDETAILMASK_ON
-  m_LightmapFlags: 5
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _EMISSION
+  - _NORMALMAP
+  - _PARALLAXMAP
+  m_InvalidKeywords:
+  - _CUSTOMDETAILNORMAL_ON
+  - _CUSTOMDETAILTEX_ON
+  - _DETAILCOLOR_ON
+  - _NORMALDETAIL_ON
+  - _SPECDETAIL_ON
+  - _SPECULARIBL_ON
+  - _USEDETAILMASK_ON
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -59,6 +73,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: ca3872646b7817c4fb1fd72d6c587a52, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AOPower: 2
     - _BumpPower: 0
@@ -74,7 +89,9 @@ Material:
     - _Diffusepower: 1
     - _DstBlend: 0
     - _EmissionScaleUI: 0
+    - _GlossMapScale: 1
     - _Glossiness: 0.11
+    - _GlossyReflections: 1
     - _HeightSmooth: 0
     - _IBLAmbient: 0.5
     - _IBLPower: 5
@@ -90,7 +107,9 @@ Material:
     - _RimFresnel: 3
     - _RimPower: 1
     - _Shininess: 0.26
+    - _SmoothnessTextureChannel: 0
     - _SpecDetail: 1
+    - _SpecularHighlights: 1
     - _SpecularIBL: 1
     - _SpecularPower: 2
     - _SrcBlend: 1
@@ -106,3 +125,4 @@ Material:
     - _LightWrapColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _RimLightColor: {r: 0.5147059, g: 0.5147059, b: 0.5147059, a: 1}
     - _SpecColor: {r: 0.6102941, g: 0.6102941, b: 0.6102941, a: 1}
+  m_BuildTextureStacks: []

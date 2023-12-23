@@ -2,20 +2,31 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: PlasterWhite00
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _DETAILSPEC_ON _DETAIL_MULX2 _METALLICGLOSSMAP _NORMALMAP _USEGLOSSMAP_ON
-    _USETINT_ON
-  m_LightmapFlags: 5
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _DETAIL_MULX2
+  - _EMISSION
+  - _METALLICGLOSSMAP
+  - _NORMALMAP
+  m_InvalidKeywords:
+  - _DETAILSPEC_ON
+  - _USEGLOSSMAP_ON
+  - _USETINT_ON
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -99,6 +110,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: d5dcb6877e098b94ab77f160bc28cdb4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AOPower: 1
     - _BumpDetailPower: 0
@@ -111,7 +123,9 @@ Material:
     - _DstBlend: 0
     - _EmissionScaleUI: 0
     - _Gloss: 0.26785713
+    - _GlossMapScale: 1
     - _Glossiness: 0.25
+    - _GlossyReflections: 1
     - _MainTiling: 1
     - _Metallic: 0
     - _Mode: 0
@@ -120,6 +134,8 @@ Material:
     - _OclussionPower: 0
     - _Parallax: 0.08
     - _Shininess: 0.2
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SpecularLevel: 0.11
     - _SpecularPower: 0.5
     - _SrcBlend: 1
@@ -133,3 +149,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 0.9117647, g: 0.9069562, b: 0.8983564, a: 1}
+  m_BuildTextureStacks: []
