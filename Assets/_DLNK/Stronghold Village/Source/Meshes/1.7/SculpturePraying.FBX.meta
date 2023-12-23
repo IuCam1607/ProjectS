@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: 53a83c9cde8d62c41aec7f128b674cdc
+timeCreated: 1485819291
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Praying00_lod0
+    100002: Praying00_lod001
+    100004: Praying00_lod002
+    100006: Praying00_lod003
+    100008: Praying00_lod004
+    100010: Praying00_lod005
+    100012: Praying00_lod006
+    100014: Praying00_lod007
+    100016: Praying00_lod008
+    100018: Praying00_lod009
+    100020: Praying00_lod010
+    100022: Praying00_lod011
+    100024: Praying00_lod012
+    100026: Praying00_lod013
+    100028: Praying00_lod014
+    100030: Praying00_lod015
+    100032: Praying00_lod016
+    100034: Praying00_lod017
+    100036: Praying00_lod018
+    100038: Praying00_lod019
+    100040: //RootNode
+    100042: SculpturePraying00
+    100044: SculpturePraying001
+    100046: SculpturePraying002
+    100048: SculpturePraying003
+    100050: SculpturePraying004
+    400000: Praying00_lod0
+    400002: Praying00_lod001
+    400004: Praying00_lod002
+    400006: Praying00_lod003
+    400008: Praying00_lod004
+    400010: Praying00_lod005
+    400012: Praying00_lod006
+    400014: Praying00_lod007
+    400016: Praying00_lod008
+    400018: Praying00_lod009
+    400020: Praying00_lod010
+    400022: Praying00_lod011
+    400024: Praying00_lod012
+    400026: Praying00_lod013
+    400028: Praying00_lod014
+    400030: Praying00_lod015
+    400032: Praying00_lod016
+    400034: Praying00_lod017
+    400036: Praying00_lod018
+    400038: Praying00_lod019
+    400040: //RootNode
+    400042: SculpturePraying00
+    400044: SculpturePraying001
+    400046: SculpturePraying002
+    400048: SculpturePraying003
+    400050: SculpturePraying004
+    2300000: Praying00_lod0
+    2300002: Praying00_lod001
+    2300004: Praying00_lod002
+    2300006: Praying00_lod003
+    2300008: Praying00_lod004
+    2300010: Praying00_lod005
+    2300012: Praying00_lod006
+    2300014: Praying00_lod007
+    2300016: Praying00_lod008
+    2300018: Praying00_lod009
+    2300020: Praying00_lod010
+    2300022: Praying00_lod011
+    2300024: Praying00_lod012
+    2300026: Praying00_lod013
+    2300028: Praying00_lod014
+    2300030: Praying00_lod015
+    2300032: Praying00_lod016
+    2300034: Praying00_lod017
+    2300036: Praying00_lod018
+    2300038: Praying00_lod019
+    3300000: Praying00_lod0
+    3300002: Praying00_lod001
+    3300004: Praying00_lod002
+    3300006: Praying00_lod003
+    3300008: Praying00_lod004
+    3300010: Praying00_lod005
+    3300012: Praying00_lod006
+    3300014: Praying00_lod007
+    3300016: Praying00_lod008
+    3300018: Praying00_lod009
+    3300020: Praying00_lod010
+    3300022: Praying00_lod011
+    3300024: Praying00_lod012
+    3300026: Praying00_lod013
+    3300028: Praying00_lod014
+    3300030: Praying00_lod015
+    3300032: Praying00_lod016
+    3300034: Praying00_lod017
+    3300036: Praying00_lod018
+    3300038: Praying00_lod019
+    4300000: Praying00_lod0
+    4300002: Praying00_lod001
+    4300004: Praying00_lod002
+    4300006: Praying00_lod003
+    4300008: Praying00_lod004
+    4300010: Praying00_lod005
+    4300012: Praying00_lod006
+    4300014: Praying00_lod007
+    4300016: Praying00_lod008
+    4300018: Praying00_lod009
+    4300020: Praying00_lod010
+    4300022: Praying00_lod011
+    4300024: Praying00_lod012
+    4300026: Praying00_lod013
+    4300028: Praying00_lod014
+    4300030: Praying00_lod015
+    4300032: Praying00_lod016
+    4300034: Praying00_lod017
+    4300036: Praying00_lod018
+    4300038: Praying00_lod019
+    6400000: Praying00_lod0
+    6400002: Praying00_lod001
+    6400004: Praying00_lod002
+    6400006: Praying00_lod003
+    6400008: Praying00_lod004
+    6400010: Praying00_lod005
+    6400012: Praying00_lod006
+    6400014: Praying00_lod007
+    6400016: Praying00_lod008
+    6400018: Praying00_lod009
+    6400020: Praying00_lod010
+    6400022: Praying00_lod011
+    6400024: Praying00_lod012
+    6400026: Praying00_lod013
+    6400028: Praying00_lod014
+    6400030: Praying00_lod015
+    6400032: Praying00_lod016
+    6400034: Praying00_lod017
+    6400036: Praying00_lod018
+    6400038: Praying00_lod019
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 30
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Water
+  m_Shader: {fileID: 4800000, guid: d952bab2ef2f75e4884c02005740919f, type: 3}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 2800000, guid: 53838b24e3ced7e49896b3414f5b9db6, type: 3}
+        m_Scale: {x: 50, y: 50}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamAlbedo:
+        m_Texture: {fileID: 2800000, guid: d74c74c6be1819d4894bd59b4eb6ff7a, type: 3}
+        m_Scale: {x: 60, y: 60}
+        m_Offset: {x: 0, y: 0}
+    - _FoamGloss:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamMask:
+        m_Texture: {fileID: 2800000, guid: e4885cc09e8012344a8653a144bf25a2, type: 3}
+        m_Scale: {x: 90, y: 90}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: 1b9f0d7abd1665049a0dc77b61d6f1aa, type: 3}
+        m_Scale: {x: 65, y: 65}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalA:
+        m_Texture: {fileID: 2800000, guid: 937e3dbbd615b4d42a348fe95eb4d892, type: 3}
+        m_Scale: {x: 90, y: 90}
+        m_Offset: {x: 0, y: 0}
+    - _NormalB:
+        m_Texture: {fileID: 2800000, guid: c5ab9bde27313f24f8dd917f31a18abb, type: 3}
+        m_Scale: {x: 70, y: 70}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 813f700032b39e34291bfba9c4d691ca, type: 3}
+        m_Scale: {x: 90, y: 90}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterAGloss:
+        m_Texture: {fileID: 2800000, guid: 828fe616b9d2edd4aae5bcbc0437d4e2, type: 3}
+        m_Scale: {x: 90, y: 90}
+        m_Offset: {x: 0, y: 0}
+    - _WaterBGloss:
+        m_Texture: {fileID: 2800000, guid: 84ee455bcb46dfc45820fe91d38f5948, type: 3}
+        m_Scale: {x: 24, y: 24}
+        m_Offset: {x: 0, y: 0}
+    - _WaterTextureB:
+        m_Texture: {fileID: 2800000, guid: 1b9f0d7abd1665049a0dc77b61d6f1aa, type: 3}
+        m_Scale: {x: 70, y: 70}
+        m_Offset: {x: 12, y: 12}
+    m_Floats:
+    - _BumpScale: 1
+    - _BumpSmooth: 1.55
+    - _Cutoff: 0.5
+    - _Depth: 0.001
+    - _DepthFocus: 0.13
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _FMaskMult: 0.27
+    - _FoamGlossMult: 0
+    - _FoamPower: 0.88
+    - _Gloss: 0.69
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _InvertMask: 0
+    - _Maskmult: 3.6
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Opacity: 0.13
+    - _Parallax: 0.02
+    - _Refraction: 0.1
+    - _SecondaryGloss: 1.19
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Tessellation: 20
+    - _UVSec: 0
+    - _UseMainTexAlpha: 0
+    - _VelocityA: 0.06
+    - _VelocityB: 0.1
+    - _VelocityX: 0.001
+    - _VelocityY: 0.006
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

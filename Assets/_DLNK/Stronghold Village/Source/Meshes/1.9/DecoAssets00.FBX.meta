@@ -1,0 +1,362 @@
+fileFormatVersion: 2
+guid: d00190eae2ee7664fa93abbf0ed0c8db
+timeCreated: 1534505931
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box017
+    100002: //RootNode
+    100004: StrawBale00
+    100006: StrawBale001
+    100008: Box027
+    100010: SignBoardWood00
+    100012: Box030
+    100014: SimpleRoundColumn00
+    100016: Box031
+    100018: SimpleRoundColumn001
+    100020: ChurchBell00
+    100022: Cylinder004
+    100024: Cylinder005
+    100026: Cylinder006
+    100028: Box053
+    100030: MuiscInstrument00
+    100032: ArmorChest00
+    100034: Arrow00
+    100036: Box054
+    100038: Coin00
+    100040: CrossBow00
+    100042: Cylinder009
+    100044: Feather00
+    100046: GoldBunchSquare00
+    100048: Horn00
+    100050: Medallion00
+    100052: MuiscInstrument002
+    100054: Object004
+    100056: Object005
+    100058: Object007
+    100060: Object008
+    100062: Object009
+    100064: Object010
+    100066: Object011
+    100068: Object012
+    100070: Object013
+    100072: Object014
+    100074: Object015
+    100076: Object017
+    100078: OldDocument00
+    100080: OldDraw00
+    100082: OldMap00
+    100084: OldMap01
+    100086: Plane003
+    100088: SignBoardWood007
+    100090: SmallDecoArch00
+    100092: Target00
+    100094: VesselSmallCeramic00
+    100096: Medallion00 1
+    100098: OldMap01 1
+    100100: Apple00
+    100102: AppleBox00
+    100104: GeoSphere001
+    100106: Object018
+    100108: AppleBarrel00
+    100110: Cylinder010
+    100112: MoneyBag00
+    100114: Object019
+    100116: Plane005
+    100118: Curtins00
+    100120: Cylinder011
+    100122: Cylinder012
+    100124: Plane006
+    400000: Box017
+    400002: //RootNode
+    400004: StrawBale00
+    400006: StrawBale001
+    400008: Box027
+    400010: SignBoardWood00
+    400012: Box030
+    400014: SimpleRoundColumn00
+    400016: Box031
+    400018: SimpleRoundColumn001
+    400020: ChurchBell00
+    400022: Cylinder004
+    400024: Cylinder005
+    400026: Cylinder006
+    400028: Box053
+    400030: MuiscInstrument00
+    400032: ArmorChest00
+    400034: Arrow00
+    400036: Box054
+    400038: Coin00
+    400040: CrossBow00
+    400042: Cylinder009
+    400044: Feather00
+    400046: GoldBunchSquare00
+    400048: Horn00
+    400050: Medallion00
+    400052: MuiscInstrument002
+    400054: Object004
+    400056: Object005
+    400058: Object007
+    400060: Object008
+    400062: Object009
+    400064: Object010
+    400066: Object011
+    400068: Object012
+    400070: Object013
+    400072: Object014
+    400074: Object015
+    400076: Object017
+    400078: OldDocument00
+    400080: OldDraw00
+    400082: OldMap00
+    400084: OldMap01
+    400086: Plane003
+    400088: SignBoardWood007
+    400090: SmallDecoArch00
+    400092: Target00
+    400094: VesselSmallCeramic00
+    400096: Medallion00 1
+    400098: OldMap01 1
+    400100: Apple00
+    400102: AppleBox00
+    400104: GeoSphere001
+    400106: Object018
+    400108: AppleBarrel00
+    400110: Cylinder010
+    400112: MoneyBag00
+    400114: Object019
+    400116: Plane005
+    400118: Curtins00
+    400120: Cylinder011
+    400122: Cylinder012
+    400124: Plane006
+    2100000: 'Material #59'
+    2100002: 'Material #57'
+    2100004: 'Material #55'
+    2100006: No Name
+    2100008: 'Material #101'
+    2100010: 'Material #58'
+    2100012: 'Material #56'
+    2100014: 'Material #102'
+    2100016: 'Material #105'
+    2100018: 'Material #106'
+    2300000: Box017
+    2300002: Box027
+    2300004: Box030
+    2300006: Box031
+    2300008: Cylinder004
+    2300010: Cylinder005
+    2300012: Cylinder006
+    2300014: Box053
+    2300016: Box054
+    2300018: Cylinder009
+    2300020: Medallion00
+    2300022: Object004
+    2300024: Object005
+    2300026: Object007
+    2300028: Object008
+    2300030: Object009
+    2300032: Object010
+    2300034: Object011
+    2300036: Object012
+    2300038: Object013
+    2300040: Object014
+    2300042: Object015
+    2300044: Object017
+    2300046: OldMap01
+    2300048: Plane003
+    2300050: Medallion00 1
+    2300052: OldMap01 1
+    2300054: GeoSphere001
+    2300056: Object018
+    2300058: Cylinder010
+    2300060: Object019
+    2300062: Plane005
+    2300064: Cylinder011
+    2300066: Cylinder012
+    2300068: Plane006
+    3300000: Box017
+    3300002: Box027
+    3300004: Box030
+    3300006: Box031
+    3300008: Cylinder004
+    3300010: Cylinder005
+    3300012: Cylinder006
+    3300014: Box053
+    3300016: Box054
+    3300018: Cylinder009
+    3300020: Medallion00
+    3300022: Object004
+    3300024: Object005
+    3300026: Object007
+    3300028: Object008
+    3300030: Object009
+    3300032: Object010
+    3300034: Object011
+    3300036: Object012
+    3300038: Object013
+    3300040: Object014
+    3300042: Object015
+    3300044: Object017
+    3300046: OldMap01
+    3300048: Plane003
+    3300050: Medallion00 1
+    3300052: OldMap01 1
+    3300054: GeoSphere001
+    3300056: Object018
+    3300058: Cylinder010
+    3300060: Object019
+    3300062: Plane005
+    3300064: Cylinder011
+    3300066: Cylinder012
+    3300068: Plane006
+    4300000: Box017
+    4300002: Box027
+    4300004: Box030
+    4300006: Box031
+    4300008: Cylinder004
+    4300010: Cylinder005
+    4300012: Cylinder006
+    4300014: Box053
+    4300016: Box054
+    4300018: Object014
+    4300020: Object004
+    4300022: Object008
+    4300024: Object005
+    4300026: Object007
+    4300028: OldMap01
+    4300030: Object015
+    4300032: Plane003
+    4300034: Medallion00
+    4300036: Object013
+    4300038: Object012
+    4300040: Object009
+    4300042: Object010
+    4300044: Object017
+    4300046: Cylinder009
+    4300048: Object011
+    4300050: GeoSphere001
+    4300052: Object018
+    4300054: Cylinder010
+    4300056: Object019
+    4300058: Plane005
+    4300060: Cylinder011
+    4300062: Cylinder012
+    4300064: Plane006
+    6400000: Box017
+    6400002: Box027
+    6400004: Box030
+    6400006: Box031
+    6400008: Cylinder004
+    6400010: Cylinder005
+    6400012: Cylinder006
+    6400014: Box053
+    6400016: Box054
+    6400018: Cylinder009
+    6400020: Medallion00
+    6400022: Object004
+    6400024: Object005
+    6400026: Object007
+    6400028: Object008
+    6400030: Object009
+    6400032: Object010
+    6400034: Object011
+    6400036: Object012
+    6400038: Object013
+    6400040: Object014
+    6400042: Object015
+    6400044: Object017
+    6400046: OldMap01
+    6400048: Plane003
+    6400050: Medallion00 1
+    6400052: OldMap01 1
+    6400054: GeoSphere001
+    6400056: Object018
+    6400058: Cylinder010
+    6400060: Object019
+    6400062: Plane005
+    6400064: Cylinder011
+    6400066: Cylinder012
+    6400068: Plane006
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

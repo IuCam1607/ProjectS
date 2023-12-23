@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 586f2d05c742449468f0ba35ab29054d
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: SewerCover0000
+    100002: SewerCover0001
+    100004: SewerCover0002
+    100006: SewerCover0003
+    100008: SewerCover0004
+    100010: SewerCover0005
+    100012: SewerCover0006
+    100014: SewerCover0007
+    100016: SewerCover0008
+    100018: SewerCover0009
+    100020: SewerCover0010
+    100022: SewerCover0011
+    100024: //RootNode
+    400000: SewerCover0000
+    400002: SewerCover0001
+    400004: SewerCover0002
+    400006: SewerCover0003
+    400008: SewerCover0004
+    400010: SewerCover0005
+    400012: SewerCover0006
+    400014: SewerCover0007
+    400016: SewerCover0008
+    400018: SewerCover0009
+    400020: SewerCover0010
+    400022: SewerCover0011
+    400024: //RootNode
+    2300000: SewerCover0000
+    2300002: SewerCover0001
+    2300004: SewerCover0002
+    2300006: SewerCover0003
+    2300008: SewerCover0004
+    2300010: SewerCover0005
+    2300012: SewerCover0006
+    2300014: SewerCover0007
+    2300016: SewerCover0008
+    2300018: SewerCover0009
+    2300020: SewerCover0010
+    2300022: SewerCover0011
+    3300000: SewerCover0000
+    3300002: SewerCover0001
+    3300004: SewerCover0002
+    3300006: SewerCover0003
+    3300008: SewerCover0004
+    3300010: SewerCover0005
+    3300012: SewerCover0006
+    3300014: SewerCover0007
+    3300016: SewerCover0008
+    3300018: SewerCover0009
+    3300020: SewerCover0010
+    3300022: SewerCover0011
+    4300000: SewerCover0000
+    4300002: SewerCover0001
+    4300004: SewerCover0002
+    4300006: SewerCover0003
+    4300008: SewerCover0004
+    4300010: SewerCover0005
+    4300012: SewerCover0006
+    4300014: SewerCover0007
+    4300016: SewerCover0008
+    4300018: SewerCover0009
+    4300020: SewerCover0010
+    4300022: SewerCover0011
+    6400000: SewerCover0000
+    6400002: SewerCover0001
+    6400004: SewerCover0002
+    6400006: SewerCover0003
+    6400008: SewerCover0004
+    6400010: SewerCover0005
+    6400012: SewerCover0006
+    6400014: SewerCover0007
+    6400016: SewerCover0008
+    6400018: SewerCover0009
+    6400020: SewerCover0010
+    6400022: SewerCover0011
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0149999997
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
