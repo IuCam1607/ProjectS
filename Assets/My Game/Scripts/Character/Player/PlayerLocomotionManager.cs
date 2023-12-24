@@ -34,6 +34,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     private void HandleGroundedMovement()
     {
         GetVerticalAndHorizontalInputs();
+
         moveDirection = PlayerCamera.instance.transform.forward * verticalMovement;
         moveDirection = moveDirection + PlayerCamera.instance.transform.right * horizontalMovement;
         moveDirection.Normalize();
@@ -50,9 +51,9 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     }
     private void HandleRotation()
     {
-        Vector3 targetDirection = Vector3.zero;
-        targetDirection = PlayerCamera.instance.cameraObject.transform.forward * verticalMovement;
-        targetDirection = targetDirection + PlayerCamera.instance.cameraObject.transform.right * horizontalMovement;
+        targetRotationDirection = Vector3.zero;
+        targetRotationDirection = PlayerCamera.instance.cameraObject.transform.forward * verticalMovement;
+        targetRotationDirection = targetRotationDirection + PlayerCamera.instance.cameraObject.transform.right * horizontalMovement;
         targetRotationDirection.Normalize();
         targetRotationDirection.y = 0;
 
@@ -61,7 +62,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             targetRotationDirection = transform.forward;
         }
 
-        Quaternion newRotation = Quaternion.LookRotation(targetRotationDirection);
+        Quaternion newRotation = Quaternion.LookRotation(targetRotationDirection);  
         Quaternion targetRotation = Quaternion.Slerp(transform.rotation, newRotation, rotationSpeed * Time.deltaTime);
         transform.rotation = targetRotation;
     }
