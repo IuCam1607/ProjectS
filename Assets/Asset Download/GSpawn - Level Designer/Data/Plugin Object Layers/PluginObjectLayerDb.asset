@@ -19,6 +19,25 @@ MonoBehaviour:
   _isTerrainMesh: 0
   _isSphericalMesh: 0
   _uiSelected: 0
+--- !u!114 &-2984831909517698540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79425504febc2843801a7aa28fd9495, type: 3}
+  m_Name: Layer_9
+  m_EditorClassIdentifier: 
+  _guid:
+    _guidString: f0c59105-ab59-41b3-8a88-b3e73075a901
+  _layer: 9
+  _isErasable: 1
+  _isTerrainMesh: 0
+  _isSphericalMesh: 0
+  _uiSelected: 0
 --- !u!114 &-2205709065428074114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +82,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -2984831909517698540}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

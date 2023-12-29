@@ -10,9 +10,6 @@ public class CharacterManager : NetworkBehaviour
 
     CharacterNetworkManager characterNetworkManager;
 
-    [SerializeField]private float gravity = 9.8f;
-    [SerializeField]private float verticalSpeed;
-
     protected virtual void Awake()
     {
         DontDestroyOnLoad(this);
@@ -39,20 +36,6 @@ public class CharacterManager : NetworkBehaviour
                 characterNetworkManager.networkRotation.Value,
                 characterNetworkManager.networkRotationSmoothTime);
         }
-        //test
-        if (!characterController.isGrounded)
-        {
-            verticalSpeed -= gravity * Time.deltaTime;
-        }
-        else
-        {
-            // Reset tốc độ di chuyển khi đối tượng đứng trên mặt đất
-            verticalSpeed = 0f;
-        }
-
-        // Di chuyển đối tượng theo trục y
-        Vector3 moveDirection = new Vector3(0, verticalSpeed, 0);
-        characterController.Move(moveDirection * Time.deltaTime);
     }
     protected virtual void LateUpdate()
     {
