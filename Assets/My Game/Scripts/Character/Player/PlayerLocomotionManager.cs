@@ -6,6 +6,8 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
 {
     PlayerManager player;
 
+    private float testGit;
+
     public float verticalMovement;
     public float horizontalMovement;
     public float moveAmount;
