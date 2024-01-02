@@ -74,14 +74,62 @@
             ]
         },
         {
+            "name": "Player Actions",
+            "id": "393c5dda-e00a-484d-a5a0-6cc641f1d83f",
+            "actions": [
+                {
+                    "name": "Dodge",
+                    "type": "Button",
+                    "id": "8a3cdaab-f9af-44dd-bee9-3c7dd8415e63",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.5)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "PassThrough",
+                    "id": "181eb956-d0a9-497f-9131-d0b2ee749609",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e8e42846-52f9-48da-b47d-686fd4dac65f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1ec3463-cc1b-4ce2-b41c-c8a03cf46d3e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Player Camera",
             "id": "f53134da-03aa-43d5-924b-91abb8f1810c",
             "actions": [
                 {
-                    "name": "Camera Controls",
+                    "name": "Mouse",
                     "type": "PassThrough",
                     "id": "df41faba-33dc-4c81-bed3-49ef32c80288",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Delta",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -89,59 +137,15 @@
             ],
             "bindings": [
                 {
-                    "name": "Mouse",
-                    "id": "45ee0c9d-05f6-4f56-afab-ea0c79117178",
-                    "path": "2DVector(mode=2)",
+                    "name": "",
+                    "id": "54a305ee-ca9b-47ae-9392-ebc373b8ff8e",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Camera Controls",
-                    "isComposite": true,
+                    "action": "Mouse",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "a622688a-f5b2-4ea4-9bf2-1fc019d9f8a8",
-                    "path": "<Mouse>/delta/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera Controls",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "2ce55f3f-c93f-404c-a74d-afc506dc7974",
-                    "path": "<Mouse>/delta/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera Controls",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "0dc46a64-1723-496e-80d2-4b255947b478",
-                    "path": "<Mouse>/delta/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera Controls",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "b0cf1a14-ddb2-4f45-af3b-0f0f975f9dd1",
-                    "path": "<Mouse>/delta/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera Controls",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }
