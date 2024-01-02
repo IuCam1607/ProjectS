@@ -60,7 +60,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.25560537
+      - time: 0.21967722
         functionName: PlayRollSoundFX
         data: 
         objectReferenceParameter: {instanceID: 0}
