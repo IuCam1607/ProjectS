@@ -17,6 +17,7 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
     [SerializeField] float runningSpeed = 2;
     [SerializeField] float sprintingSpeed = 6.5f;
     [SerializeField] float rotationSpeed = 15;
+    [SerializeField] int sprintingStaminaCost = 5;
 
     [Header("Dodge")]
     private Vector3 rollDirection;
@@ -115,6 +116,12 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
             player.playerNetworkManager.isSprinting.Value = false;
         }
 
+        if(player.playerNetworkManager.currentStamina.Value <= 0)
+        {
+            player.playerNetworkManager.isSprinting.Value = false;
+            return;
+        }
+
         if(moveAmount >= 0.5)
         {
             player.playerNetworkManager.isSprinting.Value = true;
@@ -123,6 +130,12 @@ public class PlayerLocomotionManager : CharacterLocomotionManager
         {
             player.playerNetworkManager.isSprinting.Value = false;
 
+        }
+
+        if(player.playerNetworkManager.isSprinting.Value)
+        {
+            player.playerNetworkManager.currentStamina.Value -= sprintingStaminaCost * Time.deltaTime;
+            Debug.Log("HandleSprinting: CurrentStamina - " + player.playerNetworkManager.currentStamina.Value);
         }
     }
     public void AttemptToPerformDodge()
