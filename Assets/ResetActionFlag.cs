@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ResetActionFlag : StateMachineBehaviour
 {
-    CharacterManager character;
+    PlayerManager player;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(character == null)
+        if(player == null)
         {
-            character = animator.GetComponent<CharacterManager>();
+            player = animator.GetComponent<PlayerManager>();
         }
 
-        character.isPerformingAction = false;
-        character.canRotate = true;
-        character.canMove = true;
-        character.applyRootMotion = false;
+        player.isPerformingAction = false;
+        player.applyRootMotion = false;
+        player.canRotate = true;
+        player.canMove = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
