@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03134139776692a4e90a1ebf537813e4, type: 3}
+  m_Name: Broad Sword
+  m_EditorClassIdentifier: 
+  itemName: Broad Sword
+  pickupIcon: {fileID: 21300000, guid: 4bf4c1460e893fd49bca40bce0cf1fa1, type: 3}
+  itemIcon: {fileID: 21300000, guid: 8e64a4113e234e24f82627d2208fefde, type: 3}
+  itemDescription: 
+  itemID: 2
+  isUnarmed: 0
+  weaponModel: {fileID: 5501387686025746793, guid: 80dd57b8a556a15429fb4f84aaace918, type: 3}
+  TH_Idle: TH_Idle_01
+  OH_Light_Attack_01: OH_Light_Attack_01
+  OH_Light_Attack_02: OH_Light_Attack_02
+  OH_Heavy_Attack_01: OH_Heavy_Attack_01
+  strengthREQ: 10
+  dexREQ: 10
+  intREQ: 0
+  faithREQ: 0
+  physicalDamage: 80
+  magicDamage: 0
+  fireDamage: 0
+  lightningDamage: 0
+  holyDamage: 0
+  poiseDamage: 25
+  baseStaminaCost: 12
+  lightAttackMultiplier: 1
+  heavyAttackMultiplire: 2
