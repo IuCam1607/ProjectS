@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03134139776692a4e90a1ebf537813e4, type: 3}
+  m_Name: Talisman
+  m_EditorClassIdentifier: 
+  itemName: Talisman
+  pickupIcon: {fileID: 0}
+  itemIcon: {fileID: 0}
+  itemDescription: 
+  itemID: 3
+  isUnarmed: 1
+  weaponModel: {fileID: 7128485576389618302, guid: 2c5ce1cd6bfb7b8489f4802a8eb41dc4, type: 3}
+  TH_Idle: TH_Idle_Sword_01
+  OH_Light_Attack_01: 
+  OH_Light_Attack_02: 
+  OH_Heavy_Attack_01: 
+  TH_Light_Attack_01: 
+  TH_Light_Attack_02: 
+  TH_Light_Attack_03: 
+  baseDamage: 25
+  criticalDamageMultiplier: 4
+  baseStaminaCost: 0
+  lightAttackMultiplier: 0
+  heavyAttackMultiplire: 0
+  isSpellCaster: 0
+  isFaithCaster: 1
+  isPyroCaster: 0
+  isMeleeWeapon: 0

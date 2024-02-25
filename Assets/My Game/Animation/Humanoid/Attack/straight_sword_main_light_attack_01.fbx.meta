@@ -61,21 +61,28 @@ ModelImporter:
       curves: []
       events:
       - time: 0.27480915
-        functionName: OpenRightHandDamageCollider
+        functionName: OpenDamageCollider
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.5085324
+      - time: 0.32950193
+        functionName: DrainStaminaLightAttack
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.47859228
         functionName: EnebleCombo
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.51397437
-        functionName: CloseRightHandDamageCollider
+      - time: 0.4930163
+        functionName: CloseDamageCollider
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -88,8 +95,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.32950193
-        functionName: DrainStaminaLightAttack
+      - time: 0.29439253
+        functionName: CanRotate
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.49065417
+        functionName: StopRotate
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

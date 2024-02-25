@@ -6,21 +6,14 @@ namespace SG
 {
     public class ResetAnimatorBool : StateMachineBehaviour
     {
-        AnimationDemoController controller;
+        public string targetBool;
+        public bool status;
+
 
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (controller == null)
-            {
-                controller = animator.GetComponent<AnimationDemoController>();
-            }
-
-            controller.isUsingRootMotion = false;
-            controller.allowMovement = true;
-            controller.allowRotation = true;
-            animator.SetBool("isPerformingAction", false);
-            animator.SetBool("isPerformingBackStep", false);
+            animator.SetBool(targetBool, status);
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

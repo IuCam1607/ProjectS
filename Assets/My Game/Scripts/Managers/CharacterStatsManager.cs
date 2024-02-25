@@ -6,12 +6,21 @@ public class CharacterStatsManager : MonoBehaviour
 {
     [Header("Levels")]
     public float vitalityLevel = 10;
+    public int focusLevel = 10;
     public int enduranceLevel = 10;
 
     [Header("Stats")]
+    public float currentHealth;
+    public float maxHealth;
+
+    public float currentFocusPoint;
+    public float maxFocusPoint;
+
     public float currentStamina;
     public float maxStamina;
 
-    public float currentHealth;
-    public float maxHealth;
+    [Header("Status")]
+    public bool isDead = false;
+
+    public int soulCount = 0;
 }

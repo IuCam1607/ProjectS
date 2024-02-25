@@ -45,7 +45,7 @@ public class TakeDamageEffect : InstantCharacterEffect
     public override void ProcessEffect(PlayerManager player)
     {
         base.ProcessEffect(player);
-        if (player.isDead)
+        if (player.playerStatsManager.isDead)
             return;
 
         CalculateDamage(player);

@@ -1,21 +1,17 @@
-using GLTF.Schema;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimatorManager : AnimatorManager
 {
-    private PlayerInputManager playerInput;
     private PlayerManager player;
-
 
     int vertical;
     int horizontal;
 
     private void Awake()
     {
-        player = GetComponent<PlayerManager>();
-        playerInput = GetComponent<PlayerInputManager>();
+        player = GetComponentInParent<PlayerManager>();
         animator = GetComponent<Animator>();
 
         vertical = Animator.StringToHash("Vertical");
@@ -53,6 +49,21 @@ public class PlayerAnimatorManager : AnimatorManager
         player.canMove = canMove;
     }
 
+    public void ApplyJumpingVelocity()
+    {
+        player.playerLocomotion.yVelocity.y = Mathf.Sqrt(player.playerLocomotion.jumpHeight * -2 * player.playerLocomotion.gravityForce);
+    }
+
+    public void CanRotate()
+    {
+        player.canRotate = true;
+    }
+
+    public void StopRotate()
+    {
+        player.canRotate = false;
+    }
+
     public void EnebleCombo()
     {
         animator.SetBool("canDoCombo", true);
@@ -61,5 +72,30 @@ public class PlayerAnimatorManager : AnimatorManager
     public void DisableCombo()
     {
         animator.SetBool("canDoCombo", false);
+    }
+
+    public void EnableIsInvulnerable()
+    {
+        animator.SetBool("isInvulnerable", true);
+    }
+
+    public void DisableIsInvulnerable()
+    {
+        animator.SetBool("isInvulnerable", false);
+    }
+    public void EnableIsParrying()
+    {
+        player.isParrying = true;
+    }
+
+    public void DisableIsParrying()
+    {
+        player.isParrying = false;
+    }
+
+    public override void TakeCriticalDamageAnimationEvent()
+    {
+        player.playerStatsManager.TakeDamageNoAnimation(player.pendingCriticalDamage);
+        player.pendingCriticalDamage = 0;
     }
 }

@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class DamageCollider : MonoBehaviour
 {
+    CharacterManager characterManager;
+
     [Header("Collider")]
     protected Collider damageCollider;
 
     [Header("Damage")]
-    public float physicalDamage = 0;
-    public float magicDamage = 0;
-    public float fireDamage = 0;
-    public float lightningDamage = 0;
-    public float holyDamage = 0;
-
-    [Header("Contact Point")]
-    protected Vector3 contactPoint;
-
-    [Header("Characters Damaged")]
-    protected List<PlayerManager> playerDamaged = new List<PlayerManager>();
+    public int currentWeaponDamage = 20;
 
     private void Awake()
     {
@@ -26,66 +18,42 @@ public class DamageCollider : MonoBehaviour
         damageCollider.gameObject.SetActive(true);
         damageCollider.isTrigger = true;
         damageCollider.enabled = false;
+
+        characterManager = GetComponentInParent<CharacterManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collision)
     {
-        PlayerManager damageTarget = other.GetComponent<PlayerManager>();
-
-        if(damageTarget != null )
+        if (collision.tag == "Player")
         {
-            contactPoint = other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+            PlayerStatsManager playerStats = collision.GetComponent<PlayerStatsManager>();
+            CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
 
+            if (enemyCharacterManager != null)
+            {
+                if (enemyCharacterManager.isParrying)
+                {
+                    //characterManager.GetComponentInChildren<AnimatorManager>()./*PlayTar*/
+                }
+            }
 
-            DamageTarget(damageTarget);
+            if (playerStats != null)
+            {
+                playerStats.TakeDamage(currentWeaponDamage);
+            }
+        }
+        else if (collision.tag == "Enemy")
+        {
+            EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
+            CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
+
+            if (enemyStats != null)
+            {
+                enemyStats.TakeDamage(currentWeaponDamage);
+                Debug.Log("Enemy Take Damage");
+            }
         }
     }
-
-    protected virtual void DamageTarget(PlayerManager damageTarget)
-    {
-        if (playerDamaged.Contains(damageTarget))
-        {
-            return;
-        }
-
-        playerDamaged.Add(damageTarget);
-
-        TakeDamageEffect damageEffect = Instantiate(WorldCharacterEffectsManager.instance.takeDamageEffect);
-        damageEffect.physicalDamage = physicalDamage;
-        damageEffect.magicDamage = magicDamage;
-        damageEffect.fireDamage = fireDamage;
-        damageEffect.lightningDamage = lightningDamage;
-        damageEffect.holyDamage = holyDamage;
-        damageEffect.contactPoint = contactPoint;
-
-        damageTarget.playerEffectManager.ProcessInstantEffect(damageEffect);
-    }
-
-    //private void OnTriggerEnter(Collider collision)
-    //{
-    //    if (collision.tag == "Player")
-    //    {
-    //        PlayerStatsManager playerStatsManager = collision.GetComponent<PlayerStatsManager>();
-
-
-    //        if(playerStatsManager != null )
-    //        {
-    //            playerStatsManager.TakeDamage(currentWeaponDamage);
-    //        }
-    //    }
-
-    //    if (collision.tag == "Enemy")
-    //    {
-    //        EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
-
-    //        if (enemyStats != null)
-    //        {
-    //            enemyStats.TakeDamage(currentWeaponDamage);
-    //            Debug.Log("Enemy TakeDamage");
-    //        }
-    //    }
-    //}
-
 
     public virtual void EnableDamageCollider()
     {
@@ -94,7 +62,9 @@ public class DamageCollider : MonoBehaviour
 
     public virtual void DisableDamageCollider()
     {
-        damageCollider.enabled = false;
-        playerDamaged.Clear();
+        if (damageCollider != null)
+        {
+            damageCollider.enabled = false;
+        } 
     }
 }

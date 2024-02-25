@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemyStatsManager : CharacterStatsManager
 {
-    Animator animator;
     CapsuleCollider capsuleCollider;
+    EnemyAnimatorManager enemyAnimatorManager;
+
+    public int soulsAwardedOnDeath = 50;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
     }
 
     private void Start()
@@ -26,8 +28,36 @@ public class EnemyStatsManager : CharacterStatsManager
         return maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamageNoAnimation(int damage)
     {
         currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            isDead = true;
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (isDead)
+            return;
+
+        // animation take Damage
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            HandleDeath();
+        }
+    }
+
+    private void HandleDeath()
+    {
+        currentHealth = 0;
+        enemyAnimatorManager.PlayTargetActionAnimation("Skeleton_Dead_01", true);
+        isDead = true;
+
     }
 }

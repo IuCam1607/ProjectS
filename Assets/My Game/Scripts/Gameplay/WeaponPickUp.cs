@@ -22,7 +22,7 @@ public class WeaponPickUp : Interactable
         PlayerAnimatorManager playerAnimation;
         playerInventory = playerManager.GetComponent<PlayerInventoryManager>();
         playerLocomotion = playerManager.GetComponent<PlayerLocomotion>();
-        playerAnimation = playerManager.GetComponent<PlayerAnimatorManager>();
+        playerAnimation = playerManager.GetComponentInChildren<PlayerAnimatorManager>();
         
 
         playerLocomotion.moveDirection = Vector3.zero;

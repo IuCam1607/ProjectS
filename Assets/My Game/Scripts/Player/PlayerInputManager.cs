@@ -23,6 +23,7 @@ public class PlayerInputManager : MonoBehaviour
     [Header("Flags")]
     public bool comboFlag;
     public bool isLockedOn;
+    public bool twoHandFlag;
 
 
     [Header("Player Movement Input")]
@@ -35,20 +36,26 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool dodgeInput = false;
     [SerializeField] bool sprintInput = false;
     [SerializeField] bool jumpInput = false;
-    [SerializeField] bool attackInput = false;
     [SerializeField] bool shiftInput = false;
-    public bool switchWeapon = false;
+    public bool attackInput = false;
     public bool interactInput = false;
     public bool selectInput;
     public bool lockOnInput = false;
     public bool switchRightTargetInput = false;
     public bool switchLeftTargetInput = false;
     public bool twoHandInput = false;
+    public bool criticalAttackInput = false;
+    public bool rightMouseInput = false;
+
+    private float scrollUp;
+    private float scrollDown;
+
+    public Transform criticalAttackCastStartPoint;
+
 
 
     private void Awake()
     {
-        //playerAttack =  GetComponent<PlayerAttack>();
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
 
@@ -95,13 +102,19 @@ public class PlayerInputManager : MonoBehaviour
             playerInputActions.PlayerCamera.Mouse.performed += i => cameraInput = i.ReadValue<Vector2>();
             playerInputActions.PlayerActions.Dodge.performed += i => dodgeInput = true;
             playerInputActions.PlayerActions.Jump.performed += i => jumpInput = true;
-            playerInputActions.PlayerActions.SwitchWeapon.performed += i => switchWeapon = true;
             playerInputActions.PlayerActions.Interact.performed += i => interactInput = true;
             playerInputActions.PlayerActions.Selection.performed += i => selectInput = true;
             playerInputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
-            //playerInputActions.PlayerActions.ScrollUp.started += HandleQuickSlotsInput;
             playerInputActions.PlayerActions.Attack.started += HandleAttackInputs;
-            playerInputActions.PlayerActions.TwoHandAttack.performed += i => twoHandInput = true;
+            playerInputActions.PlayerActions.RightMouse.started += HandleRightMouseInput;
+            playerInputActions.PlayerActions.TwoHand.performed += i =>  twoHandInput = true;
+            playerInputActions.PlayerActions.CriticalAttack.performed += i => criticalAttackInput = true;
+            playerInputActions.PlayerActions.RightMouse.performed += i => rightMouseInput = true;
+
+
+            // Scroll Up and Down
+            playerInputActions.PlayerActions.ScrollUp.performed += OnSwitchRightWeaponPerform;
+            playerInputActions.PlayerActions.ScrollDown.performed += OnSwitchLeftWeaponPerform;
 
             // Holding the Input, sets the bool to true
             playerInputActions.PlayerActions.Sprint.performed += i => sprintInput = true;
@@ -132,10 +145,11 @@ public class PlayerInputManager : MonoBehaviour
         HandleDodgeInput();
         HandleSprintingInput();
         HandleJumpInput();
-        HandleQuickSlotsInput();
         HandleInteractingButtonInput();
         HandleInventoryInput();
         HandleLockOnInput();
+        HandleTwoHandInput();
+        HandleCriticalAttackInput();
     }
 
     // Movement
@@ -227,6 +241,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             dodgeInput = false;
 
+            comboFlag = false;
             player.playerLocomotion.AttemptToPerformDodge();
         }
     }
@@ -262,18 +277,6 @@ public class PlayerInputManager : MonoBehaviour
             jumpInput = false;
 
             player.playerLocomotion.AttemptToPerformJump();
-        }
-    }
-
-    private void HandleQuickSlotsInput()
-    {
-        if (player.isPerformingAction || player.isJumping || !player.isGrounded)
-            return;
-
-        if (switchWeapon)
-        {
-            playerInventoryManager.ChangeRightWeapon();
-            switchWeapon = false;
         }
     }
 
@@ -317,27 +320,86 @@ public class PlayerInputManager : MonoBehaviour
             }
             else
             {
-                if (player.canDoCombo)
+                player.playerCombatManager.HandleLMAction();
+            }
+        }
+    }
+
+    public void HandleRightMouseInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            if (playerInputActions.PlayerActions.Shift.ReadValue<float>() == 1f)
+            {
+                if (twoHandFlag)
                 {
-                    comboFlag = true;
-                    player.playerCombatManager.HandleWeaponCombo(playerInventoryManager.rightWeapon);
-                    comboFlag = false;
+
                 }
                 else
                 {
-                    if (!player.isGrounded)
-                    {
-                        attackInput = false;
-                        return;
-                    }
-
-                    if (player.isPerformingAction || player.canDoCombo)
-                        return;
-
-                    player.playerCombatManager.HandleLightAttack(playerInventoryManager.rightWeapon);
+                    player.playerCombatManager.HandleRMAction();
                 }
             }
         }
     }
+
+    private void HandleTwoHandInput()
+    {
+        if (twoHandInput)
+        {
+            twoHandInput = false;
+
+            twoHandFlag = !twoHandFlag;
+
+            if (twoHandFlag)
+            {
+                weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
+            }
+            else
+            {
+                weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
+                weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.leftWeapon, true);
+            }
+        }
+    }
+
+    private void HandleCriticalAttackInput()
+    {
+        if (criticalAttackInput)
+        {
+            criticalAttackInput = false;
+            Debug.Log("Critical Attack Input");
+            player.playerCombatManager.AttemptBackStabOrRiposte();
+
+        }
+    }   
+
+    public void OnSwitchRightWeaponPerform(InputAction.CallbackContext context)
+    {
+        scrollUp = context.ReadValue<float>();
+
+        if (player.isPerformingAction || player.isJumping || !player.isGrounded)
+            return;
+
+        if (scrollUp > 0 && shiftInput)
+        {
+            playerInventoryManager.ChangeRightWeapon();
+        }
+    }
+
+    public void OnSwitchLeftWeaponPerform(InputAction.CallbackContext context)
+    {
+        scrollDown = context.ReadValue<float>();
+
+        if (player.isPerformingAction || player.isJumping || !player.isGrounded)
+            return;
+
+        if (scrollDown > 0 && shiftInput)
+        {
+            playerInventoryManager.ChangeLeftWeapon();
+        }
+    }
+
+
 
 }

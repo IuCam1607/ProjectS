@@ -14,7 +14,6 @@ public class PlayerManager : CharacterManager
     [HideInInspector] public PlayerStatsManager playerStatsManager;
     [HideInInspector] public PlayerEffectManager playerEffectManager;
     [HideInInspector] public PlayerInventoryManager playerInventoryManager;
-    [HideInInspector] public PlayerEquipmentManager playerEquipmentManager;
     [HideInInspector] public PlayerCombatManager playerCombatManager;
 
     [Header("UI")]
@@ -22,12 +21,8 @@ public class PlayerManager : CharacterManager
     public GameObject interactableUIGameObject;
     public GameObject itemInteractableGameObject;
 
-
     [Header("Debug Menu")]
     [SerializeField] bool respawnCharacter = false;
-
-    [Header("Status")]
-    public bool isDead = false;
 
     [Header("Flags")]
     public bool isPerformingAction = false;
@@ -38,7 +33,10 @@ public class PlayerManager : CharacterManager
     public bool canMove = true;
     public bool canDoCombo = false;
     public bool inventoryFlag;
-    public bool isRolling;
+    public bool isRolling = false;
+    public bool isUsingRightHand;
+    public bool isUsingLeftHand;
+    public bool isInvulnerable;
 
 
     private void Awake()
@@ -48,13 +46,12 @@ public class PlayerManager : CharacterManager
         characterController = GetComponent<CharacterController>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerInput = GetComponent<PlayerInputManager>();
-        playerAnimationManager = GetComponent<PlayerAnimatorManager>();
         playerStatsManager = GetComponent<PlayerStatsManager>();
         playerEffectManager = GetComponent<PlayerEffectManager>();
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
-        playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
         interactableUI = FindAnyObjectByType<InteractableUI>();
-        playerCombatManager = GetComponent<PlayerCombatManager>();
+        playerCombatManager = GetComponentInChildren<PlayerCombatManager>();
+        playerAnimationManager = GetComponentInChildren<PlayerAnimatorManager>();
     }
     private void Start()
     {
@@ -64,9 +61,12 @@ public class PlayerManager : CharacterManager
     {
         playerAnimationManager.animator.SetBool("isGrounded", isGrounded);
         canDoCombo = playerAnimationManager.animator.GetBool("canDoCombo");
+        isUsingRightHand = playerAnimationManager.animator.GetBool("isUsingRightHand");
+        isUsingLeftHand = playerAnimationManager.animator.GetBool("isUsingLeftHand");
+        isInvulnerable = playerAnimationManager.animator.GetBool("isInvulnerable");
+        playerAnimationManager.animator.SetBool("isDead", playerStatsManager.isDead);
 
         playerInput.HandleAllInputs();
-
         playerStatsManager.RegenerateStamina();
 
         DebugMenu();
@@ -102,6 +102,8 @@ public class PlayerManager : CharacterManager
 
         playerAnimationManager.PlayTargetActionAnimation("Empty", false);
     }
+
+    #region Player Interactions
 
     public void CheckForInteractableObject()
     {
@@ -140,23 +142,32 @@ public class PlayerManager : CharacterManager
         }
     }
 
+    public void OpenChestInteraction(Transform playerStandsHereWhenOpeningChest)
+    {
 
-
-
-
-
-        //public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)
-        //{
-        //    currentCharacterData.characterName = characterName.ToString();
-        //    currentCharacterData.xPosition = transform.position.x;
-        //    currentCharacterData.yPosition = transform.position.y;
-        //    currentCharacterData.zPosition = transform.position.z;
-        //}
-
-        //public void LoadGameDataFromCurrentCharacterData(ref CharacterSaveData currentCharacterData)
-        //{
-        //    characterName = currentCharacterData.characterName;
-        //    Vector3 myPosition = new Vector3(currentCharacterData.xPosition, currentCharacterData.yPosition, currentCharacterData.zPosition);
-        //    transform.position = myPosition;
-        //}
+        transform.position = playerStandsHereWhenOpeningChest.transform.position;
+        playerAnimationManager.PlayTargetActionAnimation("Open Chest", true);
     }
+
+    #endregion
+
+
+
+
+
+
+    //public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)
+    //{
+    //    currentCharacterData.characterName = characterName.ToString();
+    //    currentCharacterData.xPosition = transform.position.x;
+    //    currentCharacterData.yPosition = transform.position.y;
+    //    currentCharacterData.zPosition = transform.position.z;
+    //}
+
+    //public void LoadGameDataFromCurrentCharacterData(ref CharacterSaveData currentCharacterData)
+    //{
+    //    characterName = currentCharacterData.characterName;
+    //    Vector3 myPosition = new Vector3(currentCharacterData.xPosition, currentCharacterData.yPosition, currentCharacterData.zPosition);
+    //    transform.position = myPosition;
+    //}
+}

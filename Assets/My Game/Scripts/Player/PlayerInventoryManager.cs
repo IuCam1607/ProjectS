@@ -8,6 +8,7 @@ public class PlayerInventoryManager : MonoBehaviour
 
     WeaponSlotManager weaponSlotManager;
 
+    public SpellItem currentSpell;
     public WeaponItem rightWeapon;
     public WeaponItem leftWeapon;
 
@@ -24,7 +25,7 @@ public class PlayerInventoryManager : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<PlayerManager>();
-        weaponSlotManager = GetComponent<WeaponSlotManager>();
+        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
     }
     private void Start()
     {
@@ -36,7 +37,7 @@ public class PlayerInventoryManager : MonoBehaviour
 
     public void ChangeRightWeapon()
     {
-        player.playerAnimationManager.PlayTargetActionAnimation("Swap_Right_Weapon_01", false, true, true, true);
+        player.playerAnimationManager.PlayTargetActionAnimation("Swap_Right_Weapon_01", false, false, true, true);
 
         rightHandWeaponIndex = rightHandWeaponIndex + 1;
 
@@ -67,6 +68,42 @@ public class PlayerInventoryManager : MonoBehaviour
             rightHandWeaponIndex = -1;
             rightWeapon = unarmedWeapon;
             weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+        }
+    }
+
+    public void ChangeLeftWeapon()
+    {
+        player.playerAnimationManager.PlayTargetActionAnimation("Swap_Left_Weapon_01", false, false, true, true);
+
+        leftHandWeaponIndex = leftHandWeaponIndex + 1;
+
+        if (leftHandWeaponIndex == 0 && weaponsInLeftHandSlots[0] != null)
+        {
+            leftWeapon = weaponsInLeftHandSlots[leftHandWeaponIndex];
+            weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[leftHandWeaponIndex], true);
+        }
+
+        else if (leftHandWeaponIndex == 0 && weaponsInLeftHandSlots[0] == null)
+        {
+            leftHandWeaponIndex = leftHandWeaponIndex + 1;
+        }
+
+        else if (leftHandWeaponIndex == 1 && weaponsInLeftHandSlots[1] != null)
+        {
+            leftWeapon = weaponsInRightHandSlots[leftHandWeaponIndex];
+            weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[leftHandWeaponIndex], true);
+        }
+
+        else if (leftHandWeaponIndex == 1 && weaponsInLeftHandSlots[1] == null)
+        {
+            leftHandWeaponIndex = leftHandWeaponIndex + 1;
+        }
+
+        if (leftHandWeaponIndex > weaponsInLeftHandSlots.Length - 1)
+        {
+            leftHandWeaponIndex = -1;
+            leftWeapon = unarmedWeapon;
+            weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
         }
     }
 }

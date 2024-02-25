@@ -17,24 +17,27 @@ public class WeaponItem : Item
     public string OH_Light_Attack_02;
     public string OH_Heavy_Attack_01;
 
-    [Header("Weapon Requirements")]
-    public int strengthREQ = 0;
-    public int dexREQ = 0;
-    public int intREQ = 0;
-    public int faithREQ = 0;
+    [Header("Two Handed Attack Animation")]
+    public string TH_Light_Attack_01;
+    public string TH_Light_Attack_02;
+    public string TH_Light_Attack_03;
 
-    [Header("Weapon Base Damage")]
-    public int physicalDamage = 0;
-    public int magicDamage = 0;
-    public int fireDamage = 0;
-    public int lightningDamage = 0;
-    public int holyDamage = 0;
+    [Header("Weapon Art")]
+    public string weapon_Art;
 
-    [Header("Weapon Poise")]
-    public float poiseDamage = 10;
+    [Header("Damage")]
+    public int baseDamage = 25;
+    public int criticalDamageMultiplier = 4;
 
     [Header("Stamina Costs")]
     public int baseStaminaCost = 20;
     public float lightAttackMultiplier;
     public float heavyAttackMultiplire;
+
+    [Header("Weapon Type")]
+    public bool isSpellCaster;
+    public bool isFaithCaster;
+    public bool isPyroCaster;
+    public bool isMeleeWeapon;
+    public bool isShieldWeapon;
 }

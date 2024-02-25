@@ -8,9 +8,10 @@ public class WeaponSlotManager : MonoBehaviour
 
     WeaponHolderSlot leftHandSlot;
     WeaponHolderSlot rightHandSlot;
+    WeaponHolderSlot backSlot;
 
-    DamageCollider leftHandDamageCollider;
-    DamageCollider rightHandDamageCollider;
+    public DamageCollider leftHandDamageCollider;
+    public DamageCollider rightHandDamageCollider;
 
     QuickSlotsUI quickSlotsUI;
 
@@ -21,8 +22,8 @@ public class WeaponSlotManager : MonoBehaviour
     {
         quickSlotsUI = FindAnyObjectByType<QuickSlotsUI>();
         InitializeWeaponSlots();
-        playerStats = GetComponent<PlayerStatsManager>();
-        player = GetComponent<PlayerManager>();
+        playerStats = GetComponentInParent<PlayerStatsManager>();
+        player = GetComponentInParent<PlayerManager>();
     }
 
     private void InitializeWeaponSlots()
@@ -39,6 +40,10 @@ public class WeaponSlotManager : MonoBehaviour
             {
                 rightHandSlot = weaponSlot;
             }
+            else if (weaponSlot.isBackSlot)
+            {
+                backSlot = weaponSlot;
+            }
         }
     }
 
@@ -46,15 +51,33 @@ public class WeaponSlotManager : MonoBehaviour
     {
         if (isLeft)
         {
+            leftHandSlot.currentWeapon = weaponItem;
             leftHandSlot.LoadWeaponModel(weaponItem);
-            LoadLeftWeaponDamageCollider();
             quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
+            LoadLeftWeaponDamageCollider();
         }
         else
         {
+            
+
+            if (player.playerInput.twoHandFlag)
+            {
+                backSlot.LoadWeaponModel(leftHandSlot.currentWeapon);
+                leftHandSlot.UnloadWeaponAndDestroy();
+                player.playerAnimationManager.animator.CrossFade(weaponItem.TH_Idle, 0.2f);
+            }
+            else
+            {
+                player.playerAnimationManager.animator.CrossFade("Both Arms Empty", 0.2f);
+
+                backSlot.UnloadWeaponAndDestroy();
+            }
+
+
+            rightHandSlot.currentWeapon = weaponItem;
             rightHandSlot.LoadWeaponModel(weaponItem);
+            quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
             LoadRightWeaponDamageCollider();
-            quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
         }
     }
 
@@ -63,32 +86,41 @@ public class WeaponSlotManager : MonoBehaviour
     private void LoadLeftWeaponDamageCollider()
     {
         leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        if (!player.playerInventoryManager.leftWeapon.isUnarmed)
+        {
+            leftHandDamageCollider.currentWeaponDamage = player.playerInventoryManager.leftWeapon.baseDamage;
+        }
     }
 
     private void LoadRightWeaponDamageCollider()
     {
         rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        if (!player.playerInventoryManager.rightWeapon.isUnarmed)
+        {
+            rightHandDamageCollider.currentWeaponDamage = player.playerInventoryManager.rightWeapon.baseDamage;
+        }
+
     }
 
-    public void OpenRightHandDamageCollider()
+    public void OpenDamageCollider()
     {
-        rightHandDamageCollider.EnableDamageCollider();
+        if (player.isUsingRightHand)
+        {
+            rightHandDamageCollider.EnableDamageCollider();
+        }
+        else if (player.isUsingLeftHand)
+        {
+            leftHandDamageCollider.EnableDamageCollider();
+        }
     }
 
-    public void OpenLeftHandDamageCollider()
+
+    public void CloseDamageCollider()
     {
-        leftHandDamageCollider.EnableDamageCollider();
+         rightHandDamageCollider.DisableDamageCollider();
+         leftHandDamageCollider.DisableDamageCollider();
     }
 
-    public void CloseRightHandDamageCollider()
-    {
-        rightHandDamageCollider.DisableDamageCollider();
-    }
-
-    public void CloseLeftHandDamageCollider()
-    {
-        leftHandDamageCollider.DisableDamageCollider();
-    }
     #endregion
 
 

@@ -5,21 +5,41 @@ using UnityEngine;
 public class ResetActionFlag : StateMachineBehaviour
 {
     PlayerManager player;
+    EnemyManager enemy;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+
         if(player == null)
         {
-            player = animator.GetComponent<PlayerManager>();
+            player = animator.GetComponentInParent<PlayerManager>();
         }
 
-        player.isPerformingAction = false;
-        player.applyRootMotion = false;
-        player.canRotate = true;
-        player.canMove = true;
-        player.isJumping = false;
-        player.canDoCombo = false;
-        player.isRolling = false;
+        if (enemy == null)
+        {
+            enemy = animator.GetComponent<EnemyManager>();
+        }
+
+        if (player)
+        {
+            player.isPerformingAction = false;
+            player.applyRootMotion = false;
+            player.canRotate = true;
+            player.canMove = true;
+            player.isJumping = false;
+            player.canDoCombo = false;
+            player.isRolling = false;
+        }
+
+        if (enemy)
+        {
+            enemy.isPerformingAction = false;
+            enemy.applyRootMotion = false;
+            enemy.canRotate = true;
+            enemy.canMove = true;
+        }
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

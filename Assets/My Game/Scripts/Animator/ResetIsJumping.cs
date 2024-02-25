@@ -10,7 +10,7 @@ public class ResetIsJumping : StateMachineBehaviour
     {
         if (player == null)
         {
-            player = animator.GetComponent<PlayerManager>();
+            player = animator.GetComponentInParent<PlayerManager>();
         }
 
         player.isJumping = false;

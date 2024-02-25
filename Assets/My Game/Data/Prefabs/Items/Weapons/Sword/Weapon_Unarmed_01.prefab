@@ -73,7 +73,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9109536908021259705}
-  - component: {fileID: 4658854440881923467}
   m_Layer: 0
   m_Name: Weapon_Unarmed_01
   m_TagString: Untagged
@@ -97,19 +96,6 @@ Transform:
   - {fileID: 1147994468512344680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4658854440881923467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5612726425261628421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c178120728c8cd64ba14f73717c14c53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleeDamageCollider: {fileID: 0}
 --- !u!1 &8245476229157521223
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,11 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc7e1fb64e3d704694828e525c3ddf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicalDamage: 0
-  magicDamage: 0
-  fireDamage: 0
-  lightningDamage: 0
-  holyDamage: 0
+  currentWeaponDamage: 20
   playerCausingDamage: {fileID: 0}
 --- !u!135 &8211417949969699697
 SphereCollider:

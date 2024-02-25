@@ -154,6 +154,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Critical Attack",
+                    "type": "Button",
+                    "id": "0bf866d3-84f0-4983-a5d6-0dddc106ca7d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Hold Attack",
                     "type": "PassThrough",
                     "id": "1f9ae4e5-b19a-4f12-989b-6115578086f9",
@@ -173,21 +182,21 @@
                 },
                 {
                     "name": "ScrollUp",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "16ba4401-0431-4d1c-aa25-319a96ea5163",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "SwitchWeapon",
-                    "type": "Button",
-                    "id": "827c4efe-0aff-4139-a54b-2c722de9a910",
-                    "expectedControlType": "Button",
+                    "name": "ScrollDown",
+                    "type": "Value",
+                    "id": "b09e7416-0d56-4f4b-95ee-7c87ef33d2a0",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Interact",
@@ -217,9 +226,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Two Hand Attack",
+                    "name": "Two Hand",
                     "type": "Button",
                     "id": "522b8b4d-1fd3-4a85-b132-a27ca42d264d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right Mouse",
+                    "type": "Button",
+                    "id": "3957b6c6-e284-4d40-aff6-fff2fad4de9e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -285,22 +303,11 @@
                 {
                     "name": "",
                     "id": "f270a5f3-67b8-44b6-bf5f-a7300c903b2e",
-                    "path": "<Keyboard>/l",
+                    "path": "<Mouse>/scroll/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ScrollUp",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "67bde846-b910-4b4c-a19e-643bbdd1bedb",
-                    "path": "<Keyboard>/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SwitchWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -355,7 +362,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Two Hand Attack",
+                    "action": "Two Hand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54716089-b6be-4ff1-8af3-2c648b312c89",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Critical Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa9e0341-4aeb-4eb6-85b0-2071480bf5eb",
+                    "path": "<Mouse>/scroll/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b4c5cd6-9c7c-4d6b-be60-0fe800529e01",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right Mouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

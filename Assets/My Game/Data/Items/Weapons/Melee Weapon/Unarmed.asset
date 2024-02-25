@@ -19,9 +19,13 @@ MonoBehaviour:
   itemID: 0
   isUnarmed: 1
   weaponModel: {fileID: 5612726425261628421, guid: dfe0aad1c634b3f45858fc9b9f329edb, type: 3}
+  TH_Idle: 
   OH_Light_Attack_01: 
   OH_Light_Attack_02: 
   OH_Heavy_Attack_01: 
+  TH_Light_Attack_01: 
+  TH_Light_Attack_02: 
+  TH_Light_Attack_03: 
   strengthREQ: 0
   dexREQ: 0
   intREQ: 0
@@ -35,3 +39,7 @@ MonoBehaviour:
   baseStaminaCost: 5
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0
+  isSpellCaster: 0
+  isFaithCaster: 0
+  isPyroCaster: 0
+  isMeleeWeapon: 1

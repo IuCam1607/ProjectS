@@ -1,5 +1,4 @@
-﻿using GLTF.Schema;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,6 +8,7 @@ public class PlayerStatsManager : CharacterStatsManager
     private PlayerManager playerManager;
     public StaminaBar staminaBar;
     public HealthBar healthBar;
+    public FocusPointBar focusPointBar;
 
     [Header("Stamina Regeneration")]
     [SerializeField] private float staminaRegenerationTimer = 1f;
@@ -19,6 +19,7 @@ public class PlayerStatsManager : CharacterStatsManager
         playerManager = GetComponent<PlayerManager>();
         staminaBar = FindAnyObjectByType<StaminaBar>();
         healthBar = FindAnyObjectByType<HealthBar>();
+        focusPointBar = FindAnyObjectByType<FocusPointBar>();
     }
 
     private void Start()
@@ -26,10 +27,17 @@ public class PlayerStatsManager : CharacterStatsManager
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetCurrentHealth(currentHealth);
 
         maxStamina = SetMaxStaminaFromEnduranceLevel();
         currentStamina = maxStamina;
         staminaBar.SetMaxStamina(maxStamina);
+        staminaBar.SetCurrentStamina(currentStamina);
+
+        maxFocusPoint = SetMaxFocusFromFocusLevel();
+        currentFocusPoint = maxFocusPoint;
+        focusPointBar.SetMaxFocusPoint(maxFocusPoint);
+        focusPointBar.SetCurrentStamina(currentFocusPoint);
     }
 
     public void RefreshHUD()
@@ -46,8 +54,37 @@ public class PlayerStatsManager : CharacterStatsManager
         return maxHealth;
     }
 
+    private float SetMaxStaminaFromEnduranceLevel()
+    {
+        maxStamina = enduranceLevel * 10;
+        return maxStamina;
+    }
+
+    private float SetMaxFocusFromFocusLevel()
+    {
+        maxFocusPoint = focusLevel * 10;
+        return maxFocusPoint;
+    }
+
+    public void TakeDamageNoAnimation(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            isDead = true;
+        }
+    }
+
     public void TakeDamage(int damage)
     {
+        if (playerManager.isInvulnerable)
+            return;
+
+        if (isDead)
+            return;
+
         currentHealth -= damage;
         healthBar.SetCurrentHealth(currentHealth);
 
@@ -57,11 +94,7 @@ public class PlayerStatsManager : CharacterStatsManager
         }
     }
 
-    private float SetMaxStaminaFromEnduranceLevel()
-    {
-        maxStamina = enduranceLevel * 10;
-        return maxStamina;
-    }
+
 
     public void TakeStaminaCost(float cost)
     {
@@ -91,25 +124,12 @@ public class PlayerStatsManager : CharacterStatsManager
         } 
     }
 
-    public void CheckHP()
-    {
-        if (currentHealth <= 0)
-        {
-
-        }
-
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
-    }
-
     public IEnumerator ProcessDeathEvent(bool manuallySelectDeathAnimation = false)
     {
         PlayerUIManager.instance.playerUIPopUPManager.SendYouDiedPopUp();
 
         currentHealth = 0;
-        playerManager.isDead = true;
+        playerManager.playerStatsManager.isDead = true;
 
         if (!manuallySelectDeathAnimation)
         {
@@ -117,5 +137,32 @@ public class PlayerStatsManager : CharacterStatsManager
         }
 
         yield return new WaitForSeconds(5);
+    }
+
+    public void HealPlay(int healAmount)
+    {
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        healthBar.SetCurrentHealth(currentHealth);
+    }
+
+    public void DeductFocusPoints(int focusPoints)
+    {
+        currentFocusPoint -= focusPoints;
+        if (currentFocusPoint < 0)
+        {
+            currentFocusPoint = 0;
+        }
+
+        focusPointBar.SetCurrentStamina(currentFocusPoint);
+    }
+
+    public void AddSouls(int souls)
+    {
+        soulCount += souls;
     }
 }

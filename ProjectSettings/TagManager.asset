@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Interactable
+  - Hittable
   layers:
   - Default
   - TransparentFX
@@ -21,9 +22,9 @@ TagManager:
   - Interactable
   - Environment
   - Controller
-  - 
-  - 
-  - 
+  - BackStab
+  - Character Collider Blocker
+  - Riposte
   - 
   - 
   - 
