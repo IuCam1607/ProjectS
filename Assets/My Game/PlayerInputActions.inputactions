@@ -240,6 +240,15 @@
                     "id": "3957b6c6-e284-4d40-aff6-fff2fad4de9e",
                     "expectedControlType": "Button",
                     "processors": "",
+                    "interactions": "Hold(duration=0.1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Use Item",
+                    "type": "Button",
+                    "id": "d6d95c1b-52d8-4f34-a1ae-8809ed96a604",
+                    "expectedControlType": "Button",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 }
@@ -396,6 +405,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Right Mouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd0f8458-6c5e-440e-96ab-faf25e41bd27",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use Item",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -6,6 +6,8 @@ public class DamageCollider : MonoBehaviour
 {
     CharacterManager characterManager;
 
+    public bool enableDamageColliderOnStartUp = false;
+
     [Header("Collider")]
     protected Collider damageCollider;
 
@@ -17,9 +19,7 @@ public class DamageCollider : MonoBehaviour
         damageCollider = GetComponent<Collider>();
         damageCollider.gameObject.SetActive(true);
         damageCollider.isTrigger = true;
-        damageCollider.enabled = false;
-
-        characterManager = GetComponentInParent<CharacterManager>();
+        damageCollider.enabled = enableDamageColliderOnStartUp;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -28,12 +28,19 @@ public class DamageCollider : MonoBehaviour
         {
             PlayerStatsManager playerStats = collision.GetComponent<PlayerStatsManager>();
             CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
+            BlockingCollider shield = collision.GetComponentInChildren<BlockingCollider>();
 
             if (enemyCharacterManager != null)
             {
-                if (enemyCharacterManager.isParrying)
+                if (shield != null && enemyCharacterManager.isBlocking)
                 {
-                    //characterManager.GetComponentInChildren<AnimatorManager>()./*PlayTar*/
+                    float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * shield.blockingPhysicalDamageAbsorption) / 100;
+
+                    if (playerStats != null)
+                    {
+                        playerStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
+                        return;
+                    }
                 }
             }
 
@@ -46,6 +53,21 @@ public class DamageCollider : MonoBehaviour
         {
             EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
             CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
+            BlockingCollider shield = collision.GetComponentInChildren<BlockingCollider>();
+
+            if (enemyCharacterManager != null)
+            {
+                if (shield != null && enemyCharacterManager.isBlocking)
+                {
+                    float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * shield.blockingPhysicalDamageAbsorption) / 100;
+
+                    if (enemyStats != null)
+                    {
+                        enemyStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
+                        return;
+                    }
+                }
+            }
 
             if (enemyStats != null)
             {
@@ -57,7 +79,10 @@ public class DamageCollider : MonoBehaviour
 
     public virtual void EnableDamageCollider()
     {
-        damageCollider.enabled = true;
+        if (damageCollider != null)
+        {
+            damageCollider.enabled = true;
+        }
     }
 
     public virtual void DisableDamageCollider()

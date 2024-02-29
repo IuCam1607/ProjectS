@@ -11,6 +11,7 @@ public class PlayerInputManager : MonoBehaviour
     private PlayerInputActions playerInputActions;
     private PlayerInventoryManager playerInventoryManager;
     private WeaponSlotManager weaponSlotManager;
+    private BlockingCollider blockingCollider;
 
     public PlayerManager player;
     
@@ -36,7 +37,7 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool dodgeInput = false;
     [SerializeField] bool sprintInput = false;
     [SerializeField] bool jumpInput = false;
-    [SerializeField] bool shiftInput = false;
+    public bool shiftInput = false;
     public bool attackInput = false;
     public bool interactInput = false;
     public bool selectInput;
@@ -46,6 +47,7 @@ public class PlayerInputManager : MonoBehaviour
     public bool twoHandInput = false;
     public bool criticalAttackInput = false;
     public bool rightMouseInput = false;
+    public bool useItemInput = false;
 
     private float scrollUp;
     private float scrollDown;
@@ -58,6 +60,7 @@ public class PlayerInputManager : MonoBehaviour
     {
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+        blockingCollider = GetComponentInChildren<BlockingCollider>();
 
         if (instance == null)
         {
@@ -105,8 +108,10 @@ public class PlayerInputManager : MonoBehaviour
             playerInputActions.PlayerActions.Interact.performed += i => interactInput = true;
             playerInputActions.PlayerActions.Selection.performed += i => selectInput = true;
             playerInputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
-            playerInputActions.PlayerActions.Attack.started += HandleAttackInputs;
+            playerInputActions.PlayerActions.UseItem.performed += i => useItemInput = true;
+            playerInputActions.PlayerActions.Attack.started += HandleLeftMouseInput;
             playerInputActions.PlayerActions.RightMouse.started += HandleRightMouseInput;
+
             playerInputActions.PlayerActions.TwoHand.performed += i =>  twoHandInput = true;
             playerInputActions.PlayerActions.CriticalAttack.performed += i => criticalAttackInput = true;
             playerInputActions.PlayerActions.RightMouse.performed += i => rightMouseInput = true;
@@ -119,10 +124,12 @@ public class PlayerInputManager : MonoBehaviour
             // Holding the Input, sets the bool to true
             playerInputActions.PlayerActions.Sprint.performed += i => sprintInput = true;
             playerInputActions.PlayerActions.Shift.performed += i => shiftInput = true;
+            playerInputActions.PlayerActions.RightMouse.performed += i => rightMouseInput = true;
 
             // Releasing the Input, sets the bool to false
             playerInputActions.PlayerActions.Sprint.canceled += i => sprintInput = false;
             playerInputActions.PlayerActions.Shift.canceled += i => shiftInput = false;
+            playerInputActions.PlayerActions.RightMouse.canceled += i => rightMouseInput = false;
 
             // Lock On
             playerInputActions.PlayerMovement.LockOnTargetLeft.performed += i => switchLeftTargetInput = true;
@@ -150,6 +157,17 @@ public class PlayerInputManager : MonoBehaviour
         HandleLockOnInput();
         HandleTwoHandInput();
         HandleCriticalAttackInput();
+        HandleUseConsumableItem();
+
+        if (playerInputActions.PlayerActions.RightMouse.ReadValue<float>() == 0f)
+        {
+            player.isBlocking = false;
+
+            if (blockingCollider.blockingCollider.enabled)
+            {
+                blockingCollider.DisableBlockingCollider();
+            }
+        }
     }
 
     // Movement
@@ -310,7 +328,7 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
 
-    private void HandleAttackInputs(InputAction.CallbackContext context)
+    private void HandleLeftMouseInput(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started)
         {
@@ -340,6 +358,14 @@ public class PlayerInputManager : MonoBehaviour
                     player.playerCombatManager.HandleRMAction();
                 }
             }
+
+            if (playerInputActions.PlayerActions.RightMouse.ReadValue<float>() == 1f)
+            {        
+                player.playerCombatManager.HandleRMAction();
+                
+            }
+
+
         }
     }
 
@@ -368,7 +394,6 @@ public class PlayerInputManager : MonoBehaviour
         if (criticalAttackInput)
         {
             criticalAttackInput = false;
-            Debug.Log("Critical Attack Input");
             player.playerCombatManager.AttemptBackStabOrRiposte();
 
         }
@@ -400,6 +425,15 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
 
+    private void HandleUseConsumableItem()
+    {
+        if (player.isPerformingAction)
+            return;
 
-
+        if (useItemInput)
+        {
+            useItemInput = false;
+            playerInventoryManager.currentConsumable.AttempToConsumeItem(player.playerAnimationManager, weaponSlotManager, player.playerEffectManager);
+        }
+    }
 }

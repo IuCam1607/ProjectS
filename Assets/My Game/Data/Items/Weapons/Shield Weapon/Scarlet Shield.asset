@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Scarlet Shield
   pickupIcon: {fileID: 21300000, guid: 95d92323985fff34d93f41487ce4aa16, type: 3}
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 7e79658c83e1edd41b29f45e11370e8d, type: 3}
   itemDescription: 
   itemID: 0
   isUnarmed: 0
@@ -26,9 +26,10 @@ MonoBehaviour:
   TH_Light_Attack_01: 
   TH_Light_Attack_02: 
   TH_Light_Attack_03: 
-  weapon_Art: Parry
+  weapon_Art: 
   baseDamage: 25
   criticalDamageMultiplier: 4
+  physicalDamageAbsorption: 99
   baseStaminaCost: 20
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0

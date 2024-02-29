@@ -122,13 +122,20 @@ public class PlayerCombatManager : MonoBehaviour
     {
         if (player.playerInventoryManager.leftWeapon.isShieldWeapon)
         {
-            PerformRMWeaponArt(player.playerInput.twoHandFlag);
+            if (player.playerInput.shiftInput == true)
+            {
+                PerformRMWeaponArt(player.playerInput.twoHandFlag);
+            }
+            else
+            {
+                PerformRMBlockingAction();
+            }
+            
         }
         else if (player.playerInventoryManager.leftWeapon.isMeleeWeapon)
         {
             
         }
-
     }
 
     #endregion
@@ -176,13 +183,26 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 if (player.playerStatsManager.currentFocusPoint >= player.playerInventoryManager.currentSpell.focusPointCost)
                 {
-                    player.playerInventoryManager.currentSpell.AttempToCastSpell(player.playerAnimationManager, player.playerStatsManager);
+                    player.playerInventoryManager.currentSpell.AttempToCastSpell(player.playerAnimationManager, player.playerStatsManager, weaponSlotManager);
                 }
                 else
                 {
                     player.playerAnimationManager.PlayTargetActionAnimation("Shrug", true);
                 }
-
+            }
+        }
+        else if (weapon.isPyroCaster)
+        {
+            if (player.playerInventoryManager.currentSpell != null && player.playerInventoryManager.currentSpell.isPyroSpell)
+            {
+                if (player.playerStatsManager.currentFocusPoint >= player.playerInventoryManager.currentSpell.focusPointCost)
+                {
+                    player.playerInventoryManager.currentSpell.AttempToCastSpell(player.playerAnimationManager, player.playerStatsManager, weaponSlotManager);
+                }
+                else
+                {
+                    player.playerAnimationManager.PlayTargetActionAnimation("Shrug", true);
+                }
             }
         }
     }
@@ -204,7 +224,26 @@ public class PlayerCombatManager : MonoBehaviour
 
     private void SuccesfullyCastSpell()
     {
-        player.playerInventoryManager.currentSpell.SuccessfullyCastSpell(player.playerAnimationManager, player.playerStatsManager);
+        player.playerInventoryManager.currentSpell.SuccessfullyCastSpell(player.playerAnimationManager, player.playerStatsManager, PlayerCamera.instance, weaponSlotManager);
+        player.playerAnimationManager.animator.SetBool("isFiringSpell", true);
+    }
+
+    #endregion
+
+    #region Defense Actions
+
+    private void PerformRMBlockingAction()
+    {
+        if (player.isPerformingAction)
+            return;
+
+        if (player.isBlocking)
+            return;
+
+        player.playerAnimationManager.PlayTargetActionAnimation("Block_Start", false, false , true, true);
+        player.playerEquipment.OpenBlockingCollider();
+        player.isBlocking = true;
+
     }
 
     #endregion

@@ -23,4 +23,9 @@ public class CharacterStatsManager : MonoBehaviour
     public bool isDead = false;
 
     public int soulCount = 0;
+
+    public virtual void TakeDamage(int damage, string damageAnimation = "Damage_01")
+    {
+
+    }
 }

@@ -8,13 +8,18 @@ public class PlayerInventoryManager : MonoBehaviour
 
     WeaponSlotManager weaponSlotManager;
 
+    [Header("Quick Slots Item")]
     public SpellItem currentSpell;
     public WeaponItem rightWeapon;
     public WeaponItem leftWeapon;
+    public ConsumableItem currentConsumable;
+
+    [Header("Current Equipment")]
+    public HelmetEquipment currentHelmetEquipment;
 
     public WeaponItem unarmedWeapon;
 
-    [Header("Quick Slots")]
+    [Header("Quick Slots Weapon")]
     public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1];
     public int rightHandWeaponIndex;
     public WeaponItem[] weaponsInLeftHandSlots = new WeaponItem[1];

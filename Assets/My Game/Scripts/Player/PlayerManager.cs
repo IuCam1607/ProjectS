@@ -15,6 +15,7 @@ public class PlayerManager : CharacterManager
     [HideInInspector] public PlayerEffectManager playerEffectManager;
     [HideInInspector] public PlayerInventoryManager playerInventoryManager;
     [HideInInspector] public PlayerCombatManager playerCombatManager;
+    [HideInInspector] public PlayerEquipmentManager playerEquipment;
 
     [Header("UI")]
     InteractableUI interactableUI;
@@ -47,11 +48,12 @@ public class PlayerManager : CharacterManager
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerInput = GetComponent<PlayerInputManager>();
         playerStatsManager = GetComponent<PlayerStatsManager>();
-        playerEffectManager = GetComponent<PlayerEffectManager>();
+        playerEffectManager = GetComponentInChildren<PlayerEffectManager>();
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
         interactableUI = FindAnyObjectByType<InteractableUI>();
         playerCombatManager = GetComponentInChildren<PlayerCombatManager>();
         playerAnimationManager = GetComponentInChildren<PlayerAnimatorManager>();
+        playerEquipment = GetComponentInChildren<PlayerEquipmentManager>();
     }
     private void Start()
     {
@@ -64,6 +66,8 @@ public class PlayerManager : CharacterManager
         isUsingRightHand = playerAnimationManager.animator.GetBool("isUsingRightHand");
         isUsingLeftHand = playerAnimationManager.animator.GetBool("isUsingLeftHand");
         isInvulnerable = playerAnimationManager.animator.GetBool("isInvulnerable");
+        isFiringSpell = playerAnimationManager.animator.GetBool("isFiringSpell");
+        playerAnimationManager.animator.SetBool("isBlocking", isBlocking);
         playerAnimationManager.animator.SetBool("isDead", playerStatsManager.isDead);
 
         playerInput.HandleAllInputs();
@@ -71,6 +75,7 @@ public class PlayerManager : CharacterManager
 
         DebugMenu();
         CheckForInteractableObject();
+
     }
     private void FixedUpdate()
     {

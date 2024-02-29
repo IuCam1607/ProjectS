@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class PlayerEffectManager : MonoBehaviour
 {
-    [Header("Debug Delete Later")]
-    [SerializeField] InstantCharacterEffect effectToTest;
-    [SerializeField] bool processEffect = false;
-
-    PlayerManager player;
+    PlayerStatsManager playerStats;
+    WeaponSlotManager weaponSlotManager;
+    public GameObject currentParticleFX;
+    public GameObject instantiatedFXModel;
+    public int amountToBeHealed;
 
     private void Awake()
     {
-        player = GetComponent<PlayerManager>();
+        playerStats = GetComponentInParent<PlayerStatsManager>();
+        weaponSlotManager = GetComponent<WeaponSlotManager>();
     }
 
-    private void Update()
+    public void HealPlayerFromEffect(int healAmount)
     {
-        if (processEffect)
-        {
-            processEffect = false;
-            InstantCharacterEffect effect = Instantiate(effectToTest);
-            ProcessInstantEffect(effect);
-        }
-    }
-
-    public void ProcessInstantEffect(InstantCharacterEffect effect)
-    {
-        effect.ProcessEffect(player);
+        playerStats.HealPlayer(amountToBeHealed);
+        GameObject healParticles = Instantiate(currentParticleFX, playerStats.transform);
+        Destroy(instantiatedFXModel.gameObject);
+        //weaponSlotManager.LoadBothWeaponOnSlots();
     }
 }

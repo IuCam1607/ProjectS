@@ -7,6 +7,8 @@ public class EnemyStatsManager : CharacterStatsManager
     CapsuleCollider capsuleCollider;
     EnemyAnimatorManager enemyAnimatorManager;
 
+    public UIEnemyHealthBar enemyHealthBar;
+
     public int soulsAwardedOnDeath = 50;
 
     private void Awake()
@@ -19,6 +21,7 @@ public class EnemyStatsManager : CharacterStatsManager
     {
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
+        enemyHealthBar.SetMaxHealth(Mathf.RoundToInt(maxHealth));
 
     }
 
@@ -32,6 +35,8 @@ public class EnemyStatsManager : CharacterStatsManager
     {
         currentHealth -= damage;
 
+        enemyHealthBar.SetHealth(Mathf.RoundToInt(currentHealth));
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -39,13 +44,15 @@ public class EnemyStatsManager : CharacterStatsManager
         }
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage, string damageAnimation = "Damage_01")
     {
         if (isDead)
             return;
 
-        // animation take Damage
         currentHealth -= damage;
+        enemyHealthBar.SetHealth(Mathf.RoundToInt(currentHealth));
+
+        enemyAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
 
         if (currentHealth <= 0)
         {

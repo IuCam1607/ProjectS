@@ -11,7 +11,7 @@ public class PlayerStatsManager : CharacterStatsManager
     public FocusPointBar focusPointBar;
 
     [Header("Stamina Regeneration")]
-    [SerializeField] private float staminaRegenerationTimer = 1f;
+    [SerializeField] private float staminaRegenerationTimer = 0.5f;
     [SerializeField] float staminaRegenerationAmount;
 
     private void Awake()
@@ -77,7 +77,7 @@ public class PlayerStatsManager : CharacterStatsManager
         }
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage, string damageAnimation = "Damage_01")
     {
         if (playerManager.isInvulnerable)
             return;
@@ -87,6 +87,8 @@ public class PlayerStatsManager : CharacterStatsManager
 
         currentHealth -= damage;
         healthBar.SetCurrentHealth(currentHealth);
+
+        playerManager.playerAnimationManager.PlayTargetActionAnimation(damageAnimation, true);
 
         if (currentHealth <= 0)
         {
@@ -139,7 +141,7 @@ public class PlayerStatsManager : CharacterStatsManager
         yield return new WaitForSeconds(5);
     }
 
-    public void HealPlay(int healAmount)
+    public void HealPlayer(int healAmount)
     {
         currentHealth += healAmount;
         if (currentHealth > maxHealth)

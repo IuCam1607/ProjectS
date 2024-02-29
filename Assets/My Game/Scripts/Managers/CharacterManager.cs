@@ -14,7 +14,10 @@ public class CharacterManager : MonoBehaviour
     [Header("Combat Flags")]
     public bool canBeRiposted;
     public bool canbeParried;
-    public bool isParrying;
+    public bool isBlocking;
+
+    [Header("Spells")]
+    public bool isFiringSpell;
 
     public int pendingCriticalDamage;
 }

@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8505621706187647106}
   - component: {fileID: 8447775399661201511}
   m_Layer: 0
-  m_Name: Stamina Border
+  m_Name: Health Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3234,7 +3234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7700649286654289862}
   m_Layer: 0
-  m_Name: Stamina Bar Fill
+  m_Name: Health Bar Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,14 +9,14 @@ public class CombatStanceState : State
 
     public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimator)
     {
-        if (enemyStats.isDead)
+        if (enemyStats.isDead || enemyManager.isInteracting)
         {
             return this;
         }
 
         float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
 
-        HandleRotateTowardsTarget(enemyManager);
+        //HandleRotateTowardsTarget(enemyManager);
 
         if (enemyManager.isPerformingAction)
         {

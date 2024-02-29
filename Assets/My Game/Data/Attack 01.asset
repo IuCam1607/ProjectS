@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Attack 01
   m_EditorClassIdentifier: 
   actionAnimation: Skeleton_Attack_01
+  canCombo: 1
+  comboAction: {fileID: 11400000, guid: 4bfddf978a7f08f489476618af8f1af9, type: 2}
   attackScore: 3
   recoveryTime: 4
   minimumAttackAngle: -35

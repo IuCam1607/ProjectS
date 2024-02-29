@@ -5,25 +5,41 @@ using UnityEngine;
 public class AttackState : State
 {
     public CombatStanceState combatStanceState;
+
     public EnemyAttackAction[] enemyAttacks;
     public EnemyAttackAction currentAttack;
 
+    bool willDoComboNextAttack = false;
+
     public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimator)
     {
-        if (enemyStats.isDead)
+        if (enemyStats.isDead || enemyManager.isInteracting && enemyManager.canDoCombo == false)
         {
             return this;
         }
+        else if (enemyManager.isInteracting && enemyManager.canDoCombo)
+        {
+            if (willDoComboNextAttack)
+            {
+                willDoComboNextAttack = false;
+                enemyAnimator.PlayTargetActionAnimation(currentAttack.actionAnimation, true);
+            }
+        }
+
+
 
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
         float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
         float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
 
-        if (enemyManager.isPerformingAction)
-            return combatStanceState;
-
-
         HandleRotateTowardsTarget(enemyManager);
+
+        if (enemyManager.isPerformingAction)
+        {
+            return combatStanceState;
+        }
+       
+
 
         if (currentAttack != null)
         {
@@ -42,9 +58,19 @@ public class AttackState : State
                         enemyAnimator.animator.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
                         enemyAnimator.PlayTargetActionAnimation(currentAttack.actionAnimation, true);
                         enemyManager.isPerformingAction = true;
-                        enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
-                        currentAttack = null;
-                        return combatStanceState;
+                        RollForComboChance(enemyManager);
+
+                        if (currentAttack.canCombo && willDoComboNextAttack)
+                        {
+                            currentAttack = currentAttack.comboAction;
+                            return this;
+                        }
+                        else
+                        {
+                            enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
+                            currentAttack = null;
+                            return combatStanceState;
+                        }
                     }
                 }
             }
@@ -137,4 +163,13 @@ public class AttackState : State
         }
     }
 
+    private void RollForComboChance(EnemyManager enemyManager)
+    {
+        float comboChance = Random.Range(0, 100);
+
+        if (enemyManager.allowAIToPerformCombos && comboChance <= enemyManager.comboLikelyHood)
+        {
+            willDoComboNextAttack = true;
+        }
+    }
 }

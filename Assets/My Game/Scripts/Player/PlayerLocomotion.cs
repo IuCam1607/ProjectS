@@ -202,7 +202,7 @@ public class PlayerLocomotion : MonoBehaviour
                     {
                         return;
                     }
-                    rotationDirection = PlayerCamera.instance.currentLockOnTarget.position - transform.position;
+                    rotationDirection = PlayerCamera.instance.currentLockOnTarget.transform.position - transform.position;
                     rotationDirection.Normalize();
                     rotationDirection.y = 0;
                     Quaternion tr = Quaternion.LookRotation(rotationDirection);

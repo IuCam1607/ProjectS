@@ -14,8 +14,7 @@ public class EnemyAnimatorManager : AnimatorManager
     }
 
     private void OnAnimatorMove()
-    {
-        
+    {        
         float delta = Time.deltaTime;
         enemyManager.enemyRigidbody.drag = 0;
         Vector3 deltaPosition = animator.deltaPosition;
@@ -37,6 +36,46 @@ public class EnemyAnimatorManager : AnimatorManager
     {
         enemyManager.enemyStats.TakeDamageNoAnimation(enemyManager.pendingCriticalDamage);
         enemyManager.pendingCriticalDamage = 0;
+    }
+
+    public void CanRotate()
+    {
+        enemyManager.canRotate = true;
+    }
+
+    public void StopRotate()
+    {
+        enemyManager.canRotate = false;
+    }
+
+    public void EnebleCombo()
+    {
+        animator.SetBool("canDoCombo", true);
+    }
+
+    public void DisableCombo()
+    {
+        animator.SetBool("canDoCombo", false);
+    }
+
+    public void EnableIsInvulnerable()
+    {
+        animator.SetBool("isInvulnerable", true);
+    }
+
+    public void DisableIsInvulnerable()
+    {
+        animator.SetBool("isInvulnerable", false);
+    }
+
+    public void EnableCanBeRiposted()
+    {
+        enemyManager.canBeRiposted = true;
+    }
+
+    public void DisableCanBeRiposted()
+    {
+        enemyManager.canBeRiposted = false;
     }
 
     public void AwardSoulsOnDeath()

@@ -262,6 +262,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""3957b6c6-e284-4d40-aff6-fff2fad4de9e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.1)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Use Item"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6d95c1b-52d8-4f34-a1ae-8809ed96a604"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 }
@@ -420,6 +429,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Right Mouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd0f8458-6c5e-440e-96ab-faf25e41bd27"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use Item"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -475,6 +495,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_PlayerActions_LockOn = m_PlayerActions.FindAction("LockOn", throwIfNotFound: true);
         m_PlayerActions_TwoHand = m_PlayerActions.FindAction("Two Hand", throwIfNotFound: true);
         m_PlayerActions_RightMouse = m_PlayerActions.FindAction("Right Mouse", throwIfNotFound: true);
+        m_PlayerActions_UseItem = m_PlayerActions.FindAction("Use Item", throwIfNotFound: true);
         // Player Camera
         m_PlayerCamera = asset.FindActionMap("Player Camera", throwIfNotFound: true);
         m_PlayerCamera_Mouse = m_PlayerCamera.FindAction("Mouse", throwIfNotFound: true);
@@ -615,6 +636,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_LockOn;
     private readonly InputAction m_PlayerActions_TwoHand;
     private readonly InputAction m_PlayerActions_RightMouse;
+    private readonly InputAction m_PlayerActions_UseItem;
     public struct PlayerActionsActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -633,6 +655,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @LockOn => m_Wrapper.m_PlayerActions_LockOn;
         public InputAction @TwoHand => m_Wrapper.m_PlayerActions_TwoHand;
         public InputAction @RightMouse => m_Wrapper.m_PlayerActions_RightMouse;
+        public InputAction @UseItem => m_Wrapper.m_PlayerActions_UseItem;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -684,6 +707,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @RightMouse.started += instance.OnRightMouse;
             @RightMouse.performed += instance.OnRightMouse;
             @RightMouse.canceled += instance.OnRightMouse;
+            @UseItem.started += instance.OnUseItem;
+            @UseItem.performed += instance.OnUseItem;
+            @UseItem.canceled += instance.OnUseItem;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -730,6 +756,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @RightMouse.started -= instance.OnRightMouse;
             @RightMouse.performed -= instance.OnRightMouse;
             @RightMouse.canceled -= instance.OnRightMouse;
+            @UseItem.started -= instance.OnUseItem;
+            @UseItem.performed -= instance.OnUseItem;
+            @UseItem.canceled -= instance.OnUseItem;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -815,6 +844,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnLockOn(InputAction.CallbackContext context);
         void OnTwoHand(InputAction.CallbackContext context);
         void OnRightMouse(InputAction.CallbackContext context);
+        void OnUseItem(InputAction.CallbackContext context);
     }
     public interface IPlayerCameraActions
     {
