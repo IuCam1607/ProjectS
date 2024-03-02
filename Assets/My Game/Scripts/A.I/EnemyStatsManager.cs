@@ -21,7 +21,7 @@ public class EnemyStatsManager : CharacterStatsManager
     {
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
-        enemyHealthBar.SetMaxHealth(Mathf.RoundToInt(maxHealth));
+        enemyHealthBar.SetMaxHealth((int)maxHealth);
 
     }
 
@@ -35,7 +35,7 @@ public class EnemyStatsManager : CharacterStatsManager
     {
         currentHealth -= damage;
 
-        enemyHealthBar.SetHealth(Mathf.RoundToInt(currentHealth));
+        enemyHealthBar.SetHealth((int)currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -46,13 +46,11 @@ public class EnemyStatsManager : CharacterStatsManager
 
     public override void TakeDamage(int damage, string damageAnimation = "Damage_01")
     {
-        if (isDead)
-            return;
+        base.TakeDamage(damage, damageAnimation = "Damage_01");
 
-        currentHealth -= damage;
-        enemyHealthBar.SetHealth(Mathf.RoundToInt(currentHealth));
+        enemyHealthBar.SetHealth((int)currentHealth);
 
-        enemyAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
+        //enemyAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
 
         if (currentHealth <= 0)
         {

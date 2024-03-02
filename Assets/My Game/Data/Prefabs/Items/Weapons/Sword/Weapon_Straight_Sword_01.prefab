@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38731724380770446}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.8189836, y: 0.09756232, z: -0.042841237, w: 0.5638369}
-  m_LocalPosition: {x: -0.893, y: -1.008, z: -0.887}
+  m_LocalRotation: {x: -0.60130537, y: 0.45106453, z: -0.33149478, w: 0.5701613}
+  m_LocalPosition: {x: -0.9421, y: -1.1054, z: -0.8557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3503189454619215133}
   m_Father: {fileID: 7364656422289470819}
-  m_LocalEulerAnglesHint: {x: -113.768, y: -26.557007, z: 31.089996}
+  m_LocalEulerAnglesHint: {x: -157.255, y: -81.893005, z: 93.549}
 --- !u!1 &236705337978715797
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7176030ed7917524eb18b77db252e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableDamageColliderOnStartUp: 0
   currentWeaponDamage: 20
 --- !u!1 &1397019506323539020
 GameObject:

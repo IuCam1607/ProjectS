@@ -9,6 +9,8 @@ public class PlayerEquipmentManager : MonoBehaviour
     [Header("Equipment Model Changers")]
     HelmetModelChanger helmetModelChanger;
 
+    [Header("Default UnEquipMent Models")]
+    public GameObject nakedHeadModel;
 
 
     public BlockingCollider blockingCollider;
@@ -17,12 +19,26 @@ public class PlayerEquipmentManager : MonoBehaviour
     {
         player = GetComponentInParent<PlayerManager>();
         helmetModelChanger = GetComponentInChildren<HelmetModelChanger>();
+
     }
 
     private void Start()
     {
-        helmetModelChanger.UnEquipAllHelmetModels();
-        helmetModelChanger.EquipHelmetModelByName(player.playerInventoryManager.currentHelmetEquipment.helmetModelName);
+        EquipAllEquipmentModelsOnStart();
+    }
+
+    private void EquipAllEquipmentModelsOnStart()
+    {     
+        if (player.playerInventoryManager.currentHelmetEquipment != null)
+        {
+            helmetModelChanger.EquipHelmetModelByName(player.playerInventoryManager.currentHelmetEquipment.helmetModelName);
+            player.playerStatsManager.physicalDamageAbsorptionHead = player.playerInventoryManager.currentHelmetEquipment.physicalDefense;
+        }
+        else
+        {
+            helmetModelChanger.UnEquipAllHelmetModels();
+            player.playerStatsManager.physicalDamageAbsorptionHead = 0;
+        }
     }
 
     public void OpenBlockingCollider()

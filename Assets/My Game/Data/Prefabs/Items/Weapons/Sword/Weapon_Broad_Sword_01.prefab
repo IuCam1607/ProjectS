@@ -66,11 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7176030ed7917524eb18b77db252e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicalDamage: 0
-  magicDamage: 0
-  fireDamage: 0
-  lightningDamage: 0
-  holyDamage: 0
+  enableDamageColliderOnStartUp: 0
+  currentWeaponDamage: 20
 --- !u!1 &6016898290273843169
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,11 +208,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7988866690456617783}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5408844, y: -0.04088064, z: -0.06310731, w: 0.8377293}
-  m_LocalPosition: {x: -0.889, y: -0.973, z: -0.821}
+  m_LocalRotation: {x: -0.48096055, y: -0.6252951, z: -0.5336921, w: -0.30472255}
+  m_LocalPosition: {x: -0.9298, y: -1.1069, z: -0.8128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6722663324455993555}
   m_Father: {fileID: 6162302225023148088}
-  m_LocalEulerAnglesHint: {x: 64.299, y: -18.382, z: -20.23}
+  m_LocalEulerAnglesHint: {x: -158.018, y: -74.70401, z: -88.004}
