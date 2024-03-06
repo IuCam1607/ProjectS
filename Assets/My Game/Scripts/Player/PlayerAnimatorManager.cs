@@ -13,6 +13,7 @@ public class PlayerAnimatorManager : AnimatorManager
     {
         player = GetComponentInParent<PlayerManager>();
         animator = GetComponent<Animator>();
+        characterManager = GetComponentInParent<CharacterManager>();
 
         vertical = Animator.StringToHash("Vertical");
         horizontal = Animator.StringToHash("Horizontal");
@@ -40,14 +41,16 @@ public class PlayerAnimatorManager : AnimatorManager
         animator.SetFloat(horizontal, horizontalAmount, 0.1f, Time.deltaTime);
         animator.SetFloat(vertical, verticalAmount, 0.1f, Time.deltaTime);
     }
-    public void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false)
+    public override void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false)
     {
-        player.applyRootMotion = applyRootMotion;
-        animator.CrossFade(targetAnimation, 0.2f);
-        player.isPerformingAction = isPerformingAction;
-        player.canRotate = canRotate;
-        player.canMove = canMove;
+        base.PlayTargetActionAnimation(targetAnimation, isPerformingAction, applyRootMotion, canRotate, canMove);
+        //player.applyRootMotion = applyRootMotion;
+        //animator.CrossFade(targetAnimation, 0.2f);
+        //player.isPerformingAction = isPerformingAction;
+        //player.canRotate = canRotate;
+        //player.canMove = canMove;
     }
+
 
     public void ApplyJumpingVelocity()
     {
@@ -56,12 +59,12 @@ public class PlayerAnimatorManager : AnimatorManager
 
     public void CanRotate()
     {
-        player.canRotate = true;
+        animator.SetBool("canRotate", true);
     }
 
     public void StopRotate()
     {
-        player.canRotate = false;
+        animator.SetBool("canRotate", false);
     }
 
     public void EnebleCombo()

@@ -47,6 +47,7 @@ public class CharacterStatsManager : MonoBehaviour
         {
             currentHealth = 0;
             isDead = true;
+            
         }
     }
 }

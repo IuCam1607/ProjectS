@@ -8,7 +8,8 @@ public class EnemyAnimatorManager : AnimatorManager
 
     private void Awake()
     {
-        enemyManager = GetComponent<EnemyManager>();    
+        characterManager = GetComponentInParent<CharacterManager>();
+        enemyManager = GetComponentInParent<EnemyManager>();    
         animator = GetComponent<Animator>();
         animator.applyRootMotion = true;
     }
@@ -21,15 +22,21 @@ public class EnemyAnimatorManager : AnimatorManager
         deltaPosition.y = 0;
         Vector3 velocity = deltaPosition / delta;
         enemyManager.enemyRigidbody.velocity = velocity;
+
+        if (enemyManager.isRotatingWithRootMotion)
+        {
+            enemyManager.transform.rotation *= animator.deltaRotation;
+        }
     }
 
-    public void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false)
+    public override void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false)
     {
-        enemyManager.applyRootMotion = applyRootMotion;
-        animator.CrossFade(targetAnimation, 0.2f);
-        enemyManager.isPerformingAction = isPerformingAction;
-        enemyManager.canRotate = canRotate;
-        enemyManager.canMove = canMove;
+        base.PlayTargetActionAnimation(targetAnimation, isPerformingAction, applyRootMotion, canRotate, canMove);
+        //enemyManager.applyRootMotion = applyRootMotion;
+        //animator.CrossFade(targetAnimation, 0.2f);
+        //enemyManager.isPerformingAction = isPerformingAction;
+        //enemyManager.canRotate = canRotate;
+        //enemyManager.canMove = canMove;
     }
 
     public override void TakeCriticalDamageAnimationEvent()
@@ -92,7 +99,5 @@ public class EnemyAnimatorManager : AnimatorManager
                 soulCountBar.SetSoulCountText(playerStats.soulCount);
             }
         }
-
-
     }
 }

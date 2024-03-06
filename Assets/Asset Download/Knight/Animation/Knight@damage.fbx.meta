@@ -1,409 +1,1205 @@
 fileFormatVersion: 2
 guid: cd0e621ec9ce07f4ea2c36294c6be032
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestEndEffector
-    100002: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestOriginEffector
-    100004: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Head
-    100006: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HeadEffector
-    100008: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Hips
-    100010: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HipsEffector
-    100012: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftAnkleEffector
-    100014: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftArm
-    100016: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftElbowEffector
-    100018: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFoot
-    100020: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFootEffector
-    100022: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftForeArm
-    100024: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
-    100026: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex1
-    100028: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex2
-    100030: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex3
-    100032: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex4
-    100034: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndexEffector
-    100036: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle1
-    100038: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle2
-    100040: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle3
-    100042: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle4
-    100044: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddleEffector
-    100046: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky1
-    100048: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky2
-    100050: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky3
-    100052: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky4
-    100054: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinkyEffector
-    100056: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing1
-    100058: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing2
-    100060: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing3
-    100062: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing4
-    100064: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRingEffector
-    100066: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb1
-    100068: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb2
-    100070: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb3
-    100072: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb4
-    100074: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumbEffector
-    100076: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHipEffector
-    100078: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftKneeEffector
-    100080: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftLeg
-    100082: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulder
-    100084: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulderEffector
-    100086: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftToeBase
-    100088: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftUpLeg
-    100090: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftWristEffector
-    100092: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Neck
-    100094: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
-    100096: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightAnkleEffector
-    100098: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightArm
-    100100: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightElbowEffector
-    100102: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFoot
-    100104: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFootEffector
-    100106: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightForeArm
-    100108: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
-    100110: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex1
-    100112: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex2
-    100114: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex3
-    100116: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex4
-    100118: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndexEffector
-    100120: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle1
-    100122: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle2
-    100124: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle3
-    100126: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle4
-    100128: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddleEffector
-    100130: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky1
-    100132: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky2
-    100134: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky3
-    100136: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky4
-    100138: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinkyEffector
-    100140: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing1
-    100142: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing2
-    100144: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing3
-    100146: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing4
-    100148: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRingEffector
-    100150: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb1
-    100152: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb2
-    100154: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb3
-    100156: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb4
-    100158: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumbEffector
-    100160: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHipEffector
-    100162: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightKneeEffector
-    100164: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightLeg
-    100166: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulder
-    100168: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulderEffector
-    100170: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightToeBase
-    100172: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightUpLeg
-    100174: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightWristEffector
-    100176: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine
-    100178: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine1
-    100180: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine2
-    100182: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Head
-    100184: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
-    100186: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftArm
-    100188: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftFoot
-    100190: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftForeArm
-    100192: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
-    100194: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex1
-    100196: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex2
-    100198: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex3
-    100200: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex4
-    100202: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle1
-    100204: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle2
-    100206: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle3
-    100208: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle4
-    100210: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky1
-    100212: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky2
-    100214: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky3
-    100216: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky4
-    100218: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing1
-    100220: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing2
-    100222: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing3
-    100224: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing4
-    100226: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb1
-    100228: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb2
-    100230: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb3
-    100232: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb4
-    100234: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftLeg
-    100236: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftShoulder
-    100238: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftToeBase
-    100240: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftUpLeg
-    100242: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Neck
-    100244: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Reference
-    100246: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightArm
-    100248: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightFoot
-    100250: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightForeArm
-    100252: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
-    100254: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex1
-    100256: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex2
-    100258: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex3
-    100260: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex4
-    100262: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle1
-    100264: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle2
-    100266: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle3
-    100268: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle4
-    100270: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky1
-    100272: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky2
-    100274: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky3
-    100276: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky4
-    100278: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing1
-    100280: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing2
-    100282: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing3
-    100284: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing4
-    100286: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb1
-    100288: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb2
-    100290: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb3
-    100292: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb4
-    100294: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightLeg
-    100296: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightShoulder
-    100298: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightToeBase
-    100300: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightUpLeg
-    100302: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
-    100304: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine1
-    100306: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
-    100308: Base_mesh_skin:Left_toga_front
-    100310: Base_mesh_skin:Left_toga_front1
-    100312: Base_mesh_skin:Left_toga_front2
-    100314: Base_mesh_skin:Left_toga_front3
-    100316: Base_mesh_skin:Left_toga_front4
-    100318: Base_mesh_skin:Mask_join
-    100320: Base_mesh_skin:Mask_join1
-    100322: Base_mesh_skin:plash_backmid
-    100324: Base_mesh_skin:plash_backmid1
-    100326: Base_mesh_skin:plash_backmid2
-    100328: Base_mesh_skin:plash_backmid3
-    100330: Base_mesh_skin:plash_backmid4
-    100332: Base_mesh_skin:plash_left
-    100334: Base_mesh_skin:plash_left1
-    100336: Base_mesh_skin:plash_left2
-    100338: Base_mesh_skin:plash_left3
-    100340: Base_mesh_skin:plash_left4
-    100342: Base_mesh_skin:plash_right
-    100344: Base_mesh_skin:plash_right1
-    100346: Base_mesh_skin:plash_right2
-    100348: Base_mesh_skin:plash_right3
-    100350: Base_mesh_skin:plash_right4
-    100352: Base_mesh_skin:Right_toga_front
-    100354: Base_mesh_skin:Right_toga_front1
-    100356: Base_mesh_skin:Right_toga_front2
-    100358: Base_mesh_skin:Right_toga_front3
-    100360: Base_mesh_skin:Right_toga_front4
-    100362: Base_mesh_skin:Shoulder_left
-    100364: Base_mesh_skin:Shoulder_left1
-    100366: Base_mesh_skin:Shoulder_right
-    100368: Base_mesh_skin:Shoulder_right1
-    100370: Base_mesh_skin:Sword_join
-    100372: Base_mesh_skin:Sword_join1
-    100374: Base_mesh_skin:Toga_left
-    100376: Base_mesh_skin:Toga_left1
-    100378: Base_mesh_skin:Toga_left2
-    100380: Base_mesh_skin:Toga_left3
-    100382: Base_mesh_skin:Toga_left4
-    100384: Base_mesh_skin:Toga_right
-    100386: Base_mesh_skin:Toga_right1
-    100388: Base_mesh_skin:Toga_right2
-    100390: Base_mesh_skin:Toga_right3
-    100392: Base_mesh_skin:Toga_right4
-    100394: //RootNode
-    400000: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestEndEffector
-    400002: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestOriginEffector
-    400004: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Head
-    400006: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HeadEffector
-    400008: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Hips
-    400010: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HipsEffector
-    400012: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftAnkleEffector
-    400014: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftArm
-    400016: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftElbowEffector
-    400018: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFoot
-    400020: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFootEffector
-    400022: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftForeArm
-    400024: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
-    400026: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex1
-    400028: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex2
-    400030: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex3
-    400032: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex4
-    400034: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndexEffector
-    400036: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle1
-    400038: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle2
-    400040: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle3
-    400042: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle4
-    400044: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddleEffector
-    400046: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky1
-    400048: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky2
-    400050: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky3
-    400052: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky4
-    400054: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinkyEffector
-    400056: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing1
-    400058: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing2
-    400060: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing3
-    400062: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing4
-    400064: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRingEffector
-    400066: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb1
-    400068: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb2
-    400070: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb3
-    400072: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb4
-    400074: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumbEffector
-    400076: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHipEffector
-    400078: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftKneeEffector
-    400080: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftLeg
-    400082: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulder
-    400084: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulderEffector
-    400086: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftToeBase
-    400088: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftUpLeg
-    400090: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftWristEffector
-    400092: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Neck
-    400094: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
-    400096: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightAnkleEffector
-    400098: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightArm
-    400100: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightElbowEffector
-    400102: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFoot
-    400104: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFootEffector
-    400106: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightForeArm
-    400108: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
-    400110: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex1
-    400112: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex2
-    400114: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex3
-    400116: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex4
-    400118: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndexEffector
-    400120: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle1
-    400122: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle2
-    400124: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle3
-    400126: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle4
-    400128: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddleEffector
-    400130: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky1
-    400132: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky2
-    400134: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky3
-    400136: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky4
-    400138: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinkyEffector
-    400140: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing1
-    400142: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing2
-    400144: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing3
-    400146: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing4
-    400148: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRingEffector
-    400150: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb1
-    400152: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb2
-    400154: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb3
-    400156: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb4
-    400158: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumbEffector
-    400160: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHipEffector
-    400162: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightKneeEffector
-    400164: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightLeg
-    400166: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulder
-    400168: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulderEffector
-    400170: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightToeBase
-    400172: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightUpLeg
-    400174: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightWristEffector
-    400176: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine
-    400178: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine1
-    400180: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine2
-    400182: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Head
-    400184: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
-    400186: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftArm
-    400188: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftFoot
-    400190: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftForeArm
-    400192: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
-    400194: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex1
-    400196: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex2
-    400198: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex3
-    400200: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex4
-    400202: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle1
-    400204: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle2
-    400206: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle3
-    400208: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle4
-    400210: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky1
-    400212: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky2
-    400214: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky3
-    400216: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky4
-    400218: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing1
-    400220: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing2
-    400222: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing3
-    400224: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing4
-    400226: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb1
-    400228: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb2
-    400230: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb3
-    400232: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb4
-    400234: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftLeg
-    400236: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftShoulder
-    400238: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftToeBase
-    400240: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftUpLeg
-    400242: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Neck
-    400244: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Reference
-    400246: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightArm
-    400248: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightFoot
-    400250: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightForeArm
-    400252: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
-    400254: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex1
-    400256: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex2
-    400258: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex3
-    400260: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex4
-    400262: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle1
-    400264: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle2
-    400266: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle3
-    400268: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle4
-    400270: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky1
-    400272: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky2
-    400274: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky3
-    400276: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky4
-    400278: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing1
-    400280: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing2
-    400282: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing3
-    400284: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing4
-    400286: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb1
-    400288: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb2
-    400290: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb3
-    400292: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb4
-    400294: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightLeg
-    400296: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightShoulder
-    400298: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightToeBase
-    400300: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightUpLeg
-    400302: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
-    400304: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine1
-    400306: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
-    400308: Base_mesh_skin:Left_toga_front
-    400310: Base_mesh_skin:Left_toga_front1
-    400312: Base_mesh_skin:Left_toga_front2
-    400314: Base_mesh_skin:Left_toga_front3
-    400316: Base_mesh_skin:Left_toga_front4
-    400318: Base_mesh_skin:Mask_join
-    400320: Base_mesh_skin:Mask_join1
-    400322: Base_mesh_skin:plash_backmid
-    400324: Base_mesh_skin:plash_backmid1
-    400326: Base_mesh_skin:plash_backmid2
-    400328: Base_mesh_skin:plash_backmid3
-    400330: Base_mesh_skin:plash_backmid4
-    400332: Base_mesh_skin:plash_left
-    400334: Base_mesh_skin:plash_left1
-    400336: Base_mesh_skin:plash_left2
-    400338: Base_mesh_skin:plash_left3
-    400340: Base_mesh_skin:plash_left4
-    400342: Base_mesh_skin:plash_right
-    400344: Base_mesh_skin:plash_right1
-    400346: Base_mesh_skin:plash_right2
-    400348: Base_mesh_skin:plash_right3
-    400350: Base_mesh_skin:plash_right4
-    400352: Base_mesh_skin:Right_toga_front
-    400354: Base_mesh_skin:Right_toga_front1
-    400356: Base_mesh_skin:Right_toga_front2
-    400358: Base_mesh_skin:Right_toga_front3
-    400360: Base_mesh_skin:Right_toga_front4
-    400362: Base_mesh_skin:Shoulder_left
-    400364: Base_mesh_skin:Shoulder_left1
-    400366: Base_mesh_skin:Shoulder_right
-    400368: Base_mesh_skin:Shoulder_right1
-    400370: Base_mesh_skin:Sword_join
-    400372: Base_mesh_skin:Sword_join1
-    400374: Base_mesh_skin:Toga_left
-    400376: Base_mesh_skin:Toga_left1
-    400378: Base_mesh_skin:Toga_left2
-    400380: Base_mesh_skin:Toga_left3
-    400382: Base_mesh_skin:Toga_left4
-    400384: Base_mesh_skin:Toga_right
-    400386: Base_mesh_skin:Toga_right1
-    400388: Base_mesh_skin:Toga_right2
-    400390: Base_mesh_skin:Toga_right3
-    400392: Base_mesh_skin:Toga_right4
-    400394: //RootNode
-    7400000: Take 001
-    9500000: //RootNode
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestEndEffector
+  - first:
+      1: 100002
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestOriginEffector
+  - first:
+      1: 100004
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Head
+  - first:
+      1: 100006
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HeadEffector
+  - first:
+      1: 100008
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Hips
+  - first:
+      1: 100010
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HipsEffector
+  - first:
+      1: 100012
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftAnkleEffector
+  - first:
+      1: 100014
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftArm
+  - first:
+      1: 100016
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftElbowEffector
+  - first:
+      1: 100018
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFoot
+  - first:
+      1: 100020
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFootEffector
+  - first:
+      1: 100022
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftForeArm
+  - first:
+      1: 100024
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
+  - first:
+      1: 100026
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex1
+  - first:
+      1: 100028
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex2
+  - first:
+      1: 100030
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex3
+  - first:
+      1: 100032
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex4
+  - first:
+      1: 100034
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndexEffector
+  - first:
+      1: 100036
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle1
+  - first:
+      1: 100038
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle2
+  - first:
+      1: 100040
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle3
+  - first:
+      1: 100042
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle4
+  - first:
+      1: 100044
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddleEffector
+  - first:
+      1: 100046
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky1
+  - first:
+      1: 100048
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky2
+  - first:
+      1: 100050
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky3
+  - first:
+      1: 100052
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky4
+  - first:
+      1: 100054
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinkyEffector
+  - first:
+      1: 100056
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing1
+  - first:
+      1: 100058
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing2
+  - first:
+      1: 100060
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing3
+  - first:
+      1: 100062
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing4
+  - first:
+      1: 100064
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRingEffector
+  - first:
+      1: 100066
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb1
+  - first:
+      1: 100068
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb2
+  - first:
+      1: 100070
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb3
+  - first:
+      1: 100072
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb4
+  - first:
+      1: 100074
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumbEffector
+  - first:
+      1: 100076
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHipEffector
+  - first:
+      1: 100078
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftKneeEffector
+  - first:
+      1: 100080
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftLeg
+  - first:
+      1: 100082
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulder
+  - first:
+      1: 100084
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulderEffector
+  - first:
+      1: 100086
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftToeBase
+  - first:
+      1: 100088
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftUpLeg
+  - first:
+      1: 100090
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftWristEffector
+  - first:
+      1: 100092
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Neck
+  - first:
+      1: 100094
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+  - first:
+      1: 100096
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightAnkleEffector
+  - first:
+      1: 100098
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightArm
+  - first:
+      1: 100100
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightElbowEffector
+  - first:
+      1: 100102
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFoot
+  - first:
+      1: 100104
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFootEffector
+  - first:
+      1: 100106
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightForeArm
+  - first:
+      1: 100108
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
+  - first:
+      1: 100110
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex1
+  - first:
+      1: 100112
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex2
+  - first:
+      1: 100114
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex3
+  - first:
+      1: 100116
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex4
+  - first:
+      1: 100118
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndexEffector
+  - first:
+      1: 100120
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle1
+  - first:
+      1: 100122
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle2
+  - first:
+      1: 100124
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle3
+  - first:
+      1: 100126
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle4
+  - first:
+      1: 100128
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddleEffector
+  - first:
+      1: 100130
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky1
+  - first:
+      1: 100132
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky2
+  - first:
+      1: 100134
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky3
+  - first:
+      1: 100136
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky4
+  - first:
+      1: 100138
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinkyEffector
+  - first:
+      1: 100140
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing1
+  - first:
+      1: 100142
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing2
+  - first:
+      1: 100144
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing3
+  - first:
+      1: 100146
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing4
+  - first:
+      1: 100148
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRingEffector
+  - first:
+      1: 100150
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb1
+  - first:
+      1: 100152
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb2
+  - first:
+      1: 100154
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb3
+  - first:
+      1: 100156
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb4
+  - first:
+      1: 100158
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumbEffector
+  - first:
+      1: 100160
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHipEffector
+  - first:
+      1: 100162
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightKneeEffector
+  - first:
+      1: 100164
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightLeg
+  - first:
+      1: 100166
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulder
+  - first:
+      1: 100168
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulderEffector
+  - first:
+      1: 100170
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightToeBase
+  - first:
+      1: 100172
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightUpLeg
+  - first:
+      1: 100174
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightWristEffector
+  - first:
+      1: 100176
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine
+  - first:
+      1: 100178
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine1
+  - first:
+      1: 100180
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine2
+  - first:
+      1: 100182
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Head
+  - first:
+      1: 100184
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
+  - first:
+      1: 100186
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftArm
+  - first:
+      1: 100188
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftFoot
+  - first:
+      1: 100190
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftForeArm
+  - first:
+      1: 100192
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+  - first:
+      1: 100194
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex1
+  - first:
+      1: 100196
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex2
+  - first:
+      1: 100198
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex3
+  - first:
+      1: 100200
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex4
+  - first:
+      1: 100202
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle1
+  - first:
+      1: 100204
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle2
+  - first:
+      1: 100206
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle3
+  - first:
+      1: 100208
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle4
+  - first:
+      1: 100210
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky1
+  - first:
+      1: 100212
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky2
+  - first:
+      1: 100214
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky3
+  - first:
+      1: 100216
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky4
+  - first:
+      1: 100218
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing1
+  - first:
+      1: 100220
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing2
+  - first:
+      1: 100222
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing3
+  - first:
+      1: 100224
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing4
+  - first:
+      1: 100226
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb1
+  - first:
+      1: 100228
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb2
+  - first:
+      1: 100230
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb3
+  - first:
+      1: 100232
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb4
+  - first:
+      1: 100234
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftLeg
+  - first:
+      1: 100236
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftShoulder
+  - first:
+      1: 100238
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftToeBase
+  - first:
+      1: 100240
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftUpLeg
+  - first:
+      1: 100242
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Neck
+  - first:
+      1: 100244
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Reference
+  - first:
+      1: 100246
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightArm
+  - first:
+      1: 100248
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightFoot
+  - first:
+      1: 100250
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightForeArm
+  - first:
+      1: 100252
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+  - first:
+      1: 100254
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex1
+  - first:
+      1: 100256
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex2
+  - first:
+      1: 100258
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex3
+  - first:
+      1: 100260
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex4
+  - first:
+      1: 100262
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle1
+  - first:
+      1: 100264
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle2
+  - first:
+      1: 100266
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle3
+  - first:
+      1: 100268
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle4
+  - first:
+      1: 100270
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky1
+  - first:
+      1: 100272
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky2
+  - first:
+      1: 100274
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky3
+  - first:
+      1: 100276
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky4
+  - first:
+      1: 100278
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing1
+  - first:
+      1: 100280
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing2
+  - first:
+      1: 100282
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing3
+  - first:
+      1: 100284
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing4
+  - first:
+      1: 100286
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb1
+  - first:
+      1: 100288
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb2
+  - first:
+      1: 100290
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb3
+  - first:
+      1: 100292
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb4
+  - first:
+      1: 100294
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightLeg
+  - first:
+      1: 100296
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightShoulder
+  - first:
+      1: 100298
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightToeBase
+  - first:
+      1: 100300
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightUpLeg
+  - first:
+      1: 100302
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+  - first:
+      1: 100304
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine1
+  - first:
+      1: 100306
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
+  - first:
+      1: 100308
+    second: Base_mesh_skin:Left_toga_front
+  - first:
+      1: 100310
+    second: Base_mesh_skin:Left_toga_front1
+  - first:
+      1: 100312
+    second: Base_mesh_skin:Left_toga_front2
+  - first:
+      1: 100314
+    second: Base_mesh_skin:Left_toga_front3
+  - first:
+      1: 100316
+    second: Base_mesh_skin:Left_toga_front4
+  - first:
+      1: 100318
+    second: Base_mesh_skin:Mask_join
+  - first:
+      1: 100320
+    second: Base_mesh_skin:Mask_join1
+  - first:
+      1: 100322
+    second: Base_mesh_skin:plash_backmid
+  - first:
+      1: 100324
+    second: Base_mesh_skin:plash_backmid1
+  - first:
+      1: 100326
+    second: Base_mesh_skin:plash_backmid2
+  - first:
+      1: 100328
+    second: Base_mesh_skin:plash_backmid3
+  - first:
+      1: 100330
+    second: Base_mesh_skin:plash_backmid4
+  - first:
+      1: 100332
+    second: Base_mesh_skin:plash_left
+  - first:
+      1: 100334
+    second: Base_mesh_skin:plash_left1
+  - first:
+      1: 100336
+    second: Base_mesh_skin:plash_left2
+  - first:
+      1: 100338
+    second: Base_mesh_skin:plash_left3
+  - first:
+      1: 100340
+    second: Base_mesh_skin:plash_left4
+  - first:
+      1: 100342
+    second: Base_mesh_skin:plash_right
+  - first:
+      1: 100344
+    second: Base_mesh_skin:plash_right1
+  - first:
+      1: 100346
+    second: Base_mesh_skin:plash_right2
+  - first:
+      1: 100348
+    second: Base_mesh_skin:plash_right3
+  - first:
+      1: 100350
+    second: Base_mesh_skin:plash_right4
+  - first:
+      1: 100352
+    second: Base_mesh_skin:Right_toga_front
+  - first:
+      1: 100354
+    second: Base_mesh_skin:Right_toga_front1
+  - first:
+      1: 100356
+    second: Base_mesh_skin:Right_toga_front2
+  - first:
+      1: 100358
+    second: Base_mesh_skin:Right_toga_front3
+  - first:
+      1: 100360
+    second: Base_mesh_skin:Right_toga_front4
+  - first:
+      1: 100362
+    second: Base_mesh_skin:Shoulder_left
+  - first:
+      1: 100364
+    second: Base_mesh_skin:Shoulder_left1
+  - first:
+      1: 100366
+    second: Base_mesh_skin:Shoulder_right
+  - first:
+      1: 100368
+    second: Base_mesh_skin:Shoulder_right1
+  - first:
+      1: 100370
+    second: Base_mesh_skin:Sword_join
+  - first:
+      1: 100372
+    second: Base_mesh_skin:Sword_join1
+  - first:
+      1: 100374
+    second: Base_mesh_skin:Toga_left
+  - first:
+      1: 100376
+    second: Base_mesh_skin:Toga_left1
+  - first:
+      1: 100378
+    second: Base_mesh_skin:Toga_left2
+  - first:
+      1: 100380
+    second: Base_mesh_skin:Toga_left3
+  - first:
+      1: 100382
+    second: Base_mesh_skin:Toga_left4
+  - first:
+      1: 100384
+    second: Base_mesh_skin:Toga_right
+  - first:
+      1: 100386
+    second: Base_mesh_skin:Toga_right1
+  - first:
+      1: 100388
+    second: Base_mesh_skin:Toga_right2
+  - first:
+      1: 100390
+    second: Base_mesh_skin:Toga_right3
+  - first:
+      1: 100392
+    second: Base_mesh_skin:Toga_right4
+  - first:
+      1: 100394
+    second: //RootNode
+  - first:
+      4: 400000
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestEndEffector
+  - first:
+      4: 400002
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestOriginEffector
+  - first:
+      4: 400004
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Head
+  - first:
+      4: 400006
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HeadEffector
+  - first:
+      4: 400008
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Hips
+  - first:
+      4: 400010
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HipsEffector
+  - first:
+      4: 400012
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftAnkleEffector
+  - first:
+      4: 400014
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftArm
+  - first:
+      4: 400016
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftElbowEffector
+  - first:
+      4: 400018
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFoot
+  - first:
+      4: 400020
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFootEffector
+  - first:
+      4: 400022
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftForeArm
+  - first:
+      4: 400024
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
+  - first:
+      4: 400026
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex1
+  - first:
+      4: 400028
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex2
+  - first:
+      4: 400030
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex3
+  - first:
+      4: 400032
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex4
+  - first:
+      4: 400034
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndexEffector
+  - first:
+      4: 400036
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle1
+  - first:
+      4: 400038
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle2
+  - first:
+      4: 400040
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle3
+  - first:
+      4: 400042
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle4
+  - first:
+      4: 400044
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddleEffector
+  - first:
+      4: 400046
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky1
+  - first:
+      4: 400048
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky2
+  - first:
+      4: 400050
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky3
+  - first:
+      4: 400052
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky4
+  - first:
+      4: 400054
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinkyEffector
+  - first:
+      4: 400056
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing1
+  - first:
+      4: 400058
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing2
+  - first:
+      4: 400060
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing3
+  - first:
+      4: 400062
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing4
+  - first:
+      4: 400064
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRingEffector
+  - first:
+      4: 400066
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb1
+  - first:
+      4: 400068
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb2
+  - first:
+      4: 400070
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb3
+  - first:
+      4: 400072
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb4
+  - first:
+      4: 400074
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumbEffector
+  - first:
+      4: 400076
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHipEffector
+  - first:
+      4: 400078
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftKneeEffector
+  - first:
+      4: 400080
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftLeg
+  - first:
+      4: 400082
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulder
+  - first:
+      4: 400084
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulderEffector
+  - first:
+      4: 400086
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftToeBase
+  - first:
+      4: 400088
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftUpLeg
+  - first:
+      4: 400090
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftWristEffector
+  - first:
+      4: 400092
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Neck
+  - first:
+      4: 400094
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+  - first:
+      4: 400096
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightAnkleEffector
+  - first:
+      4: 400098
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightArm
+  - first:
+      4: 400100
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightElbowEffector
+  - first:
+      4: 400102
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFoot
+  - first:
+      4: 400104
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFootEffector
+  - first:
+      4: 400106
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightForeArm
+  - first:
+      4: 400108
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
+  - first:
+      4: 400110
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex1
+  - first:
+      4: 400112
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex2
+  - first:
+      4: 400114
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex3
+  - first:
+      4: 400116
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex4
+  - first:
+      4: 400118
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndexEffector
+  - first:
+      4: 400120
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle1
+  - first:
+      4: 400122
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle2
+  - first:
+      4: 400124
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle3
+  - first:
+      4: 400126
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle4
+  - first:
+      4: 400128
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddleEffector
+  - first:
+      4: 400130
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky1
+  - first:
+      4: 400132
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky2
+  - first:
+      4: 400134
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky3
+  - first:
+      4: 400136
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky4
+  - first:
+      4: 400138
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinkyEffector
+  - first:
+      4: 400140
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing1
+  - first:
+      4: 400142
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing2
+  - first:
+      4: 400144
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing3
+  - first:
+      4: 400146
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing4
+  - first:
+      4: 400148
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRingEffector
+  - first:
+      4: 400150
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb1
+  - first:
+      4: 400152
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb2
+  - first:
+      4: 400154
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb3
+  - first:
+      4: 400156
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb4
+  - first:
+      4: 400158
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumbEffector
+  - first:
+      4: 400160
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHipEffector
+  - first:
+      4: 400162
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightKneeEffector
+  - first:
+      4: 400164
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightLeg
+  - first:
+      4: 400166
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulder
+  - first:
+      4: 400168
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulderEffector
+  - first:
+      4: 400170
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightToeBase
+  - first:
+      4: 400172
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightUpLeg
+  - first:
+      4: 400174
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightWristEffector
+  - first:
+      4: 400176
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine
+  - first:
+      4: 400178
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine1
+  - first:
+      4: 400180
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine2
+  - first:
+      4: 400182
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Head
+  - first:
+      4: 400184
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
+  - first:
+      4: 400186
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftArm
+  - first:
+      4: 400188
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftFoot
+  - first:
+      4: 400190
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftForeArm
+  - first:
+      4: 400192
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+  - first:
+      4: 400194
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex1
+  - first:
+      4: 400196
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex2
+  - first:
+      4: 400198
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex3
+  - first:
+      4: 400200
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex4
+  - first:
+      4: 400202
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle1
+  - first:
+      4: 400204
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle2
+  - first:
+      4: 400206
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle3
+  - first:
+      4: 400208
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle4
+  - first:
+      4: 400210
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky1
+  - first:
+      4: 400212
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky2
+  - first:
+      4: 400214
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky3
+  - first:
+      4: 400216
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky4
+  - first:
+      4: 400218
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing1
+  - first:
+      4: 400220
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing2
+  - first:
+      4: 400222
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing3
+  - first:
+      4: 400224
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing4
+  - first:
+      4: 400226
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb1
+  - first:
+      4: 400228
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb2
+  - first:
+      4: 400230
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb3
+  - first:
+      4: 400232
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb4
+  - first:
+      4: 400234
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftLeg
+  - first:
+      4: 400236
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftShoulder
+  - first:
+      4: 400238
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftToeBase
+  - first:
+      4: 400240
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftUpLeg
+  - first:
+      4: 400242
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Neck
+  - first:
+      4: 400244
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Reference
+  - first:
+      4: 400246
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightArm
+  - first:
+      4: 400248
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightFoot
+  - first:
+      4: 400250
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightForeArm
+  - first:
+      4: 400252
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+  - first:
+      4: 400254
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex1
+  - first:
+      4: 400256
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex2
+  - first:
+      4: 400258
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex3
+  - first:
+      4: 400260
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex4
+  - first:
+      4: 400262
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle1
+  - first:
+      4: 400264
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle2
+  - first:
+      4: 400266
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle3
+  - first:
+      4: 400268
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle4
+  - first:
+      4: 400270
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky1
+  - first:
+      4: 400272
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky2
+  - first:
+      4: 400274
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky3
+  - first:
+      4: 400276
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky4
+  - first:
+      4: 400278
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing1
+  - first:
+      4: 400280
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing2
+  - first:
+      4: 400282
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing3
+  - first:
+      4: 400284
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing4
+  - first:
+      4: 400286
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb1
+  - first:
+      4: 400288
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb2
+  - first:
+      4: 400290
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb3
+  - first:
+      4: 400292
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb4
+  - first:
+      4: 400294
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightLeg
+  - first:
+      4: 400296
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightShoulder
+  - first:
+      4: 400298
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightToeBase
+  - first:
+      4: 400300
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightUpLeg
+  - first:
+      4: 400302
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+  - first:
+      4: 400304
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine1
+  - first:
+      4: 400306
+    second: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
+  - first:
+      4: 400308
+    second: Base_mesh_skin:Left_toga_front
+  - first:
+      4: 400310
+    second: Base_mesh_skin:Left_toga_front1
+  - first:
+      4: 400312
+    second: Base_mesh_skin:Left_toga_front2
+  - first:
+      4: 400314
+    second: Base_mesh_skin:Left_toga_front3
+  - first:
+      4: 400316
+    second: Base_mesh_skin:Left_toga_front4
+  - first:
+      4: 400318
+    second: Base_mesh_skin:Mask_join
+  - first:
+      4: 400320
+    second: Base_mesh_skin:Mask_join1
+  - first:
+      4: 400322
+    second: Base_mesh_skin:plash_backmid
+  - first:
+      4: 400324
+    second: Base_mesh_skin:plash_backmid1
+  - first:
+      4: 400326
+    second: Base_mesh_skin:plash_backmid2
+  - first:
+      4: 400328
+    second: Base_mesh_skin:plash_backmid3
+  - first:
+      4: 400330
+    second: Base_mesh_skin:plash_backmid4
+  - first:
+      4: 400332
+    second: Base_mesh_skin:plash_left
+  - first:
+      4: 400334
+    second: Base_mesh_skin:plash_left1
+  - first:
+      4: 400336
+    second: Base_mesh_skin:plash_left2
+  - first:
+      4: 400338
+    second: Base_mesh_skin:plash_left3
+  - first:
+      4: 400340
+    second: Base_mesh_skin:plash_left4
+  - first:
+      4: 400342
+    second: Base_mesh_skin:plash_right
+  - first:
+      4: 400344
+    second: Base_mesh_skin:plash_right1
+  - first:
+      4: 400346
+    second: Base_mesh_skin:plash_right2
+  - first:
+      4: 400348
+    second: Base_mesh_skin:plash_right3
+  - first:
+      4: 400350
+    second: Base_mesh_skin:plash_right4
+  - first:
+      4: 400352
+    second: Base_mesh_skin:Right_toga_front
+  - first:
+      4: 400354
+    second: Base_mesh_skin:Right_toga_front1
+  - first:
+      4: 400356
+    second: Base_mesh_skin:Right_toga_front2
+  - first:
+      4: 400358
+    second: Base_mesh_skin:Right_toga_front3
+  - first:
+      4: 400360
+    second: Base_mesh_skin:Right_toga_front4
+  - first:
+      4: 400362
+    second: Base_mesh_skin:Shoulder_left
+  - first:
+      4: 400364
+    second: Base_mesh_skin:Shoulder_left1
+  - first:
+      4: 400366
+    second: Base_mesh_skin:Shoulder_right
+  - first:
+      4: 400368
+    second: Base_mesh_skin:Shoulder_right1
+  - first:
+      4: 400370
+    second: Base_mesh_skin:Sword_join
+  - first:
+      4: 400372
+    second: Base_mesh_skin:Sword_join1
+  - first:
+      4: 400374
+    second: Base_mesh_skin:Toga_left
+  - first:
+      4: 400376
+    second: Base_mesh_skin:Toga_left1
+  - first:
+      4: 400378
+    second: Base_mesh_skin:Toga_left2
+  - first:
+      4: 400380
+    second: Base_mesh_skin:Toga_left3
+  - first:
+      4: 400382
+    second: Base_mesh_skin:Toga_left4
+  - first:
+      4: 400384
+    second: Base_mesh_skin:Toga_right
+  - first:
+      4: 400386
+    second: Base_mesh_skin:Toga_right1
+  - first:
+      4: 400388
+    second: Base_mesh_skin:Toga_right2
+  - first:
+      4: 400390
+    second: Base_mesh_skin:Toga_right3
+  - first:
+      4: 400392
+    second: Base_mesh_skin:Toga_right4
+  - first:
+      4: 400394
+    second: //RootNode
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -412,6 +1208,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -421,7 +1218,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -436,25 +1233,36 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -463,12 +1271,1426 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
-    human: []
-    skeleton: []
+    serializedVersion: 3
+    human:
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Mask_join
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Knight@damage(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Reference
+      parentName: Knight@damage(Clone)
+      position: {x: -0, y: -0.18872248, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Reference
+      position: {x: 0.003215214, y: 0.9928814, z: 0.009069109}
+      rotation: {x: -0.03311476, y: 0.062345814, z: -0.012977402, w: 0.99742067}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftUpLeg
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
+      position: {x: -0.13414574, y: -0.09846, z: -0.000000038179714}
+      rotation: {x: -0.08269534, y: -0.4155582, z: -0.0219171, w: 0.9055343}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftLeg
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftUpLeg
+      position: {x: -0.018605888, y: -0.28036633, z: 0.0022647318}
+      rotation: {x: 0.2501132, y: 0.1598594, z: 0.018887414, w: 0.95474166}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftFoot
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftLeg
+      position: {x: -0.034764126, y: -0.4735778, z: -0.078696996}
+      rotation: {x: -0.17985599, y: 0.18630448, z: -0.012695694, w: 0.96580607}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftToeBase
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftFoot
+      position: {x: -0.07153531, y: -0.009384498, z: 0.21216334}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightUpLeg
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
+      position: {x: 0.13414575, y: -0.09846003, z: 0.000000009516732}
+      rotation: {x: -0.07490732, y: 0.056661997, z: 0.047629658, w: 0.9944394}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightLeg
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightUpLeg
+      position: {x: 0.018605676, y: -0.28036612, z: 0.0022643362}
+      rotation: {x: 0.2425518, y: 0.026729282, z: 0.0178927, w: 0.9696051}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightFoot
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightLeg
+      position: {x: 0.034764238, y: -0.47357792, z: -0.078697085}
+      rotation: {x: -0.22936694, y: -0.13294826, z: -0.048868198, w: 0.9629784}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightToeBase
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightFoot
+      position: {x: 0.0715352, y: -0.009384481, z: 0.21216306}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Hips
+      position: {x: 0.000000025363411, y: 0.11523082, z: 0.010160852}
+      rotation: {x: 0.099814266, y: -0.023356598, z: 0.019371279, w: 0.99454325}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Base_mesh_skin:Sword_join
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: 0.4923617, y: 0.03890033, z: 0.27087653}
+      rotation: {x: 0.22653404, y: 0.084343046, z: -0.5404724, w: 0.80588967}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Sword_join1
+      parentName: Base_mesh_skin:Sword_join
+      position: {x: -0.14427558, y: -7.105427e-17, z: -2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Left_toga_front
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: -0.060698804, y: -0.022212828, z: 0.09792004}
+      rotation: {x: -0.35125065, y: 0.22334418, z: 0.30534312, w: 0.8564496}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Left_toga_front1
+      parentName: Base_mesh_skin:Left_toga_front
+      position: {x: -0.11720567, y: 7.105427e-17, z: 7.105427e-17}
+      rotation: {x: 0.010248499, y: 0.12217246, z: 0.06473085, w: 0.9903428}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Left_toga_front2
+      parentName: Base_mesh_skin:Left_toga_front1
+      position: {x: -0.1245676, y: -2.1316282e-16, z: 3.5527136e-17}
+      rotation: {x: 0.030803926, y: -0.07945765, z: -0.0103031965, w: 0.9963089}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Left_toga_front3
+      parentName: Base_mesh_skin:Left_toga_front2
+      position: {x: -0.064859435, y: 0.015128601, z: -0.020526823}
+      rotation: {x: -0.07438192, y: -0.09250849, z: -0.01338738, w: 0.9928395}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Left_toga_front4
+      parentName: Base_mesh_skin:Left_toga_front3
+      position: {x: -0.037170485, y: -7.105427e-17, z: -1.0658141e-16}
+      rotation: {x: -2.6020852e-18, y: 1.4094628e-17, z: -2.0816682e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Right_toga_front
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: 0.06549001, y: -0.020370888, z: 0.095835365}
+      rotation: {x: -0.2933456, y: 0.275107, z: 0.7766273, w: 0.48488614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Right_toga_front1
+      parentName: Base_mesh_skin:Right_toga_front
+      position: {x: -0.1203827, y: -0.00318899, z: 0.015749175}
+      rotation: {x: 0.115409195, y: 0.059509523, z: 0.10892867, w: 0.9855323}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Right_toga_front2
+      parentName: Base_mesh_skin:Right_toga_front1
+      position: {x: -0.12018331, y: 3.1974422e-16, z: 7.105427e-17}
+      rotation: {x: -0.028905671, y: -0.16608039, z: -0.026302528, w: 0.9853375}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Right_toga_front3
+      parentName: Base_mesh_skin:Right_toga_front2
+      position: {x: -0.081930004, y: 7.105427e-17, z: 4.4408918e-17}
+      rotation: {x: 0.016804945, y: 0.07569509, z: 0.0725492, w: 0.99434626}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Right_toga_front4
+      parentName: Base_mesh_skin:Right_toga_front3
+      position: {x: -0.04287265, y: -6.3948843e-16, z: 0}
+      rotation: {x: 1.7347235e-18, y: -2.8839778e-17, z: -8.326673e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_right
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: 0.15216799, y: -0.008183929, z: 0.022816956}
+      rotation: {x: 0.8357919, y: -0.5162738, z: 0.1677121, w: 0.08237762}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_right1
+      parentName: Base_mesh_skin:Toga_right
+      position: {x: 0.110584855, y: 0.00000022442285, z: 0.000000051215025}
+      rotation: {x: 0.014177142, y: -0.05945871, z: 0.011184287, w: 0.99806744}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_right2
+      parentName: Base_mesh_skin:Toga_right1
+      position: {x: 0.10528834, y: -0.00000010527049, z: -0.00000008310356}
+      rotation: {x: -0.018049516, y: 0.08231539, z: 0.006979456, w: 0.9964185}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_right3
+      parentName: Base_mesh_skin:Toga_right2
+      position: {x: 0.06236301, y: 0.00000044196537, z: -0.000000006535069}
+      rotation: {x: 0.0027246776, y: -0.026210293, z: 0.058830425, w: 0.99792016}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_right4
+      parentName: Base_mesh_skin:Toga_right3
+      position: {x: 0.05608317, y: -0.000000054782742, z: 0.000000005715901}
+      rotation: {x: 0, y: 3.469447e-18, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_left
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: -0.15216775, y: -0.008183631, z: 0.022816975}
+      rotation: {x: -0.046728652, y: 0.08290874, z: 0.46464545, w: 0.8803677}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_left1
+      parentName: Base_mesh_skin:Toga_left
+      position: {x: -0.11058563, y: 7.105427e-17, z: -1.4210854e-16}
+      rotation: {x: 0.014177142, y: -0.05945871, z: 0.011184287, w: 0.99806744}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_left2
+      parentName: Base_mesh_skin:Toga_left1
+      position: {x: -0.10528801, y: 0, z: 5.3290704e-17}
+      rotation: {x: -0.046164654, y: 0.1787595, z: -0.2131845, w: 0.95940936}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_left3
+      parentName: Base_mesh_skin:Toga_left2
+      position: {x: -0.06236261, y: 2.1316282e-16, z: -1.5543122e-17}
+      rotation: {x: 0.0027246776, y: -0.026210293, z: 0.058830425, w: 0.99792016}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Toga_left4
+      parentName: Base_mesh_skin:Toga_left3
+      position: {x: -0.05608327, y: -2.1316282e-16, z: -8.8817837e-17}
+      rotation: {x: 0, y: 3.469447e-18, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_backmid
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: -0.012045124, y: 0.009267934, z: -0.12337283}
+      rotation: {x: 0.012877775, y: -0.016438156, z: 0.7134376, w: 0.70040756}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_backmid1
+      parentName: Base_mesh_skin:plash_backmid
+      position: {x: -0.22291227, y: 7.438494e-17, z: -7.105427e-17}
+      rotation: {x: 0.0031112274, y: 0.09642834, z: 0.013088654, w: 0.99524903}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_backmid2
+      parentName: Base_mesh_skin:plash_backmid1
+      position: {x: -0.19556619, y: -2.2204459e-17, z: 3.1974422e-16}
+      rotation: {x: 0.025568686, y: -0.12311724, z: 0.009877969, w: 0.9920135}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_backmid3
+      parentName: Base_mesh_skin:plash_backmid2
+      position: {x: -0.16445126, y: 6.217249e-17, z: 0}
+      rotation: {x: -0.0019486847, y: 0.04014448, z: -0.005954382, w: 0.9991743}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_backmid4
+      parentName: Base_mesh_skin:plash_backmid3
+      position: {x: -0.098641016, y: -1.7763568e-17, z: -1.7763567e-16}
+      rotation: {x: 3.7947076e-19, y: 1.3881176e-17, z: -8.2670416e-19, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_left
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: -0.14519247, y: -0.0023813336, z: -0.054262895}
+      rotation: {x: 0.13198242, y: -0.10484972, z: 0.5902798, w: 0.7894029}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_left1
+      parentName: Base_mesh_skin:plash_left
+      position: {x: -0.17665048, y: -2.1316282e-16, z: 8.5265126e-16}
+      rotation: {x: 0.03957358, y: 0.29769984, z: 0.095809594, w: 0.9490149}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_left2
+      parentName: Base_mesh_skin:plash_left1
+      position: {x: -0.2852911, y: -7.105427e-17, z: 0}
+      rotation: {x: 0.023519788, y: -0.19923128, z: 0.029624835, w: 0.9792222}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_left3
+      parentName: Base_mesh_skin:plash_left2
+      position: {x: -0.12560758, y: 5.3290704e-17, z: 2.1316282e-16}
+      rotation: {x: 0.012865385, y: 0.08403038, z: 0.12998314, w: 0.98786527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_left4
+      parentName: Base_mesh_skin:plash_left3
+      position: {x: -0.069258645, y: -3.5527136e-17, z: 3.5527136e-17}
+      rotation: {x: -1.2143064e-17, y: -2.6888214e-17, z: -5.616167e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_right
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: 0.14524299, y: -0.008582766, z: -0.05226268}
+      rotation: {x: 0.70288223, y: -0.65712017, z: -0.16440538, w: -0.21707252}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_right1
+      parentName: Base_mesh_skin:plash_right
+      position: {x: 0.17664708, y: -0.0000011569165, z: 0.000001923249}
+      rotation: {x: -0.009787246, y: 0.30068377, z: 0.078090005, w: 0.95047116}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_right2
+      parentName: Base_mesh_skin:plash_right1
+      position: {x: 0.28529185, y: 0.000000088324775, z: 0.000000018334847}
+      rotation: {x: 0.0074880817, y: -0.09175797, z: -0.15645204, w: 0.98338556}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_right3
+      parentName: Base_mesh_skin:plash_right2
+      position: {x: 0.12560734, y: 0.00000039047808, z: 0.00000015677051}
+      rotation: {x: 0.012865385, y: 0.08403038, z: 0.12998314, w: 0.98786527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:plash_right4
+      parentName: Base_mesh_skin:plash_right3
+      position: {x: 0.06925881, y: -0.00000020922057, z: -0.00000045204374}
+      rotation: {x: -1.2143064e-17, y: -2.6888214e-17, z: -5.616167e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine
+      position: {x: 0.00000000214983, y: 0.1785205, z: -0.0034883725}
+      rotation: {x: 0.052188117, y: -0.04432236, z: 0.026951915, w: 0.9972891}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999999}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine1
+      position: {x: 0.00082419347, y: 0.1785206, z: 0.023146207}
+      rotation: {x: -0.050420284, y: -0.04802708, z: 0.02133126, w: 0.9973446}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftShoulder
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
+      position: {x: -0.095244505, y: 0.13074407, z: -0.07764126}
+      rotation: {x: -0.0018440189, y: 0.03368913, z: -0.041167166, w: 0.9985825}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Base_mesh_skin:Shoulder_left
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftShoulder
+      position: {x: -0.12306859, y: 0.044190507, z: -0.01386772}
+      rotation: {x: 0.1341508, y: -0.049900748, z: 0.34504697, w: 0.9276078}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Shoulder_left1
+      parentName: Base_mesh_skin:Shoulder_left
+      position: {x: -0.121964, y: 0.015588767, z: 0.034316152}
+      rotation: {x: -3.8163916e-17, y: -2.0816682e-17, z: -5.2041704e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftArm
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftShoulder
+      position: {x: -0.11379699, y: -0.029529344, z: -0.019066421}
+      rotation: {x: 0.28353193, y: 0.05135109, z: -0.35236278, w: 0.89040065}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftForeArm
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftArm
+      position: {x: -0.18962684, y: -0.16799708, z: 0.044268742}
+      rotation: {x: -0.35182542, y: -0.28998232, z: 0.12317477, w: 0.88145167}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftForeArm
+      position: {x: -0.19450843, y: -0.13420905, z: 0.0587602}
+      rotation: {x: -0.10878726, y: 0.22239724, z: -0.21282037, w: 0.9452049}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+      position: {x: -0.014203401, y: -0.04356381, z: 0.065976135}
+      rotation: {x: -0.30479574, y: -0.093495704, z: -0.16508448, w: 0.9333303}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb1
+      position: {x: 0.0036364438, y: -0.025274327, z: 0.007600038}
+      rotation: {x: -0.09974849, y: 0.0014471553, z: 0.052537657, w: 0.9936237}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb2
+      position: {x: -0.000016720624, y: -0.033395026, z: 0.0008882905}
+      rotation: {x: -0.041446988, y: -0.00035033812, z: -0.013957062, w: 0.9990432}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandThumb3
+      position: {x: 0.0016220682, y: -0.030653749, z: -0.0040475605}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+      position: {x: -0.069772646, y: -0.08408487, z: 0.047426086}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex1
+      position: {x: -0.01875523, y: -0.03197981, z: 0.010113051}
+      rotation: {x: -0.09435076, y: 0.019257125, z: -0.11406404, w: 0.98879546}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex2
+      position: {x: -0.007927749, y: -0.03224865, z: 0.0011118384}
+      rotation: {x: 0.025124544, y: -0.009522396, z: -0.098456904, w: 0.9947785}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandIndex3
+      position: {x: 0.0012303322, y: -0.043457262, z: 0.004538138}
+      rotation: {x: 0, y: -0.00019139677, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+      position: {x: -0.0646753, y: -0.08528757, z: 0.0204056}
+      rotation: {x: -0.05311365, y: 0.025013054, z: -0.063798465, w: 0.9962345}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle1
+      position: {x: -0.012495948, y: -0.029364716, z: -0.0011098027}
+      rotation: {x: 0.019555798, y: -0.0038537811, z: -0.118221685, w: 0.99278724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle2
+      position: {x: -0.003971833, y: -0.04182806, z: 0.0007064823}
+      rotation: {x: 0.021363266, y: -0.0041129305, z: -0.12342024, w: 0.99211603}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandMiddle3
+      position: {x: 0.010796579, y: -0.0475084, z: 0.0034520018}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+      position: {x: -0.055982087, y: -0.08535441, z: -0.005143305}
+      rotation: {x: -0.06950565, y: 0.033112086, z: -0.0819022, w: 0.99366224}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing1
+      position: {x: -0.011147321, y: -0.028836967, z: -0.0021984165}
+      rotation: {x: 0.005722856, y: 0.01191534, z: -0.18531701, w: 0.98258996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing2
+      position: {x: 0.0024627023, y: -0.034730036, z: -0.002156897}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandRing3
+      position: {x: -0.000095048854, y: -0.040545516, z: -0.001152106}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHand
+      position: {x: -0.04673534, y: -0.086830534, z: -0.03129621}
+      rotation: {x: -0.08048681, y: 0.05038772, z: -0.044501394, w: 0.9944861}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky1
+      position: {x: -0.014550188, y: -0.027157003, z: -0.004433468}
+      rotation: {x: 0.03164329, y: 0.006006165, z: -0.14064264, w: 0.98953646}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky2
+      position: {x: -0.0041864524, y: -0.030179638, z: -0.0022308077}
+      rotation: {x: -0.022616472, y: 0.009240387, z: -0.082567655, w: 0.99628603}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_LeftHandPinky3
+      position: {x: 0.0023972415, y: -0.023406986, z: -0.0032761921}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightShoulder
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
+      position: {x: 0.09359613, y: 0.1307441, z: -0.077641286}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Shoulder_right
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightShoulder
+      position: {x: 0.10738875, y: 0.038234327, z: 0.010304451}
+      rotation: {x: -0.032188542, y: 0.10045719, z: 0.9469945, w: 0.3034365}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Shoulder_right1
+      parentName: Base_mesh_skin:Shoulder_right
+      position: {x: -0.107499056, y: -1.1368684e-15, z: -1.4210854e-16}
+      rotation: {x: -1.9428903e-16, y: 2.6714742e-16, z: -9.063931e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightArm
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightShoulder
+      position: {x: 0.11379697, y: -0.02952935, z: -0.0190664}
+      rotation: {x: 0.0036641876, y: 0.15249239, z: 0.28650978, w: 0.94585663}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightForeArm
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightArm
+      position: {x: 0.18962748, y: -0.16799742, z: 0.04426577}
+      rotation: {x: -0.103356905, y: 0.09212386, z: -0.07505951, w: 0.98752046}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightForeArm
+      position: {x: 0.19450861, y: -0.13420917, z: 0.05876027}
+      rotation: {x: -0.17241916, y: -0.27896178, z: 0.18445797, w: 0.9265135}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+      position: {x: 0.014203435, y: -0.043563772, z: 0.06597612}
+      rotation: {x: -0.29131034, y: 0.05274882, z: 0.18869321, w: 0.9363497}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb1
+      position: {x: -0.0036364396, y: -0.02527431, z: 0.0076000355}
+      rotation: {x: -0.10273997, y: -0.0036634337, z: -0.048688956, w: 0.99350923}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb2
+      position: {x: 0.000016748623, y: -0.033395026, z: 0.00088828616}
+      rotation: {x: -0.04616649, y: 0.0028592395, z: 0.0046029906, w: 0.9989191}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandThumb3
+      position: {x: -0.0016220981, y: -0.030653737, z: -0.004047565}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+      position: {x: 0.06977261, y: -0.084084824, z: 0.047426064}
+      rotation: {x: -0.00058686733, y: 0.045045227, z: -0.018658303, w: 0.9988105}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex1
+      position: {x: 0.018755278, y: -0.03197983, z: 0.010113069}
+      rotation: {x: -0.123992704, y: 0.010496534, z: 0.11406309, w: 0.98564965}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex2
+      position: {x: 0.007927784, y: -0.032248635, z: 0.0011116843}
+      rotation: {x: 0.03348226, y: 0.00058899715, z: 0.112562574, w: 0.9930802}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandIndex3
+      position: {x: -0.0012310834, y: -0.04345723, z: 0.0045379344}
+      rotation: {x: 1.2953356e-10, y: -0.00019140296, z: -0.0000006767585, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+      position: {x: 0.064675264, y: -0.0852875, z: 0.020405583}
+      rotation: {x: -0.14095439, y: 0.017255723, z: 0.048754424, w: 0.9886644}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle1
+      position: {x: 0.012495944, y: -0.029364714, z: -0.0011097906}
+      rotation: {x: 0.026220465, y: -0.003223196, z: 0.1322871, w: 0.9908594}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle2
+      position: {x: 0.003971909, y: -0.041828085, z: 0.000706392}
+      rotation: {x: 0.025458438, y: -0.0038108213, z: 0.13791236, w: 0.99010986}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandMiddle3
+      position: {x: -0.010796915, y: -0.0475084, z: 0.0034511462}
+      rotation: {x: 0, y: -0.00019140296, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+      position: {x: 0.055982087, y: -0.08535436, z: -0.005143276}
+      rotation: {x: -0.17220765, y: 0.027813308, z: 0.06594318, w: 0.9824574}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing1
+      position: {x: 0.011147273, y: -0.028836994, z: -0.0021984125}
+      rotation: {x: 0.006912483, y: -0.015334565, z: 0.19950294, w: 0.9797529}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing2
+      position: {x: -0.002462716, y: -0.03473004, z: -0.0021568509}
+      rotation: {x: 0.0147047145, y: -0.0025115751, z: -0.06694261, w: 0.9976453}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandRing3
+      position: {x: 0.000095159696, y: -0.040545516, z: -0.0011520969}
+      rotation: {x: 0, y: -0.00019140296, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHand
+      position: {x: 0.046735324, y: -0.0868305, z: -0.031296227}
+      rotation: {x: -0.25825608, y: 0.07577915, z: 0.0009352005, w: 0.96309936}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky1
+      position: {x: 0.014550211, y: -0.027156975, z: -0.00443339}
+      rotation: {x: 0.040290203, y: -0.01577729, z: 0.1514102, w: 0.9875236}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky2
+      position: {x: 0.0041864435, y: -0.030179702, z: -0.0022309201}
+      rotation: {x: -0.030301407, y: -0.0020577423, z: 0.094966464, w: 0.9950171}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_RightHandPinky3
+      position: {x: -0.002396963, y: -0.023406982, z: -0.0032763567}
+      rotation: {x: 0, y: -0.00019140296, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Neck
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Spine2
+      position: {x: -0.004302835, y: 0.17852063, z: -0.06989405}
+      rotation: {x: -0.17562628, y: -0.08405085, z: -0.030628491, w: 0.98038405}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Head
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Neck
+      position: {x: 0.0034142672, y: 0.068041176, z: 0.054996323}
+      rotation: {x: -0.041706685, y: -0.20141058, z: 0.06007204, w: 0.97677314}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Base_mesh_skin:Mask_join
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Head
+      position: {x: -0.0026106578, y: 0.11638053, z: 0.012544429}
+      rotation: {x: -0.23365165, y: 0.24521723, z: 0.68118006, w: 0.6490525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Mask_join1
+      parentName: Base_mesh_skin:Mask_join
+      position: {x: -0.14778626, y: 0.0048366818, z: -3.5805316e-16}
+      rotation: {x: 1.3877789e-16, y: -5.551115e-17, z: 1.5959456e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      parentName: Knight@damage(Clone)
+      position: {x: -0, y: -0.10711585, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HipsEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.0075753187, y: 0.7840263, z: 0.0046212766}
+      rotation: {x: 0.043705918, y: 0.42187285, z: -0.04018778, w: 0.9047088}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftAnkleEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.1474078, y: 0.1508105, z: 0.39011595}
+      rotation: {x: 0.0000022350562, y: 0.17549789, z: 0.000001821682, w: 0.98447984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightAnkleEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.16800037, y: 0.1516656, z: -0.3169055}
+      rotation: {x: -0.005433201, y: 0.49625114, z: 0.0031050588, w: 0.8681565}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftWristEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.22362068, y: 1.0606762, z: 0.433078}
+      rotation: {x: -0.3417688, y: 0.5067991, z: 0.012749444, w: 0.7913193}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightWristEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.5129653, y: 1.083393, z: -0.16881768}
+      rotation: {x: -0.35330796, y: 0.07350386, z: 0.10254853, w: 0.9269598}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftKneeEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.08531833, y: 0.62499845, z: 0.3356295}
+      rotation: {x: -0.1161313, y: 0.20081046, z: -0.022907378, w: 0.9724525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightKneeEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.2508072, y: 0.55870503, z: -0.073718295}
+      rotation: {x: 0.18353795, y: 0.5192843, z: 0.07887298, w: 0.8309253}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftElbowEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.21769264, y: 1.2318456, z: 0.25997633}
+      rotation: {x: -0.07804741, y: 0.38532352, z: 0.25327566, w: 0.88390374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightElbowEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.3580986, y: 1.2695512, z: -0.19450189}
+      rotation: {x: -0.20968463, y: 0.27919972, z: -0.18720537, w: 0.91816884}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestOriginEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.023564227, y: 0.99506223, z: 0.020779733}
+      rotation: {x: 0.14100383, y: 0.3935819, z: -0.06557286, w: 0.9060416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_ChestEndEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.10141323, y: 1.4682858, z: 0.1007265}
+      rotation: {x: 0.15303914, y: 0.2994965, z: -0.040050738, w: 0.94089156}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFootEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.14122392, y: 0.1414249, z: 0.61392903}
+      rotation: {x: 0.0000022351742, y: 0.1754979, z: 0.0000018216672, w: 0.98447984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFootEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.3872048, y: 0.1449371, z: -0.27083266}
+      rotation: {x: -0.005433201, y: 0.49625114, z: 0.0031050576, w: 0.8681565}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulderEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.08422701, y: 1.4427885, z: 0.19807895}
+      rotation: {x: 0.38131317, y: 0.48997974, z: -0.021136092, w: 0.78362834}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulderEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.25616485, y: 1.4495771, z: -0.041723166}
+      rotation: {x: 0.14411522, y: 0.4279006, z: -0.09025952, w: 0.88768524}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_HeadEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.15127026, y: 1.5543917, z: 0.1858682}
+      rotation: {x: 0.11898496, y: 0.011668397, z: -0.05190406, w: 0.9914698}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHipEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.093538046, y: 0.78883404, z: 0.10749177}
+      rotation: {x: -0.45138356, y: 0.055606034, z: 0.024918767, w: 0.89024717}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHipEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.07838741, y: 0.77921855, z: -0.09824921}
+      rotation: {x: -0.2005915, y: 0.42699766, z: 0.23788325, w: 0.84902745}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumbEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.1165884, y: 0.9419753, z: 0.53831863}
+      rotation: {x: -0.12046699, y: 0.42524287, z: 0.05186884, w: 0.89552546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndexEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.16510074, y: 0.88406354, z: 0.6108008}
+      rotation: {x: -0.120467015, y: 0.42524287, z: 0.051868845, w: 0.89552546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddleEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.1767335, y: 0.86170185, z: 0.569428}
+      rotation: {x: -0.12046699, y: 0.42524287, z: 0.051868837, w: 0.89552546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRingEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.20158479, y: 0.86680764, z: 0.54183155}
+      rotation: {x: -0.12046699, y: 0.42524287, z: 0.051868845, w: 0.89552546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinkyEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: -0.22770683, y: 0.87998253, z: 0.51813126}
+      rotation: {x: -0.120467, y: 0.42524287, z: 0.05186884, w: 0.89552546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumbEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.5707788, y: 1.0406706, z: -0.032662388}
+      rotation: {x: -0.37925595, y: 0.083816476, z: 0.16821289, w: 0.90600455}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndexEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.54418635, y: 1.0283093, z: -0.042946443}
+      rotation: {x: -0.27066606, y: -0.30518675, z: -0.6296004, w: 0.66121423}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddleEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.5202281, y: 1.0209173, z: -0.06708461}
+      rotation: {x: -0.36916384, y: -0.33302325, z: -0.60736704, w: 0.61961186}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRingEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.51899785, y: 1.0019188, z: -0.08293499}
+      rotation: {x: -0.3961557, y: -0.32635424, z: -0.60511136, w: 0.60859996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinkyEffector
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.54745823, y: 0.985917, z: -0.08797881}
+      rotation: {x: -0.5237285, y: -0.26565915, z: -0.5077263, w: 0.6303552}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Hips
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Reference
+      position: {x: 0.003215214, y: 0.88179207, z: 0.009069109}
+      rotation: {x: 0.04370592, y: 0.42187282, z: -0.040187784, w: 0.9047088}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftUpLeg
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Hips
+      position: {x: -0.13414562, y: -0.098459855, z: 0}
+      rotation: {x: -0.460027, y: -0.34231424, z: -0.13453415, w: 0.808144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftLeg
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftUpLeg
+      position: {x: -0.018605242, y: -0.2803661, z: 0.0022646748}
+      rotation: {x: 0.34184083, y: 0.1379301, z: 0.03955816, w: 0.9287386}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFoot
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftLeg
+      position: {x: -0.034764145, y: -0.47357786, z: -0.07869694}
+      rotation: {x: 0.11031061, y: -0.027030583, z: 0.042934753, w: 0.99260145}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftToeBase
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftFoot
+      position: {x: -0.07153522, y: -0.009384479, z: 0.21216294}
+      rotation: {x: -6.123234e-17, y: 0.000000013983264, z: -6.1232336e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightUpLeg
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Hips
+      position: {x: 0.13414562, y: -0.098459855, z: 0}
+      rotation: {x: -0.33610088, y: 0.030462433, z: 0.14604865, w: 0.92993444}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightLeg
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightUpLeg
+      position: {x: 0.018605242, y: -0.2803661, z: 0.0022646748}
+      rotation: {x: 0.41235563, y: 0.026601922, z: 0.051836897, w: 0.90915793}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFoot
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightLeg
+      position: {x: 0.034764145, y: -0.47357786, z: -0.07869694}
+      rotation: {x: -0.12632579, y: -0.037474055, z: -0.15979622, w: 0.97831625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightToeBase
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightFoot
+      position: {x: 0.07153522, y: -0.009384479, z: 0.21216294}
+      rotation: {x: -6.1232336e-17, y: 3.7493994e-33, z: -6.123234e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Hips
+      position: {x: -0, y: 0.115230784, z: 0.010160843}
+      rotation: {x: 0.099814266, y: -0.023356596, z: 0.019371279, w: 0.99454325}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine
+      position: {x: -0, y: 0.1785205, z: -0.0034883714}
+      rotation: {x: 0.05218811, y: -0.044322357, z: 0.026951913, w: 0.9972891}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine1
+      position: {x: 0.00082419766, y: 0.1785205, z: 0.023146233}
+      rotation: {x: -0.05042028, y: -0.04802708, z: 0.021331262, w: 0.9973446}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulder
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine2
+      position: {x: -0.095244505, y: 0.13074401, z: -0.07764125}
+      rotation: {x: 0.0000005347119, y: 1.1751213e-13, z: 0.00000023448298, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftArm
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftShoulder
+      position: {x: -0.11379679, y: -0.029529266, z: -0.01906638}
+      rotation: {x: 0.22555318, y: 0.23836127, z: 0.050711736, w: 0.94325924}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftForeArm
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftArm
+      position: {x: -0.18962778, y: -0.16799621, z: 0.044268787}
+      rotation: {x: -0.5304479, y: -0.036217663, z: 0.03198761, w: 0.8463393}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftForeArm
+      position: {x: -0.19450836, y: -0.13420898, z: 0.058760174}
+      rotation: {x: -0.116883, y: 0.22861414, z: -0.28128988, w: 0.92463505}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
+      position: {x: -0.014203414, y: -0.043563765, z: 0.065976106}
+      rotation: {x: 0.0000000311751, y: 0.000000023644116, z: 0.000000010925345, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb1
+      position: {x: 0.0036364363, y: -0.025274353, z: 0.007600002}
+      rotation: {x: 0.00000001182206, y: -3.0672285e-24, z: -2.5944958e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb2
+      position: {x: -0.00001674652, y: -0.033395004, z: 0.00088830944}
+      rotation: {x: 0.0000000118220616, y: 0.000000019353044, z: 0.000000021197508, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandThumb3
+      position: {x: 0.0016220856, y: -0.030653762, z: -0.0040475843}
+      rotation: {x: -1.3877788e-17, y: 2.7755576e-17, z: 1.3183897e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
+      position: {x: -0.0697726, y: -0.08408485, z: 0.047426034}
+      rotation: {x: 0.000000042997158, y: 0.000000039035687, z: 0.00000003326592, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex1
+      position: {x: -0.018755265, y: -0.031979825, z: 0.010113048}
+      rotation: {x: -0.000000011822062, y: 0.000000055932748, z: 6.6617357e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex2
+      position: {x: -0.00792778, y: -0.032248612, z: 0.0011117745}
+      rotation: {x: 9.831678e-25, y: 3.6212353e-17, z: -0.000000027150067, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandIndex3
+      position: {x: 0.0012306976, y: -0.04345726, z: 0.0045380495}
+      rotation: {x: 0.0000000311751, y: 0.00000002364412, z: 0.000000010925342, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
+      position: {x: -0.06467526, y: -0.08528755, z: 0.020405542}
+      rotation: {x: 1.0853943e-15, y: -0.00000002442805, z: 0.000000025116593, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle1
+      position: {x: -0.012495956, y: -0.0293647, z: -0.0011098003}
+      rotation: {x: -3.469447e-18, y: -5.2909066e-17, z: 6.2595735e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle2
+      position: {x: -0.0039718626, y: -0.041828077, z: 0.0007064819}
+      rotation: {x: -6.938894e-18, y: -8.673617e-19, z: -0.0000000114152305, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandMiddle3
+      position: {x: 0.010796585, y: -0.047508392, z: 0.0034520149}
+      rotation: {x: 1.3877788e-17, y: -3.2092384e-17, z: -1.1839488e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
+      position: {x: -0.055982094, y: -0.08535438, z: -0.0051433085}
+      rotation: {x: 1.0229441e-15, y: -0.00000002442805, z: 0.000000025116591, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing1
+      position: {x: -0.011147308, y: -0.028836975, z: -0.002198429}
+      rotation: {x: 3.469447e-18, y: 5.3776428e-17, z: -1.05574187e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing2
+      position: {x: 0.002462692, y: -0.034730073, z: -0.002156911}
+      rotation: {x: 5.2041704e-18, y: -5.664279e-17, z: 5.945663e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandRing3
+      position: {x: -0.000095062256, y: -0.0405455, z: -0.0011521005}
+      rotation: {x: -0.000000011822059, y: -5.962659e-17, z: 0.000000011415231, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHand
+      position: {x: -0.046735305, y: -0.08683052, z: -0.031296246}
+      rotation: {x: 0.00000001506197, y: 0.000000014278038, z: 0.000000067511614, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky1
+      position: {x: -0.014550209, y: -0.027156983, z: -0.004433456}
+      rotation: {x: 0.000000011822058, y: -2.0954462e-16, z: -0.0000000114152305, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky2
+      position: {x: -0.0041864775, y: -0.030179672, z: -0.002230808}
+      rotation: {x: 2.7755576e-17, y: -3.9031278e-17, z: 4.3693348e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_LeftHandPinky3
+      position: {x: 0.002397232, y: -0.023406982, z: -0.0032761868}
+      rotation: {x: 1.3877788e-17, y: 5.3776428e-17, z: 4.445229e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulder
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine2
+      position: {x: 0.093596116, y: 0.13074401, z: -0.07764125}
+      rotation: {x: -1.7347235e-16, y: -0.000000024222098, z: 8.1098316e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightArm
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightShoulder
+      position: {x: 0.11379679, y: -0.029529266, z: -0.01906638}
+      rotation: {x: 0.009636761, y: 0.12870434, z: -0.071693085, w: 0.98904115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightForeArm
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightArm
+      position: {x: 0.18962778, y: -0.16799621, z: 0.044268787}
+      rotation: {x: -0.26354846, y: -0.19094361, z: -0.21326844, w: 0.9211945}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightForeArm
+      position: {x: 0.19450836, y: -0.13420898, z: 0.058760174}
+      rotation: {x: -0.17241918, y: -0.27896178, z: 0.18445797, w: 0.9265135}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
+      position: {x: 0.014203414, y: -0.043563765, z: 0.065976106}
+      rotation: {x: -0.026962342, y: -0.012599063, z: 0.06312286, w: 0.99756193}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb1
+      position: {x: -0.0036364363, y: -0.025274353, z: 0.007600002}
+      rotation: {x: 0.00042814104, y: 0.00060496334, z: 0.02273223, w: 0.9997413}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb2
+      position: {x: 0.00001674652, y: -0.033395004, z: 0.00088830944}
+      rotation: {x: -0.008376437, y: 0.0032032283, z: -0.02090173, w: 0.9997413}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandThumb3
+      position: {x: -0.0016220856, y: -0.030653762, z: -0.0040475843}
+      rotation: {x: -0.0000003549659, y: 0.00000006012236, z: -0.000000101537566, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
+      position: {x: 0.0697726, y: -0.08408485, z: 0.047426034}
+      rotation: {x: -0.015345539, y: -0.046774525, z: -0.30050883, w: 0.9525078}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex1
+      position: {x: 0.018755265, y: -0.031979825, z: 0.010113048}
+      rotation: {x: 0.0023300338, y: -0.009479713, z: -0.29156765, w: 0.9565004}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex2
+      position: {x: 0.00792778, y: -0.032248612, z: 0.0011117745}
+      rotation: {x: -0.00085744954, y: -0.030275946, z: -0.29015437, w: 0.9565005}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandIndex3
+      position: {x: -0.0012306976, y: -0.04345726, z: 0.0045380495}
+      rotation: {x: -0.00000017837796, y: 1.2156338e-13, z: -0.00000069295663, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
+      position: {x: 0.06467526, y: -0.08528755, z: 0.020405542}
+      rotation: {x: -0.12783155, y: -0.013807533, z: -0.29490346, w: 0.94683707}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle1
+      position: {x: 0.012495956, y: -0.0293647, z: -0.0011098003}
+      rotation: {x: 0.00046579458, y: -0.0049036993, z: -0.29293495, w: 0.9561197}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle2
+      position: {x: 0.0039718626, y: -0.041828077, z: 0.0007064819}
+      rotation: {x: -0.004588892, y: -0.02019246, z: -0.29224318, w: 0.95611984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandMiddle3
+      position: {x: -0.010796585, y: -0.047508392, z: 0.0034520149}
+      rotation: {x: -0.000000013296718, y: -0.00000016497923, z: 0.00000017385517, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
+      position: {x: 0.055982094, y: -0.08535438, z: -0.0051433085}
+      rotation: {x: -0.1875199, y: -0.015167995, z: -0.28751388, w: 0.9391177}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing1
+      position: {x: 0.011147308, y: -0.028836975, z: -0.002198429}
+      rotation: {x: 0.0012780516, y: 0.018033, z: -0.29183236, w: 0.95629865}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing2
+      position: {x: -0.002462692, y: -0.034730073, z: -0.002156911}
+      rotation: {x: -0.000019668916, y: 0.008304767, z: -0.29227307, w: 0.9562989}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandRing3
+      position: {x: 0.000095062256, y: -0.0405455, z: -0.0011521005}
+      rotation: {x: -0.0000001700202, y: -0.00000022222419, z: 0.00000024893853, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky1
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHand
+      position: {x: 0.046735305, y: -0.08683052, z: -0.031296246}
+      rotation: {x: -0.28611648, y: 0.041560177, z: -0.2221408, w: 0.9311625}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky2
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky1
+      position: {x: 0.014550209, y: -0.027156983, z: -0.004433456}
+      rotation: {x: -0.0025811144, y: 0.018602042, z: -0.25650805, w: 0.9663597}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky3
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky2
+      position: {x: 0.0041864775, y: -0.030179672, z: -0.002230808}
+      rotation: {x: 0.003613455, y: 0.035284363, z: -0.25473753, w: 0.96635956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky4
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_RightHandPinky3
+      position: {x: -0.002397232, y: -0.023406982, z: -0.0032761868}
+      rotation: {x: -0.00000002815315, y: 0.000000014403158, z: 0.00000026141325, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Neck
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Spine2
+      position: {x: -0.004302817, y: 0.1785205, z: -0.06989401}
+      rotation: {x: 0.028158182, y: -0.09019888, z: -0.026235571, w: 0.9951799}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Head
+      parentName: Base_mesh_skin:Base_mesh_maya_skelet:Base_mesh_maya_skelet:Character1_Ctrl_Neck
+      position: {x: 0.0034142174, y: 0.06804123, z: 0.05499617}
+      rotation: {x: -0.041706692, y: -0.20141058, z: 0.06007203, w: 0.97677314}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -476,13 +2698,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

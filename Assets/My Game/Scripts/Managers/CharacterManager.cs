@@ -11,10 +11,19 @@ public class CharacterManager : MonoBehaviour
     public CriticalDamageCollider backStabCollider;
     public CriticalDamageCollider riposteCollider;
 
+    public bool isPerformingAction = false;
+    public bool canRotate = true;
+    public bool canMove = true;
+    public bool applyRootMotion = false;
+    public bool isInteracting = false;
+
     [Header("Combat Flags")]
     public bool canBeRiposted;
     public bool canbeParried;
     public bool isBlocking;
+
+    [Header("Movement Flags")]
+    public bool isRotatingWithRootMotion;
 
     [Header("Spells")]
     public bool isFiringSpell;

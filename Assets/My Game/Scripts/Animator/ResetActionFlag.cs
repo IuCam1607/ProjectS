@@ -18,15 +18,15 @@ public class ResetActionFlag : StateMachineBehaviour
 
         if (enemy == null)
         {
-            enemy = animator.GetComponent<EnemyManager>();
+            enemy = animator.GetComponentInParent<EnemyManager>();
         }
 
         if (player)
         {
             player.isPerformingAction = false;
             player.applyRootMotion = false;
-            player.canRotate = true;
             player.canMove = true;
+            player.playerAnimationManager.animator.SetBool("canRotate", true);
             player.isJumping = false;
             player.canDoCombo = false;
             player.isRolling = false;
@@ -36,8 +36,9 @@ public class ResetActionFlag : StateMachineBehaviour
         {
             enemy.isPerformingAction = false;
             enemy.applyRootMotion = false;
-            enemy.canRotate = true;
             enemy.canMove = true;
+            enemy.isRotatingWithRootMotion = false;
+            Debug.Log("Resetting Action Flag");
         }
 
     }

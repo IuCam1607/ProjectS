@@ -5,17 +5,15 @@ using UnityEngine;
 public class EnemyLocomotionManager : MonoBehaviour
 {
     EnemyManager enemyManager;
-    EnemyAnimatorManager enemyAnimator;
-
+    EnemyAnimatorManager enemyAnimatorManager;
 
     public LayerMask detectionLayer;
 
     private void Awake()
     {
         enemyManager = GetComponent<EnemyManager>();
+        enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
 
-        enemyAnimator = GetComponent<EnemyAnimatorManager>();
     }
-
 
 }

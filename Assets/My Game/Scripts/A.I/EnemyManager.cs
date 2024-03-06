@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +8,6 @@ public class EnemyManager : CharacterManager
     public EnemyLocomotionManager enemyLocomotion;
     public EnemyAnimatorManager enemyAnimator;
     public EnemyStatsManager enemyStats;
-    public bool isPerformingAction;
 
     public State currentState;
     public CharacterStatsManager currentTarget;
@@ -17,10 +15,8 @@ public class EnemyManager : CharacterManager
     public NavMeshAgent navMeshAgent;
     public Rigidbody enemyRigidbody;
 
-
-
-    public float rotationSpeed = 15;
-    public float maximumAttackRange = 1.5f;
+    public float rotationSpeed = 25;
+    public float maximumAggroRadius = 1.5f;
 
     [Header("Combat Flags")]
     public bool canDoCombo;
@@ -34,19 +30,13 @@ public class EnemyManager : CharacterManager
     public bool allowAIToPerformCombos;
     public float comboLikelyHood;
 
-    [Header("Flags")]
-    public bool applyRootMotion = false;
-    public bool canRotate = false;
-    public bool canMove = false;
-    public bool isInteracting;
-
     public float currentRecoveryTime = 0;
 
 
     private void Awake()
     {
         enemyLocomotion = GetComponent<EnemyLocomotionManager>();
-        enemyAnimator = GetComponent<EnemyAnimatorManager>();
+        enemyAnimator = GetComponentInChildren<EnemyAnimatorManager>();
         enemyStats = GetComponent<EnemyStatsManager>();
         enemyRigidbody = GetComponent<Rigidbody>();
         backStabCollider = GetComponentInChildren<CriticalDamageCollider>();
@@ -64,9 +54,11 @@ public class EnemyManager : CharacterManager
         HandleRecoveryTimer();
         HandleStateMachine();
 
-        isInteracting = enemyAnimator.animator.GetBool("IsInteracting");
+        isRotatingWithRootMotion = enemyAnimator.animator.GetBool("isRotatingWithRootMotion");
+        isInteracting = enemyAnimator.animator.GetBool("isInteracting");
         enemyAnimator.animator.SetBool("isDead", enemyStats.isDead);
         canDoCombo = enemyAnimator.animator.GetBool("canDoCombo");
+        canRotate = enemyAnimator.animator.GetBool("canRotate");
         if (enemyStats.isDead)
         {
             enemyRigidbody.isKinematic = true;
@@ -115,9 +107,4 @@ public class EnemyManager : CharacterManager
         }
     }
 
-    #region Attacks
-
-
-
-    #endregion
 }

@@ -16,5 +16,5 @@ MonoBehaviour:
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 0}
   itemDescription: 
-  physicalDefense: 12.5
+  physicalDefense: 20
   helmetModelName: Fallen Knight's Helm

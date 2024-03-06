@@ -6,6 +6,7 @@ public class PlayerCombatManager : MonoBehaviour
 {
     PlayerManager player;
     WeaponSlotManager weaponSlotManager;
+    public AnimatorManager animatorManager;
 
     LayerMask backStabLayer = 1 << 14;
     LayerMask riposteLayer = 1 << 15;
@@ -14,6 +15,7 @@ public class PlayerCombatManager : MonoBehaviour
 
     private void Awake()
     {
+        animatorManager = GetComponentInParent<AnimatorManager>();  
         weaponSlotManager = GetComponent<WeaponSlotManager>();
         player = GetComponentInParent<PlayerManager>();
     }
@@ -277,6 +279,7 @@ public class PlayerCombatManager : MonoBehaviour
 
                 player.playerAnimationManager.PlayTargetActionAnimation("Back Stab", true);
                 enemyCharacterManager.GetComponentInChildren<EnemyAnimatorManager>().PlayTargetActionAnimation("Back Stabbed", true, false, false);
+                enemyCharacterManager.GetComponentInChildren<EnemyAnimatorManager>().animator.SetBool("isInteracting", true);
             }
         }
         else if (Physics.Raycast(player.playerInput.criticalAttackCastStartPoint.position,
@@ -303,6 +306,7 @@ public class PlayerCombatManager : MonoBehaviour
 
                 player.playerAnimationManager.PlayTargetActionAnimation("Riposte", true);
                 enemyCharacterManager.GetComponentInChildren<EnemyAnimatorManager>().PlayTargetActionAnimation("Riposted", true, false, false);
+                enemyCharacterManager.GetComponentInChildren<EnemyAnimatorManager>().animator.SetBool("isInteracting", true);
             }
 
         }

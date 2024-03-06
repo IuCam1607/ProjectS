@@ -26,12 +26,9 @@ public class PlayerManager : CharacterManager
     [SerializeField] bool respawnCharacter = false;
 
     [Header("Flags")]
-    public bool isPerformingAction = false;
     public bool isJumping = false;
     public bool isGrounded = true;
-    public bool applyRootMotion = false;
-    public bool canRotate = true;
-    public bool canMove = true;
+
     public bool canDoCombo = false;
     public bool inventoryFlag;
     public bool isRolling = false;
@@ -67,6 +64,7 @@ public class PlayerManager : CharacterManager
         isUsingLeftHand = playerAnimationManager.animator.GetBool("isUsingLeftHand");
         isInvulnerable = playerAnimationManager.animator.GetBool("isInvulnerable");
         isFiringSpell = playerAnimationManager.animator.GetBool("isFiringSpell");
+        canRotate = playerAnimationManager.animator.GetBool("canRotate");
         playerAnimationManager.animator.SetBool("isBlocking", isBlocking);
         playerAnimationManager.animator.SetBool("isDead", playerStatsManager.isDead);
 

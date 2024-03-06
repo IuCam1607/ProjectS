@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyStatsManager : CharacterStatsManager
 {
+    EnemyManager enemyManager;
     CapsuleCollider capsuleCollider;
     EnemyAnimatorManager enemyAnimatorManager;
 
@@ -13,8 +14,9 @@ public class EnemyStatsManager : CharacterStatsManager
 
     private void Awake()
     {
+        enemyManager = GetComponent<EnemyManager>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
+        enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
     }
 
     private void Start()
@@ -33,22 +35,27 @@ public class EnemyStatsManager : CharacterStatsManager
 
     public void TakeDamageNoAnimation(int damage)
     {
+        if (isDead)
+            return;
+
         currentHealth -= damage;
 
-        enemyHealthBar.SetHealth((int)currentHealth);
+        //enemyHealthBar.SetHealth((int)currentHealth);
 
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
-            isDead = true;
+            HandleDeath();
         }
     }
 
     public override void TakeDamage(int damage, string damageAnimation = "Damage_01")
     {
+        if (isDead)
+            return;
+
         base.TakeDamage(damage, damageAnimation = "Damage_01");
 
-        enemyHealthBar.SetHealth((int)currentHealth);
+        ////enemyHealthBar.SetHealth((int)currentHealth);
 
         //enemyAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
 
@@ -61,8 +68,7 @@ public class EnemyStatsManager : CharacterStatsManager
     private void HandleDeath()
     {
         currentHealth = 0;
-        enemyAnimatorManager.PlayTargetActionAnimation("Skeleton_Dead_01", true);
+        enemyAnimatorManager.PlayTargetActionAnimation("Death", true);
         isDead = true;
-
     }
 }
