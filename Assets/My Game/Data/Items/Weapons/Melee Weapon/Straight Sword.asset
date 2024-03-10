@@ -16,7 +16,6 @@ MonoBehaviour:
   pickupIcon: {fileID: 21300000, guid: 4bf4c1460e893fd49bca40bce0cf1fa1, type: 3}
   itemIcon: {fileID: 21300000, guid: 8e64a4113e234e24f82627d2208fefde, type: 3}
   itemDescription: 
-  itemID: 1
   isUnarmed: 0
   weaponModel: {fileID: 5501387686025746793, guid: 80dd57b8a556a15429fb4f84aaace918, type: 3}
   TH_Idle: TH_Idle_Sword_01
@@ -26,16 +25,13 @@ MonoBehaviour:
   TH_Light_Attack_01: TH_Light_Attack_01
   TH_Light_Attack_02: TH_Light_Attack_02
   TH_Light_Attack_03: TH_Light_Attack_03
-  strengthREQ: 10
-  dexREQ: 10
-  intREQ: 0
-  faithREQ: 0
-  physicalDamage: 80
-  magicDamage: 0
+  weapon_Art: 
+  physicalDamage: 20
   fireDamage: 0
-  lightningDamage: 0
-  holyDamage: 0
-  poiseDamage: 25
+  criticalDamageMultiplier: 4
+  poiseBreak: 25
+  offensivePoiseBonus: 0
+  physicalDamageAbsorption: 0
   baseStaminaCost: 12
   lightAttackMultiplier: 1
   heavyAttackMultiplire: 2
@@ -43,3 +39,4 @@ MonoBehaviour:
   isFaithCaster: 0
   isPyroCaster: 0
   isMeleeWeapon: 1
+  isShieldWeapon: 0

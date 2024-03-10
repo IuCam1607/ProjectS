@@ -4,17 +4,33 @@ using UnityEngine;
 
 public class DamageCollider : MonoBehaviour
 {
-    CharacterManager characterManager;
+    public CharacterManager characterManager;
+
+    public GameObject weaponTrail;
 
     public bool enableDamageColliderOnStartUp = false;
+
+    [Header("Team I.D")]
+    public int teamIDNumber = 0;
 
     [Header("Collider")]
     protected Collider damageCollider;
 
-    [Header("Damage")]
-    public int currentWeaponDamage = 20;
+    [Header("Poise")]
+    public float poiseBreak;
+    public float offensivePoiseDefence;
 
-    private void Awake()
+    [Header("Damage")]
+    public int physicalDamage;
+    public int fireDamage;
+    public int magicDamage;
+    public int lightningDamage;
+    public int darkDamage;
+
+    [Header("Stamina Damage")]
+    public int staminaDamage;
+
+    protected virtual void Awake()
     {
         damageCollider = GetComponent<Collider>();
         damageCollider.gameObject.SetActive(true);
@@ -24,46 +40,26 @@ public class DamageCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Character")
         {
-            PlayerStatsManager playerStats = collision.GetComponent<PlayerStatsManager>();
+            CharacterStatsManager enemyStats = collision.GetComponent<CharacterStatsManager>();
             CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
+            CharacterEffectManager enemyEffectManager = collision.GetComponent<CharacterEffectManager>();
             BlockingCollider shield = collision.GetComponentInChildren<BlockingCollider>();
+
+            if (enemyStats.isDead)
+                return;
 
             if (enemyCharacterManager != null)
             {
                 if (shield != null && enemyCharacterManager.isBlocking)
                 {
-                    float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * shield.blockingPhysicalDamageAbsorption) / 100;
-
-                    if (playerStats != null)
-                    {
-                        playerStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
-                        return;
-                    }
-                }
-            }
-
-            if (playerStats != null)
-            {
-                playerStats.TakeDamage(currentWeaponDamage);
-            }
-        }
-        else if (collision.tag == "Enemy")
-        {
-            EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
-            CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
-            BlockingCollider shield = collision.GetComponentInChildren<BlockingCollider>();
-
-            if (enemyCharacterManager != null)
-            {
-                if (shield != null && enemyCharacterManager.isBlocking)
-                {
-                    float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * shield.blockingPhysicalDamageAbsorption) / 100;
+                    float physicalDamageAfterBlock = physicalDamage - (physicalDamage * shield.blockingPhysicalDamageAbsorption) / 100;
+                    float fireDamageAfterBlock = fireDamage - (fireDamage * shield.blockingFireDamageAbsorption) / 100;
 
                     if (enemyStats != null)
                     {
-                        enemyStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
+                        enemyStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), 0, "Block Guard");
                         return;
                     }
                 }
@@ -71,17 +67,101 @@ public class DamageCollider : MonoBehaviour
 
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(currentWeaponDamage);
-                Debug.Log("Enemy Take Damage");
+                if (enemyStats.teamIDNumber == teamIDNumber)
+                    return;
+
+                enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
+                enemyStats.totalPoiseDefence = enemyStats.totalPoiseDefence - poiseBreak;
+                Debug.Log("Player's Poise is currently: " + enemyStats.totalPoiseDefence);
+
+                Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+                enemyEffectManager.PlayBloodSplatterFX(contactPoint);
+
+                if (enemyStats.totalPoiseDefence > poiseBreak)
+                {
+                    enemyStats.TakeDamageNoAnimation(physicalDamage, fireDamage);
+                }
+                else
+                {
+                    enemyStats.TakeDamage(physicalDamage, 0);
+                }
+                Debug.Log("Player Take Damage");
+
             }
         }
     }
+    //    else if (collision.tag == "Enemy")
+    //    {
+    //        EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
+    //        CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
+    //        CharacterEffectManager enemyEffectManager = collision.GetComponent<CharacterEffectManager>();
+    //        BlockingCollider shield = collision.GetComponentInChildren<BlockingCollider>();
+            
+    //        if (enemyStats.isDead)
+    //            return;
+
+    //        if (enemyCharacterManager != null)
+    //        {
+    //            if (shield != null && enemyCharacterManager.isBlocking)
+    //            {
+    //                float physicalDamageAfterBlock = physicalDamage - (physicalDamage * shield.blockingPhysicalDamageAbsorption) / 100;
+
+    //                if (enemyStats != null)
+    //                {
+    //                    enemyStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
+    //                    return;
+    //                }
+    //            }
+    //        }
+
+    //        if (enemyStats != null)
+    //        {
+    //            enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
+    //            enemyStats.totalPoiseDefence = enemyStats.totalPoiseDefence - poiseBreak;
+    //            Debug.Log("Enemy's Poise is currently: " + enemyStats.totalPoiseDefence);
+
+    //            Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+    //            enemyEffectManager.PlayBloodSplatterFX(contactPoint);
+
+    //            if (enemyStats.isBoss)
+    //            {
+    //                if (enemyStats.totalPoiseDefence > poiseBreak)
+    //                {
+    //                    enemyStats.TakeDamageNoAnimation(physicalDamage);
+    //                }
+    //                else
+    //                {
+    //                    enemyStats.TakeDamageNoAnimation(physicalDamage);
+    //                    enemyStats.GuardBreak();
+    //                }
+    //            }
+    //            else
+    //            {
+    //                if (enemyStats.totalPoiseDefence > poiseBreak)
+    //                {
+    //                    enemyStats.TakeDamageNoAnimation(physicalDamage);
+    //                }
+    //                else
+    //                {
+    //                    enemyStats.TakeDamage(physicalDamage);
+    //                }
+    //            }
+
+    //            Debug.Log("Enemy Take Damage");
+    //        }
+    //    }
+    //}
 
     public virtual void EnableDamageCollider()
     {
         if (damageCollider != null)
         {
             damageCollider.enabled = true;
+
+            if (weaponTrail != null)
+            {
+                weaponTrail.SetActive(true);
+            }
         }
     }
 
@@ -90,6 +170,13 @@ public class DamageCollider : MonoBehaviour
         if (damageCollider != null)
         {
             damageCollider.enabled = false;
+
+            if (weaponTrail != null)
+            {
+                weaponTrail.SetActive(false);
+            }
         } 
     }
+
+
 }

@@ -22,19 +22,6 @@ public class PlayerManager : CharacterManager
     public GameObject interactableUIGameObject;
     public GameObject itemInteractableGameObject;
 
-    [Header("Debug Menu")]
-    [SerializeField] bool respawnCharacter = false;
-
-    [Header("Flags")]
-    public bool isJumping = false;
-    public bool isGrounded = true;
-
-    public bool canDoCombo = false;
-    public bool inventoryFlag;
-    public bool isRolling = false;
-    public bool isUsingRightHand;
-    public bool isUsingLeftHand;
-    public bool isInvulnerable;
 
 
     private void Awake()
@@ -45,12 +32,12 @@ public class PlayerManager : CharacterManager
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerInput = GetComponent<PlayerInputManager>();
         playerStatsManager = GetComponent<PlayerStatsManager>();
-        playerEffectManager = GetComponentInChildren<PlayerEffectManager>();
+        playerEffectManager = GetComponent<PlayerEffectManager>();
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
         interactableUI = FindAnyObjectByType<InteractableUI>();
-        playerCombatManager = GetComponentInChildren<PlayerCombatManager>();
-        playerAnimationManager = GetComponentInChildren<PlayerAnimatorManager>();
-        playerEquipment = GetComponentInChildren<PlayerEquipmentManager>();
+        playerCombatManager = GetComponent<PlayerCombatManager>();
+        playerAnimationManager = GetComponent<PlayerAnimatorManager>();
+        playerEquipment = GetComponent<PlayerEquipmentManager>();
     }
     private void Start()
     {
@@ -71,7 +58,6 @@ public class PlayerManager : CharacterManager
         playerInput.HandleAllInputs();
         playerStatsManager.RegenerateStamina();
 
-        DebugMenu();
         CheckForInteractableObject();
 
     }
@@ -84,17 +70,6 @@ public class PlayerManager : CharacterManager
         PlayerCamera.instance.HandleAllCameraActions();
         playerInput.interactInput = false;
         playerInput.selectInput = false;
-    }
-
-    // Delete Later
-    private void DebugMenu()
-    {
-        if (respawnCharacter)
-        {
-            respawnCharacter = false;
-            ReviveCharacter();
-        }
-
     }
 
     public void ReviveCharacter()
@@ -150,6 +125,16 @@ public class PlayerManager : CharacterManager
 
         transform.position = playerStandsHereWhenOpeningChest.transform.position;
         playerAnimationManager.PlayTargetActionAnimation("Open Chest", true);
+    }
+
+    public void PassThroughFogWallInteraction(Transform fogWallEntrance)
+    {
+        playerLocomotion.yVelocity = Vector3.zero;
+        Vector3 rotationDirection = fogWallEntrance.transform.forward;
+        Quaternion turnRotation = Quaternion.LookRotation(rotationDirection);
+        transform.rotation = turnRotation;
+
+        playerAnimationManager.PlayTargetActionAnimation("Pass Through Fog", true);
     }
 
     #endregion

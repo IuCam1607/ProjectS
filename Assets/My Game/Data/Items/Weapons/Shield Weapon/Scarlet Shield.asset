@@ -16,7 +16,6 @@ MonoBehaviour:
   pickupIcon: {fileID: 21300000, guid: 95d92323985fff34d93f41487ce4aa16, type: 3}
   itemIcon: {fileID: 21300000, guid: 7e79658c83e1edd41b29f45e11370e8d, type: 3}
   itemDescription: 
-  itemID: 0
   isUnarmed: 0
   weaponModel: {fileID: 2153915952354164399, guid: 7686ac97335f5ec41aafcf5ac5d0f8d6, type: 3}
   TH_Idle: TH_Idle_Sword_01
@@ -29,7 +28,9 @@ MonoBehaviour:
   weapon_Art: 
   baseDamage: 25
   criticalDamageMultiplier: 4
-  physicalDamageAbsorption: 99
+  poiseBreak: 0
+  offensivePoiseBonus: 0
+  physicalDamageAbsorption: 76
   baseStaminaCost: 20
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0

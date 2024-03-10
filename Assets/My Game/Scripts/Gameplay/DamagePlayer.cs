@@ -13,7 +13,7 @@ public class DamagePlayer : MonoBehaviour
 
         if(playerStats != null)
         {
-            playerStats.TakeDamage(damage);
+            playerStats.TakeDamage(damage, 0);
         }
     }
 }

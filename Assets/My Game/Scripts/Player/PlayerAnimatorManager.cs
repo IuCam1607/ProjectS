@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlayerAnimatorManager : AnimatorManager
 {
+    public PassThroughFogWall passThroughFogWall;
     private PlayerManager player;
 
     int vertical;
     int horizontal;
 
-    private void Awake()
+    protected override void Awake()
     {
-        player = GetComponentInParent<PlayerManager>();
+        base.Awake();
+        characterManager = GetComponent<CharacterManager>();
+        player = GetComponent<PlayerManager>();
         animator = GetComponent<Animator>();
-        characterManager = GetComponentInParent<CharacterManager>();
 
         vertical = Animator.StringToHash("Vertical");
         horizontal = Animator.StringToHash("Horizontal");
@@ -51,55 +53,21 @@ public class PlayerAnimatorManager : AnimatorManager
         //player.canMove = canMove;
     }
 
-
     public void ApplyJumpingVelocity()
     {
         player.playerLocomotion.yVelocity.y = Mathf.Sqrt(player.playerLocomotion.jumpHeight * -2 * player.playerLocomotion.gravityForce);
     }
 
-    public void CanRotate()
+
+    public void EnableCollision()
     {
-        animator.SetBool("canRotate", true);
+        passThroughFogWall.fogEntranceCollider.enabled = true;
+        passThroughFogWall.fogWallCollider.enabled = true;
     }
 
-    public void StopRotate()
+    public void DisableCollision()
     {
-        animator.SetBool("canRotate", false);
-    }
-
-    public void EnebleCombo()
-    {
-        animator.SetBool("canDoCombo", true);
-    }
-
-    public void DisableCombo()
-    {
-        animator.SetBool("canDoCombo", false);
-    }
-
-    public void EnableIsInvulnerable()
-    {
-        animator.SetBool("isInvulnerable", true);
-    }
-
-    public void DisableIsInvulnerable()
-    {
-        animator.SetBool("isInvulnerable", false);
-    }
-
-    public void EnableCanBeRiposted()
-    {
-        player.canBeRiposted = true;
-    }
-
-    public void DisableCanBeRiposted()
-    {
-        player.canBeRiposted = false;
-    }
-
-    public override void TakeCriticalDamageAnimationEvent()
-    {
-        player.playerStatsManager.TakeDamageNoAnimation(player.pendingCriticalDamage);
-        player.pendingCriticalDamage = 0;
+        passThroughFogWall.fogEntranceCollider.enabled = false;
+        passThroughFogWall.fogWallCollider.enabled = false;
     }
 }

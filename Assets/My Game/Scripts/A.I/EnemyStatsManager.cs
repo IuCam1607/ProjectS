@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStatsManager : CharacterStatsManager
 {
-    EnemyManager enemyManager;
+    EnemyBossManager enemyBossManager;
     CapsuleCollider capsuleCollider;
     EnemyAnimatorManager enemyAnimatorManager;
 
@@ -12,19 +12,24 @@ public class EnemyStatsManager : CharacterStatsManager
 
     public int soulsAwardedOnDeath = 50;
 
+    public bool isBoss;
+
     private void Awake()
     {
-        enemyManager = GetComponent<EnemyManager>();
+        enemyBossManager = GetComponent<EnemyBossManager>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
+        enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
+
+        maxHealth = SetMaxHealthFromHealthLevel();
+        currentHealth = maxHealth;
     }
 
     private void Start()
     {
-        maxHealth = SetMaxHealthFromHealthLevel();
-        currentHealth = maxHealth;
-        enemyHealthBar.SetMaxHealth((int)maxHealth);
-
+        if (!isBoss)
+        {
+            enemyHealthBar.SetMaxHealth((int)maxHealth);
+        }
     }
 
     private float SetMaxHealthFromHealthLevel()
@@ -33,14 +38,43 @@ public class EnemyStatsManager : CharacterStatsManager
         return maxHealth;
     }
 
-    public void TakeDamageNoAnimation(int damage)
+    public override void TakeDamageNoAnimation(int physicalDamage, int fireDamage)
+    {
+        base.TakeDamageNoAnimation(physicalDamage, fireDamage);
+
+        if (!isBoss)
+        {
+            enemyHealthBar.SetHealth(Mathf.RoundToInt(currentHealth));
+        }
+        else if (isBoss && enemyBossManager != null)
+        {
+            enemyBossManager.UpdateBossHealthBar(Mathf.RoundToInt(currentHealth), Mathf.RoundToInt(maxHealth));
+        }
+
+        if (currentHealth <= 0)
+        {
+            HandleDeath();
+        }
+
+    }
+
+    public override void TakeDamage(int physicalDamage,int fireDamage, string damageAnimation = "Damage_01")
     {
         if (isDead)
             return;
 
-        currentHealth -= damage;
+        base.TakeDamage(physicalDamage, fireDamage, damageAnimation = "Damage_01");
 
-        //enemyHealthBar.SetHealth((int)currentHealth);
+        if (!isBoss)
+        {
+            enemyHealthBar.SetHealth(Mathf.RoundToInt(currentHealth));
+        }
+        else if (isBoss && enemyBossManager != null)
+        {
+            enemyBossManager.UpdateBossHealthBar(Mathf.RoundToInt(currentHealth), Mathf.RoundToInt(maxHealth));
+        }
+
+        enemyAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
 
         if (currentHealth <= 0)
         {
@@ -48,21 +82,10 @@ public class EnemyStatsManager : CharacterStatsManager
         }
     }
 
-    public override void TakeDamage(int damage, string damageAnimation = "Damage_01")
+    public void GuardBreak()
     {
-        if (isDead)
-            return;
-
-        base.TakeDamage(damage, damageAnimation = "Damage_01");
-
-        ////enemyHealthBar.SetHealth((int)currentHealth);
-
-        //enemyAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
-
-        if (currentHealth <= 0)
-        {
-            HandleDeath();
-        }
+        enemyAnimatorManager.PlayTargetActionAnimation("Guard Break", true);
+        totalPoiseDefence = armorPoiseBonus;
     }
 
     private void HandleDeath()

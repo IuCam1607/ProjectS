@@ -15,6 +15,9 @@ public class PlayerLocomotion : MonoBehaviour
     [HideInInspector] public float horizontalMovement;
     [HideInInspector] public float moveAmount;
 
+    public Collider characterCollider;
+    public CapsuleCollider characterCollisionBlockerCollider;
+
     [Header("Ground Check & Jumping")]
     [SerializeField] public float gravityForce = -5.55f;
     [SerializeField] private LayerMask groundLayer;
@@ -34,7 +37,6 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private float sprintingSpeed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float sprintingStaminaCost = 1;
-
 
     [Header("Dodge")]
     private Vector3 rollDirection;
@@ -59,7 +61,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void Start()
     {
-
+        Physics.IgnoreCollision(characterCollider, characterCollisionBlockerCollider, true);
     }
 
     private void Update()
@@ -322,7 +324,7 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         }
 
-        player.playerAnimationManager.PlayTargetActionAnimation("Main_Jump_01", false);
+        player.playerAnimationManager.PlayTargetActionAnimation("Main_Jump_01", false, true, true);
 
         player.isJumping = true;
  

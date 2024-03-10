@@ -18,9 +18,6 @@ public class EnemyManager : CharacterManager
     public float rotationSpeed = 25;
     public float maximumAggroRadius = 1.5f;
 
-    [Header("Combat Flags")]
-    public bool canDoCombo;
-
     [Header("A.I Settings")]
     public float detectionRadius = 20;
     public float minimumDetectionAngle = -50;
@@ -29,14 +26,13 @@ public class EnemyManager : CharacterManager
     [Header("A.I Combat Settings")]
     public bool allowAIToPerformCombos;
     public float comboLikelyHood;
-
     public float currentRecoveryTime = 0;
-
+    public bool isPhaseShifting;
 
     private void Awake()
     {
         enemyLocomotion = GetComponent<EnemyLocomotionManager>();
-        enemyAnimator = GetComponentInChildren<EnemyAnimatorManager>();
+        enemyAnimator = GetComponent<EnemyAnimatorManager>();
         enemyStats = GetComponent<EnemyStatsManager>();
         enemyRigidbody = GetComponent<Rigidbody>();
         backStabCollider = GetComponentInChildren<CriticalDamageCollider>();
@@ -54,8 +50,15 @@ public class EnemyManager : CharacterManager
         HandleRecoveryTimer();
         HandleStateMachine();
 
+        if (enemyStats.isBoss)
+        {
+            isPhaseShifting = enemyAnimator.animator.GetBool("isPhaseShifting");
+        }
+
         isRotatingWithRootMotion = enemyAnimator.animator.GetBool("isRotatingWithRootMotion");
-        isInteracting = enemyAnimator.animator.GetBool("isInteracting");
+        isInteracting = enemyAnimator.animator.GetBool("isInteracting");      
+        isInvulnerable = enemyAnimator.animator.GetBool("isInvulnerable");
+        canRotate = enemyAnimator.animator.GetBool("canRotate");
         enemyAnimator.animator.SetBool("isDead", enemyStats.isDead);
         canDoCombo = enemyAnimator.animator.GetBool("canDoCombo");
         canRotate = enemyAnimator.animator.GetBool("canRotate");

@@ -46,7 +46,7 @@ public class AttackState : State
 
     private void AttackTarget(EnemyAnimatorManager enemyAnimator, EnemyManager enemyManager)
     {
-        enemyAnimator.PlayTargetActionAnimation(currentAttack.actionAnimation, true);
+        enemyAnimator.PlayTargetActionAnimation(currentAttack.actionAnimation, true, true, true);
         enemyAnimator.animator.SetBool("isInteracting", true);
         enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
         hasPerformedAttack = true;
@@ -56,7 +56,7 @@ public class AttackState : State
     private void AttackTargetWithCombo(EnemyAnimatorManager enemyAnimator, EnemyManager enemyManager)
     {
         willDoComboOnNextAttack = false;
-        enemyAnimator.PlayTargetActionAnimation(currentAttack.actionAnimation, true);
+        enemyAnimator.PlayTargetActionAnimation(currentAttack.actionAnimation, true, true, true);
         enemyAnimator.animator.SetBool("isInteracting", true);
         enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
         currentAttack = null;

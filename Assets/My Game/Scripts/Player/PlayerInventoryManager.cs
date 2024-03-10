@@ -6,7 +6,7 @@ public class PlayerInventoryManager : MonoBehaviour
 {
     PlayerManager player;
 
-    WeaponSlotManager weaponSlotManager;
+    PlayerWeaponSlotManager weaponSlotManager;
 
     [Header("Quick Slots Item")]
     public SpellItem currentSpell;
@@ -17,20 +17,19 @@ public class PlayerInventoryManager : MonoBehaviour
     [Header("Current Equipment")]
     public HelmetEquipment currentHelmetEquipment;
 
-    public WeaponItem unarmedWeapon;
-
     [Header("Quick Slots Weapon")]
-    public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1];
     public int rightHandWeaponIndex;
-    public WeaponItem[] weaponsInLeftHandSlots = new WeaponItem[1];
+    public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1];
     public int leftHandWeaponIndex;
+    public WeaponItem[] weaponsInLeftHandSlots = new WeaponItem[1];
+
 
     public List<WeaponItem> weaponInventory;
 
     private void Awake()
     {
         player = GetComponent<PlayerManager>();
-        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+        weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
     }
     private void Start()
     {
@@ -71,8 +70,8 @@ public class PlayerInventoryManager : MonoBehaviour
         if (rightHandWeaponIndex > weaponsInRightHandSlots.Length - 1)
         {
             rightHandWeaponIndex = -1;
-            rightWeapon = unarmedWeapon;
-            weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+            rightWeapon = weaponSlotManager.unarmedWeapon;
+            weaponSlotManager.LoadWeaponOnSlot(weaponSlotManager.unarmedWeapon, false);
         }
     }
 
@@ -107,8 +106,8 @@ public class PlayerInventoryManager : MonoBehaviour
         if (leftHandWeaponIndex > weaponsInLeftHandSlots.Length - 1)
         {
             leftHandWeaponIndex = -1;
-            leftWeapon = unarmedWeapon;
-            weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
+            leftWeapon = weaponSlotManager.unarmedWeapon;
+            weaponSlotManager.LoadWeaponOnSlot(weaponSlotManager.unarmedWeapon, true);
         }
     }
 }

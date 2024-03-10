@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Interactable
   - Hittable
+  - Effect
+  - Character
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
   - Damage Collider
+  - Player
   - Character
   - Interactable
   - Environment
@@ -25,7 +27,7 @@ TagManager:
   - BackStab
   - Character Collider Blocker
   - Riposte
-  - 
+  - Player
   - 
   - 
   - 

@@ -40,6 +40,18 @@ public class PlayerStatsManager : CharacterStatsManager
         focusPointBar.SetCurrentStamina(currentFocusPoint);
     }
 
+    public override void HandlePoiseResetTimer()
+    {
+        if (poiseResetTimer > 0)
+        {
+            poiseResetTimer -= Time.deltaTime;
+        }
+        else if (poiseResetTimer <= 0 && !playerManager.isPerformingAction)
+        {
+            totalPoiseDefence = armorPoiseBonus;
+        }
+    }
+
     public void RefreshHUD()
     {
         healthBar.gameObject.SetActive(false);
@@ -66,23 +78,24 @@ public class PlayerStatsManager : CharacterStatsManager
         return maxFocusPoint;
     }
 
-    public void TakeDamageNoAnimation(int damage)
+    public override void TakeDamageNoAnimation(int physicalDamage, int fireDamage)
     {
-        currentHealth -= damage;
+        base.TakeDamageNoAnimation(physicalDamage, fireDamage);
+
+        healthBar.SetCurrentHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
-            isDead = true;
+            StartCoroutine(ProcessDeathEvent());
         }
     }
 
-    public override void TakeDamage(int damage, string damageAnimation = "Damage_01")
+    public override void TakeDamage(int physicalDamage, int fireDamage, string damageAnimation = "Damage_01")
     {
         if (playerManager.isInvulnerable)
             return;
 
-        base.TakeDamage(damage, damageAnimation);
+        base.TakeDamage(physicalDamage, fireDamage, damageAnimation);
 
         healthBar.SetCurrentHealth(currentHealth);
         Debug.Log("Player Health: " + currentHealth);
@@ -93,8 +106,6 @@ public class PlayerStatsManager : CharacterStatsManager
             StartCoroutine(ProcessDeathEvent());
         }
     }
-
-
 
     public void TakeStaminaCost(float cost)
     {

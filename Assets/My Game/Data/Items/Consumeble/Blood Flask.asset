@@ -16,14 +16,13 @@ MonoBehaviour:
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 21300000, guid: 1c7af98cc58af944f980acfe62448e35, type: 3}
   itemDescription: 
-  itemID: 0
-  maxItemAmount: 10
-  currentItemAmount: 10
+  maxItemAmount: 3
+  currentItemAmount: 3
   itemModel: {fileID: 5207496987118038045, guid: 0cb41334c3edde946a939dd4be257816, type: 3}
   consumeAnimation: Drink
   isInteracting: 0
   hpFlash: 1
   fpFlash: 0
-  healthRecoveryAmount: 250
+  healthRecoveryAmount: 50
   focusPointRecoveryAmount: 0
   recoveryFX: {fileID: 100006, guid: d28b4386871604a438ddf78440a6d10a, type: 3}

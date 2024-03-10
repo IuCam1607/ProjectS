@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCombatManager : MonoBehaviour
 {
     PlayerManager player;
-    WeaponSlotManager weaponSlotManager;
+    PlayerWeaponSlotManager weaponSlotManager;
     public AnimatorManager animatorManager;
 
     LayerMask backStabLayer = 1 << 14;
@@ -15,15 +15,20 @@ public class PlayerCombatManager : MonoBehaviour
 
     private void Awake()
     {
-        animatorManager = GetComponentInParent<AnimatorManager>();  
-        weaponSlotManager = GetComponent<WeaponSlotManager>();
-        player = GetComponentInParent<PlayerManager>();
+        animatorManager = GetComponent<AnimatorManager>();  
+        weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
+        player = GetComponent<PlayerManager>();
     }
 
     public void HandleWeaponCombo(WeaponItem weapon)
     {
         if (player.playerStatsManager.currentStamina <= 0)
             return;
+
+        if (weapon.isUnarmed)
+        {
+            return;
+        }
 
         if (player.playerInput.comboFlag)
         {
@@ -274,7 +279,7 @@ public class PlayerCombatManager : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Slerp(player.transform.rotation, tr, 500 * Time.deltaTime);
                 player.transform.rotation = targetRotation;
 
-                int criticalDamage = player.playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.currentWeaponDamage;
+                int criticalDamage = player.playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.physicalDamage;
                 enemyCharacterManager.pendingCriticalDamage = criticalDamage;
 
                 player.playerAnimationManager.PlayTargetActionAnimation("Back Stab", true);
@@ -301,7 +306,7 @@ public class PlayerCombatManager : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Slerp(player.transform.rotation, tr, 500 * Time.deltaTime);
                 player.transform.rotation = targetRotation;
 
-                int criticalDamage = player.playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.currentWeaponDamage;
+                int criticalDamage = player.playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.physicalDamage;
                 enemyCharacterManager.pendingCriticalDamage = criticalDamage;
 
                 player.playerAnimationManager.PlayTargetActionAnimation("Riposte", true);

@@ -16,7 +16,7 @@ public class FlaskItem : ConsumableItem
     [Header("Recovery FX")]
     public GameObject recoveryFX;
 
-    public override void AttempToConsumeItem(PlayerAnimatorManager playerAnimator, WeaponSlotManager weaponSlotManager, PlayerEffectManager playerEffectManager)
+    public override void AttempToConsumeItem(PlayerAnimatorManager playerAnimator, PlayerWeaponSlotManager weaponSlotManager, PlayerEffectManager playerEffectManager)
     {
         base.AttempToConsumeItem(playerAnimator, weaponSlotManager, playerEffectManager);
         GameObject flask = Instantiate(itemModel, weaponSlotManager.rightHandSlot.transform);

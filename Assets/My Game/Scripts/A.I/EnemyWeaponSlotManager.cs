@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWeaponSlotManager : MonoBehaviour
+public class EnemyWeaponSlotManager : CharacterWeaponSlotManager
 {
     public WeaponItem rightHandWeapon;
     public WeaponItem leftHandWeapon;
 
-    WeaponHolderSlot rightHandSlot;
-    WeaponHolderSlot leftHandSlot;
-
-    DamageCollider leftHandDamageCollider;
-    DamageCollider rightHandDamageCollider;
+    EnemyStatsManager enemyStats;
 
     private void Awake()
+    {
+        enemyStats = GetComponent<EnemyStatsManager>();
+        LoadWeaponHolderSlots();
+    }
+
+    private void Start()
+    {
+        LoadWeaponOnBothHands();
+    }
+
+    private void LoadWeaponHolderSlots()
     {
         WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
 
@@ -28,11 +35,6 @@ public class EnemyWeaponSlotManager : MonoBehaviour
                 rightHandSlot = weaponSlot;
             }
         }
-    }
-
-    private void Start()
-    {
-        LoadWeaponOnBothHands();
     }
 
     public void LoadWeaponOnSlot(WeaponItem weapon, bool isLeft)
@@ -68,10 +70,23 @@ public class EnemyWeaponSlotManager : MonoBehaviour
         if (isLeft)
         {
             leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+            leftHandDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+
+            leftHandDamageCollider.physicalDamage = leftHandWeapon.physicalDamage;
+            leftHandDamageCollider.fireDamage = leftHandWeapon.fireDamage;
+
+            leftHandDamageCollider.teamIDNumber = enemyStats.teamIDNumber;
+
         }
         else
         {
             rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+            rightHandDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+
+            rightHandDamageCollider.physicalDamage = rightHandWeapon.physicalDamage;
+            rightHandDamageCollider.fireDamage = rightHandWeapon.fireDamage;
+
+            rightHandDamageCollider.teamIDNumber = enemyStats.teamIDNumber;
         }
     }
 
@@ -95,13 +110,14 @@ public class EnemyWeaponSlotManager : MonoBehaviour
 
     }
 
-    public void EnableCombo()
-    {
 
+    public void GrantWeaponAttackingPoiseBonus()
+    {
+        enemyStats.totalPoiseDefence = enemyStats.totalPoiseDefence + enemyStats.offensivePoiseBonus;
     }
 
-    public void DisableCombo()
+    public void ResetWeaponAttackingPoiseBonus()
     {
-
+        enemyStats.totalPoiseDefence = enemyStats.armorPoiseBonus;
     }
 }

@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class EnemyAnimatorManager : AnimatorManager
 {
+    EnemyBossManager enemyBossManager;
     EnemyManager enemyManager;
 
-    private void Awake()
+    protected override void Awake()
     {
-        characterManager = GetComponentInParent<CharacterManager>();
-        enemyManager = GetComponentInParent<EnemyManager>();    
+        base.Awake();
+        enemyManager = GetComponent<EnemyManager>();
+        enemyBossManager = GetComponent<EnemyBossManager>();
+        characterManager = GetComponent<CharacterManager>();
         animator = GetComponent<Animator>();
         animator.applyRootMotion = true;
     }
@@ -32,57 +35,13 @@ public class EnemyAnimatorManager : AnimatorManager
     public override void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false)
     {
         base.PlayTargetActionAnimation(targetAnimation, isPerformingAction, applyRootMotion, canRotate, canMove);
-        //enemyManager.applyRootMotion = applyRootMotion;
-        //animator.CrossFade(targetAnimation, 0.2f);
-        //enemyManager.isPerformingAction = isPerformingAction;
-        //enemyManager.canRotate = canRotate;
-        //enemyManager.canMove = canMove;
     }
 
-    public override void TakeCriticalDamageAnimationEvent()
+    public void InstantiateBossParticleFX()
     {
-        enemyManager.enemyStats.TakeDamageNoAnimation(enemyManager.pendingCriticalDamage);
-        enemyManager.pendingCriticalDamage = 0;
-    }
+        BossFXTransform bossFXTransform = GetComponentInChildren<BossFXTransform>();
 
-    public void CanRotate()
-    {
-        enemyManager.canRotate = true;
-    }
-
-    public void StopRotate()
-    {
-        enemyManager.canRotate = false;
-    }
-
-    public void EnebleCombo()
-    {
-        animator.SetBool("canDoCombo", true);
-    }
-
-    public void DisableCombo()
-    {
-        animator.SetBool("canDoCombo", false);
-    }
-
-    public void EnableIsInvulnerable()
-    {
-        animator.SetBool("isInvulnerable", true);
-    }
-
-    public void DisableIsInvulnerable()
-    {
-        animator.SetBool("isInvulnerable", false);
-    }
-
-    public void EnableCanBeRiposted()
-    {
-        enemyManager.canBeRiposted = true;
-    }
-
-    public void DisableCanBeRiposted()
-    {
-        enemyManager.canBeRiposted = false;
+        GameObject phaseFX = Instantiate(enemyBossManager.particleFX, bossFXTransform.transform);
     }
 
     public void AwardSoulsOnDeath()

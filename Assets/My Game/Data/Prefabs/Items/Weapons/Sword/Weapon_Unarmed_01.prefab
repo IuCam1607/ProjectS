@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2711235663073480423}
-  - component: {fileID: 1993736417368569400}
+  - component: {fileID: 3300859878364731940}
   - component: {fileID: 8211417949969699697}
   m_Layer: 10
   m_Name: Damage Collider
@@ -129,7 +129,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9173277991436909520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1993736417368569400
+--- !u!114 &3300859878364731940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,11 +138,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8245476229157521223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc7e1fb64e3d704694828e525c3ddf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7176030ed7917524eb18b77db252e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeaponDamage: 20
-  playerCausingDamage: {fileID: 0}
+  enableDamageColliderOnStartUp: 0
+  poiseBreak: 0
+  offensivePoiseDefence: 0
+  currentWeaponDamage: 1
 --- !u!135 &8211417949969699697
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -158,9 +160,9 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}

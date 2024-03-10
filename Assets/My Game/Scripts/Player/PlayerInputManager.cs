@@ -10,7 +10,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
     private PlayerInventoryManager playerInventoryManager;
-    private WeaponSlotManager weaponSlotManager;
+    private PlayerWeaponSlotManager weaponSlotManager;
     private BlockingCollider blockingCollider;
 
     public PlayerManager player;
@@ -59,7 +59,7 @@ public class PlayerInputManager : MonoBehaviour
     private void Awake()
     {
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
-        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+        weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
         blockingCollider = GetComponentInChildren<BlockingCollider>();
 
         if (instance == null)
@@ -427,7 +427,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleUseConsumableItem()
     {
-        if (player.isPerformingAction)
+        if (player.isPerformingAction || !player.isGrounded)
             return;
 
         if (useItemInput)

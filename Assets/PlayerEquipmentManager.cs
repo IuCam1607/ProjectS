@@ -17,7 +17,7 @@ public class PlayerEquipmentManager : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponentInParent<PlayerManager>();
+        player = GetComponent<PlayerManager>();
         helmetModelChanger = GetComponentInChildren<HelmetModelChanger>();
 
     }

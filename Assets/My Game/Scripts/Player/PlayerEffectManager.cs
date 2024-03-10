@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerEffectManager : MonoBehaviour
+public class PlayerEffectManager : CharacterEffectManager
 {
     PlayerStatsManager playerStats;
-    WeaponSlotManager weaponSlotManager;
+    PlayerWeaponSlotManager weaponSlotManager;
     public GameObject currentParticleFX;
     public GameObject instantiatedFXModel;
     public int amountToBeHealed;
 
     private void Awake()
     {
-        playerStats = GetComponentInParent<PlayerStatsManager>();
-        weaponSlotManager = GetComponent<WeaponSlotManager>();
+        playerStats = GetComponent<PlayerStatsManager>();
+        weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
     }
 
     public void HealPlayerFromEffect(int healAmount)

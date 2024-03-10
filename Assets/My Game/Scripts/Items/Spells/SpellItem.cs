@@ -23,7 +23,7 @@ public class SpellItem : Item
 
     public virtual void AttempToCastSpell(PlayerAnimatorManager playerAnimator, 
         PlayerStatsManager playerStats, 
-        WeaponSlotManager weaponSlotManager)
+        PlayerWeaponSlotManager weaponSlotManager)
     {
         Debug.Log("You attemp to cast a Spell!");
     }
@@ -31,7 +31,7 @@ public class SpellItem : Item
     public virtual void SuccessfullyCastSpell(PlayerAnimatorManager playerAnimator, 
         PlayerStatsManager playerStats, 
         PlayerCamera playerCamera, 
-        WeaponSlotManager weaponSlotManager)
+        PlayerWeaponSlotManager weaponSlotManager)
     {
         Debug.Log("You Successfully cast a Spell!");
         playerStats.DeductFocusPoints(focusPointCost);
