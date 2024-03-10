@@ -111,7 +111,15 @@ public class PlayerWeaponSlotManager : CharacterWeaponSlotManager
 
         GameObject activeModelBomb = Instantiate(fireBombItem.liveBombModel, rightHandSlot.transform.position, PlayerCamera.instance.cameraPivotTransform.rotation);
         activeModelBomb.transform.rotation = Quaternion.Euler(PlayerCamera.instance.cameraPivotTransform.eulerAngles.x, player.lockOnTransform.eulerAngles.y, 0);
+        BombDamageCollider damageCollider = activeModelBomb.GetComponentInChildren<BombDamageCollider>();
 
+        Debug.Log(damageCollider);
+        Debug.Log(activeModelBomb);
+        damageCollider.explosionDamage = fireBombItem.baseDamage;
+        damageCollider.explosionSplashDamage = fireBombItem.explosiveDamage;
+        damageCollider.bombRigidbody.AddForce(activeModelBomb.transform.forward * fireBombItem.forwardVelocity);
+        damageCollider.bombRigidbody.AddForce(activeModelBomb.transform.up * fireBombItem.upwardVelocity);
+        LoadWeaponOnSlot(player.playerInventoryManager.rightWeapon, false);
     }
 
     #region Handle Weapon Damage Collider

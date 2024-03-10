@@ -6,9 +6,10 @@ public class BombDamageCollider : DamageCollider
 {
     [Header("Explosive Damage & Radius")]
     public int explosiveRadius = 1;
-    public int fireExplosionDamage;
+    public int explosionDamage;
+    public int explosionSplashDamage;
 
-    Rigidbody bombRigidbody;
+    public Rigidbody bombRigidbody;
     private bool hasCollided = false;
     public GameObject impactParticles;
 
@@ -30,11 +31,11 @@ public class BombDamageCollider : DamageCollider
 
             if (character != null)
             {
-                character.TakeDamage(0, fireDamage);
+                character.TakeDamage(0, explosionDamage);
             }
 
             Destroy(impactParticles, 5f);
-            Destroy(transform.parent.gameObject);
+            Destroy(transform.parent.parent.gameObject);
         }
     }
 
@@ -48,7 +49,7 @@ public class BombDamageCollider : DamageCollider
 
             if (character != null)
             {
-                
+                character.TakeDamage(0, explosionSplashDamage);
             }
         }
     }

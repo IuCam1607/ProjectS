@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d5d849900ad724086a3d52e96cb816, type: 3}
   m_Name: Black Fire Bomb
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Black Fire Bomb
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 0}
   itemDescription: 
@@ -26,3 +26,4 @@ MonoBehaviour:
   bombMass: 1
   liveBombModel: {fileID: 202787282280216391, guid: 78bd5765e768f9e43a844a4ce6008d3f, type: 3}
   baseDamage: 100
+  explosiveDamage: 50

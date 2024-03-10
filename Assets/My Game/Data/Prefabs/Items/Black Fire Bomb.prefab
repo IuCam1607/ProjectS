@@ -285,7 +285,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.019879187
+  m_Radius: 0.01
   m_Center: {x: -0.0000000050635593, y: -0.010120819, z: -2.8519934e-10}
 --- !u!54 &6341949075544024604
 Rigidbody:
@@ -339,5 +339,7 @@ MonoBehaviour:
   darkDamage: 0
   staminaDamage: 0
   explosiveRadius: 1
-  fireExplosionDamage: 0
-  impactParticles: {fileID: 0}
+  explosionDamage: 0
+  explosionSplashDamage: 0
+  bombRigidbody: {fileID: 0}
+  impactParticles: {fileID: 4503145756226807100, guid: 9f464992f800c1842972dad7bb86c0d2, type: 3}

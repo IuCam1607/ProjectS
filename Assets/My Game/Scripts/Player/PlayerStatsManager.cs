@@ -17,9 +17,6 @@ public class PlayerStatsManager : CharacterStatsManager
     private void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
-        staminaBar = FindAnyObjectByType<StaminaBar>();
-        healthBar = FindAnyObjectByType<HealthBar>();
-        focusPointBar = FindAnyObjectByType<FocusPointBar>();
     }
 
     private void Start()
