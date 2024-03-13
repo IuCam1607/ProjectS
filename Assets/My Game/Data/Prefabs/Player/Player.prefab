@@ -923,8 +923,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888236586550769853}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.071995154, y: 0.058175236, z: -0.0871678, w: 0.9918842}
-  m_LocalPosition: {x: 0.03476414, y: -0.47357792, z: -0.07869689}
+  m_LocalRotation: {x: -0.052664414, y: 0.07047051, z: -0.04110619, w: 0.9952741}
+  m_LocalPosition: {x: 0.034820937, y: -0.47435164, z: -0.07882547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1348,6 +1348,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockingCollider: {fileID: 0}
   blockingPhysicalDamageAbsorption: 0
+  blockingFireDamageAbsorption: 0
+  blockingMagicDamageAbsorption: 0
+  blockingLightningDamageAbsorption: 0
+  blockingDarkDamageAbsorption: 0
 --- !u!1 &1412314679240204613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,7 +2055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2267131158156978451}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09533264, y: -0.05537818, z: 0.083392486, w: 0.9903993}
+  m_LocalRotation: {x: -0.049864925, y: -0.074039884, z: 0.03878339, w: 0.9952525}
   m_LocalPosition: {x: -0.034764126, y: -0.47357792, z: -0.07869688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2799,8 +2803,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2965998150194097275}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.112708814, y: 0.006381318, z: -0.010581169, w: 0.9935512}
-  m_LocalPosition: {x: 0.018605232, y: -0.28036606, z: 0.0022652128}
+  m_LocalRotation: {x: 0.1810893, y: 0.020801509, z: -0.0026269269, w: 0.98324317}
+  m_LocalPosition: {x: 0.018634865, y: -0.28082377, z: 0.0022654273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3007,7 +3011,7 @@ GameObject:
   - component: {fileID: 6354381845887174435}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3020,7 +3024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3263188451479487453}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 102.622, y: 3.8693879, z: 50.304585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3031,7 +3035,7 @@ Transform:
   - {fileID: 3842716979492838396}
   - {fileID: 501920045886452025}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &7107552071901388834
 Animator:
   serializedVersion: 5
@@ -3103,6 +3107,7 @@ MonoBehaviour:
   isGrounded: 1
   inventoryFlag: 0
   isRolling: 0
+  isTwoHandingWeapon: 0
   canBeRiposted: 0
   canbeParried: 0
   isBlocking: 0
@@ -3122,6 +3127,7 @@ MonoBehaviour:
   playerInventoryManager: {fileID: 0}
   playerCombatManager: {fileID: 0}
   playerEquipment: {fileID: 0}
+  playerWeaponSlotManager: {fileID: 0}
   interactableUIGameObject: {fileID: 0}
   itemInteractableGameObject: {fileID: 0}
 --- !u!114 &309906418508692468
@@ -3191,7 +3197,6 @@ MonoBehaviour:
   sprintInput: 0
   jumpInput: 0
   shiftInput: 0
-  attackInput: 0
   interactInput: 0
   selectInput: 0
   lockOnInput: 0
@@ -3199,6 +3204,7 @@ MonoBehaviour:
   switchLeftTargetInput: 0
   twoHandInput: 0
   criticalAttackInput: 0
+  leftMouseInput: 0
   rightMouseInput: 0
   useItemInput: 0
   criticalAttackCastStartPoint: {fileID: 5934028242470090804}
@@ -3214,9 +3220,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9341ea6888a10f84db91d3a6f03df999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamIDNumber: 0
+  playerLevel: 1
   vitalityLevel: 10
   focusLevel: 10
   enduranceLevel: 10
+  poiseLevel: 10
+  strengthLevel: 10
+  dexterityLevel: 10
+  intelligenceLevel: 10
+  faithLevel: 10
   currentHealth: 0
   maxHealth: 0
   currentFocusPoint: 0
@@ -3230,7 +3243,8 @@ MonoBehaviour:
   poiseResetTimer: 0
   isDead: 0
   physicalDamageAbsorptionHead: 0
-  soulCount: 0
+  fireDamageAbsorptionHead: 0
+  currentBlood: 9000
   staminaBar: {fileID: 0}
   healthBar: {fileID: 0}
   focusPointBar: {fileID: 0}
@@ -3253,11 +3267,11 @@ MonoBehaviour:
   leftWeapon: {fileID: 11400000, guid: 1137b9dea6e719b4da02b4f8602311ab, type: 2}
   currentConsumable: {fileID: 11400000, guid: 136457b997b920a4ab35cba7668c8be3, type: 2}
   currentHelmetEquipment: {fileID: 11400000, guid: d54f6a7a4a7f07a4fb3c0268254ce56a, type: 2}
-  rightHandWeaponIndex: -1
+  rightHandWeaponIndex: 0
   weaponsInRightHandSlots:
-  - {fileID: 11400000, guid: 8370b3f2968c87c4f91691674247079b, type: 2}
+  - {fileID: 11400000, guid: 75fb547fb6b8ce64985ce5e8aec0ff74, type: 2}
   - {fileID: 11400000, guid: 00cddfe2cf13a964aa9fbb3e7b367277, type: 2}
-  leftHandWeaponIndex: -1
+  leftHandWeaponIndex: 0
   weaponsInLeftHandSlots:
   - {fileID: 11400000, guid: 3e096fccc91ffe847a228e644d5b3a0c, type: 2}
   - {fileID: 11400000, guid: 75fb547fb6b8ce64985ce5e8aec0ff74, type: 2}
@@ -3335,9 +3349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c96ab8b3fd8814eac562e7f6368548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodSplatterFX: {fileID: 3795773127729422511, guid: 2075788aac1f9914db8a0ef44fda3154, type: 3}
   currentParticleFX: {fileID: 0}
   instantiatedFXModel: {fileID: 0}
   amountToBeHealed: 0
+  amountToBeManaRestored: 0
 --- !u!1 &3300431132010350438
 GameObject:
   m_ObjectHideFlags: 0
@@ -4331,8 +4347,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3872817625755583552}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.044589877, y: 0.0015058432, z: 0.047990568, w: 0.99785095}
-  m_LocalPosition: {x: 0.13414562, y: -0.09845984, z: 0}
+  m_LocalRotation: {x: -0.137065, y: -0.0065934528, z: 0.01508039, w: 0.99042535}
+  m_LocalPosition: {x: 0.13414368, y: -0.09845943, z: 0.0000033825636}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5237,8 +5253,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4636136287321821770}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.12716497, y: -0.02297452, z: -0.09940583, w: 0.9866204}
-  m_LocalPosition: {x: -0.13414562, y: -0.09845984, z: 0}
+  m_LocalRotation: {x: -0.2136163, y: -0.013877238, z: -0.061887436, w: 0.9748566}
+  m_LocalPosition: {x: -0.13414589, y: -0.098459736, z: -0.0000030100346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6485,7 +6501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1399706931417240910
 Transform:
   m_ObjectHideFlags: 0
@@ -8105,8 +8121,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7974278062006141944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21929556, y: -0.019231344, z: 0.00023009721, w: 0.97546893}
-  m_LocalPosition: {x: -0.018605217, y: -0.28036606, z: 0.0022666394}
+  m_LocalRotation: {x: 0.25593287, y: -0.038121287, z: -0.008383867, w: 0.9659063}
+  m_LocalPosition: {x: -0.018603012, y: -0.28036484, z: 0.0022636876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

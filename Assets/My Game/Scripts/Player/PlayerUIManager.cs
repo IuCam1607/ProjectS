@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerUIManager : MonoBehaviour
 {
     public static PlayerUIManager instance;
 
-    public PlayerInventoryManager playerInventoryManager;
+    PlayerManager player;
     public EquipmentWindowUI equipmentWindowUI;
 
     private QuickSlotsUI quickSlotsUI;
+
+    public TextMeshProUGUI bloodCount;
 
     [Header("UI Windows")]
     public GameObject hudWindow;
     public GameObject selectWindow;
     public GameObject equipmentScreenWindow;
     public GameObject weaponInventoryWindow;
+    public GameObject levelUpWindow;
 
     [Header("Equipment Window Slot Selected")]
     public bool rightHandSlot01Selected;
@@ -42,6 +46,7 @@ public class PlayerUIManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        player = FindAnyObjectByType<PlayerManager>();
         weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
         playerUIHudManager = GetComponentInChildren<PlayerUIHudManager>();
         playerUIPopUPManager = GetComponentInChildren<PlayerUIPopUPManager>();
@@ -51,9 +56,10 @@ public class PlayerUIManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        quickSlotsUI.UpdateCurrentSpellIcon(playerInventoryManager.currentSpell);
-        quickSlotsUI.UpdateCurrentConsumableIcon(playerInventoryManager.currentConsumable);
-        equipmentWindowUI.LoadWeaponOnEquipmentScreen(playerInventoryManager);
+        quickSlotsUI.UpdateCurrentSpellIcon(player.playerInventoryManager.currentSpell);
+        quickSlotsUI.UpdateCurrentConsumableIcon(player.playerInventoryManager.currentConsumable);
+        equipmentWindowUI.LoadWeaponOnEquipmentScreen(player.playerInventoryManager);
+        bloodCount.text = player.playerStatsManager.currentBlood.ToString();
     }
 
     public void UpdateUI()
@@ -61,14 +67,14 @@ public class PlayerUIManager : MonoBehaviour
         #region Weapon Inventory Slots
         for (int i = 0; i < weaponInventorySlots.Length; i++)
         {
-            if (i < playerInventoryManager.weaponInventory.Count)
+            if (i < player.playerInventoryManager.weaponInventory.Count)
             {
-                if (weaponInventorySlots.Length < playerInventoryManager.weaponInventory.Count)
+                if (weaponInventorySlots.Length < player.playerInventoryManager.weaponInventory.Count)
                 {
                     Instantiate(weaponInventorySlotPrefab, weaponInventorySlotsParent);
                     weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
                 }
-                weaponInventorySlots[i].AddItem(playerInventoryManager.weaponInventory[i]);
+                weaponInventorySlots[i].AddItem(player.playerInventoryManager.weaponInventory[i]);
             }
             else
             {
