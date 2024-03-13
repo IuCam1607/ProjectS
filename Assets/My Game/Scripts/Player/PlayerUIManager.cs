@@ -9,6 +9,8 @@ public class PlayerUIManager : MonoBehaviour
     public PlayerInventoryManager playerInventoryManager;
     public EquipmentWindowUI equipmentWindowUI;
 
+    private QuickSlotsUI quickSlotsUI;
+
     [Header("UI Windows")]
     public GameObject hudWindow;
     public GameObject selectWindow;
@@ -43,12 +45,15 @@ public class PlayerUIManager : MonoBehaviour
         weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
         playerUIHudManager = GetComponentInChildren<PlayerUIHudManager>();
         playerUIPopUPManager = GetComponentInChildren<PlayerUIPopUPManager>();
+        quickSlotsUI = GetComponentInChildren<QuickSlotsUI>();
     }
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
-        //equipmentWindowUI.LoadWeaponOnEquipmentScreen(playerInventoryManager);
+        quickSlotsUI.UpdateCurrentSpellIcon(playerInventoryManager.currentSpell);
+        quickSlotsUI.UpdateCurrentConsumableIcon(playerInventoryManager.currentConsumable);
+        equipmentWindowUI.LoadWeaponOnEquipmentScreen(playerInventoryManager);
     }
 
     public void UpdateUI()

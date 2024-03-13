@@ -17,23 +17,17 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemDescription: 
   isUnarmed: 0
+  weaponController: {fileID: 0}
+  weaponType: 3
+  offHandIdleAnimation: OH_Idle
   weaponModel: {fileID: 2723232960117139887, guid: bb13a6296e6a3e54aa369a52cd63b22a, type: 3}
-  TH_Idle: 
-  OH_Light_Attack_01: 
-  OH_Light_Attack_02: 
-  OH_Heavy_Attack_01: 
-  TH_Light_Attack_01: 
-  TH_Light_Attack_02: 
-  TH_Light_Attack_03: 
   weapon_Art: 
-  baseDamage: 25
+  physicalDamage: 30
+  fireDamage: 0
   criticalDamageMultiplier: 4
+  poiseBreak: 0
+  offensivePoiseBonus: 0
   physicalDamageAbsorption: 0
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0
-  isSpellCaster: 0
-  isFaithCaster: 0
-  isPyroCaster: 0
-  isMeleeWeapon: 0
-  isShieldWeapon: 0

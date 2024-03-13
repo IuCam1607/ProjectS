@@ -10,46 +10,25 @@ public class PlayerWeaponSlotManager : CharacterWeaponSlotManager
     PlayerStatsManager playerStats;
     PlayerManager player;
 
-    [Header("Attacking Weapon")]
-    public WeaponItem attackingWeapon;
 
-    private void Awake()
+
+    protected override void Awake()
     {
+        base.Awake();
         playerEffectManager = GetComponent<PlayerEffectManager>();
         playerStats = GetComponent<PlayerStatsManager>();
         player = GetComponent<PlayerManager>();
         quickSlotsUI = FindAnyObjectByType<QuickSlotsUI>();
-        InitializeWeaponSlots();
     }
 
-    private void InitializeWeaponSlots()
-    {
-        WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
 
-        foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
-        {
-            if (weaponSlot.isLeftHandSlot)
-            {
-                leftHandSlot = weaponSlot;
-            }
-            else if (weaponSlot.isRightHandSlot)
-            {
-                rightHandSlot = weaponSlot;
-            }
-            else if (weaponSlot.isBackSlot)
-            {
-                backSlot = weaponSlot;
-            }
-        }
-    }
-
-    public void LoadBothWeaponOnSlots()
+    public override void LoadBothWeaponOnSlots()
     {
         LoadWeaponOnSlot(player.playerInventoryManager.rightWeapon, false);
         LoadWeaponOnSlot(player.playerInventoryManager.leftWeapon, true);
     }
 
-    public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
+    public override void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
     {
         if (weaponItem != null)
         {
@@ -59,6 +38,7 @@ public class PlayerWeaponSlotManager : CharacterWeaponSlotManager
                 leftHandSlot.LoadWeaponModel(weaponItem);
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
                 LoadLeftWeaponDamageCollider();
+                player.playerAnimationManager.PlayTargetActionAnimation(weaponItem.offHandIdleAnimation, false, true, true);
             }
             else
             {
@@ -66,19 +46,17 @@ public class PlayerWeaponSlotManager : CharacterWeaponSlotManager
                 {
                     backSlot.LoadWeaponModel(leftHandSlot.currentWeapon);
                     leftHandSlot.UnloadWeaponAndDestroy();
-                    player.playerAnimationManager.animator.CrossFade(weaponItem.TH_Idle, 0.2f);
                 }
                 else
                 {
-                    player.playerAnimationManager.animator.CrossFade("Both Arms Empty", 0.2f);
-
                     backSlot.UnloadWeaponAndDestroy();
                 }
 
                 rightHandSlot.currentWeapon = weaponItem;
                 rightHandSlot.LoadWeaponModel(weaponItem);
-                quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
                 LoadRightWeaponDamageCollider();
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
+                player.playerAnimationManager.animator.runtimeAnimatorController = weaponItem.weaponController;
             }
         }
         else
@@ -98,10 +76,11 @@ public class PlayerWeaponSlotManager : CharacterWeaponSlotManager
                 player.playerInventoryManager.rightWeapon = unarmedWeapon;
                 rightHandSlot.currentWeapon = unarmedWeapon;
                 rightHandSlot.LoadWeaponModel(weaponItem);
-                quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
                 LoadRightWeaponDamageCollider();
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
+                player.playerAnimationManager.animator.runtimeAnimatorController = weaponItem.weaponController;
             }
-        }     
+        }
     }
 
     public void SuccessfullyThrowFireBomb()
@@ -110,71 +89,24 @@ public class PlayerWeaponSlotManager : CharacterWeaponSlotManager
         BombConsumableItem fireBombItem = player.playerInventoryManager.currentConsumable as BombConsumableItem;
 
         GameObject activeModelBomb = Instantiate(fireBombItem.liveBombModel, rightHandSlot.transform.position, PlayerCamera.instance.cameraPivotTransform.rotation);
-        activeModelBomb.transform.rotation = Quaternion.Euler(PlayerCamera.instance.cameraPivotTransform.eulerAngles.x, player.lockOnTransform.eulerAngles.y, 0);
         BombDamageCollider damageCollider = activeModelBomb.GetComponentInChildren<BombDamageCollider>();
 
-        Debug.Log(damageCollider);
-        Debug.Log(activeModelBomb);
+        if (PlayerCamera.instance.currentLockOnTarget != null)
+        {
+            activeModelBomb.transform.LookAt(PlayerCamera.instance.currentLockOnTarget.transform);
+        }
+        else
+        {
+            activeModelBomb.transform.rotation = Quaternion.Euler(PlayerCamera.instance.cameraPivotTransform.eulerAngles.x, playerStats.transform.eulerAngles.y, 0);
+        }
+
         damageCollider.explosionDamage = fireBombItem.baseDamage;
         damageCollider.explosionSplashDamage = fireBombItem.explosiveDamage;
         damageCollider.bombRigidbody.AddForce(activeModelBomb.transform.forward * fireBombItem.forwardVelocity);
         damageCollider.bombRigidbody.AddForce(activeModelBomb.transform.up * fireBombItem.upwardVelocity);
-        LoadWeaponOnSlot(player.playerInventoryManager.rightWeapon, false);
+        damageCollider.teamIDNumber = playerStats.teamIDNumber;
+
     }
-
-    #region Handle Weapon Damage Collider
-
-    private void LoadLeftWeaponDamageCollider()
-    {
-        leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-
-        leftHandDamageCollider.physicalDamage = player.playerInventoryManager.leftWeapon.physicalDamage;
-        leftHandDamageCollider.fireDamage = player.playerInventoryManager.leftWeapon.fireDamage;
-
-        leftHandDamageCollider.teamIDNumber = playerStats.teamIDNumber;
-
-        leftHandDamageCollider.poiseBreak = player.playerInventoryManager.leftWeapon.poiseBreak;
-    }
-
-    private void LoadRightWeaponDamageCollider()
-    {
-        rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-
-        rightHandDamageCollider.physicalDamage = player.playerInventoryManager.rightWeapon.physicalDamage;
-        rightHandDamageCollider.fireDamage = player.playerInventoryManager.rightWeapon.fireDamage;
-
-        rightHandDamageCollider.teamIDNumber = playerStats.teamIDNumber;
-
-        rightHandDamageCollider.poiseBreak = player.playerInventoryManager.rightWeapon.poiseBreak;
-    }
-
-    public void OpenDamageCollider()
-    {
-        if (player.isUsingRightHand)
-        {
-            rightHandDamageCollider.EnableDamageCollider();
-        }
-        else if (player.isUsingLeftHand)
-        {
-            leftHandDamageCollider.EnableDamageCollider();
-        }
-    }
-
-
-    public void CloseDamageCollider()
-    {
-        if (rightHandDamageCollider != null)
-        {
-            rightHandDamageCollider.DisableDamageCollider();
-        }
-        
-        if (leftHandDamageCollider != null)
-        {
-            leftHandDamageCollider.DisableDamageCollider();
-        }
-    }
-
-    #endregion
 
     #region Handle Weapon's Stamina Drainage
     public void DrainStaminaLightAttack()
@@ -188,17 +120,4 @@ public class PlayerWeaponSlotManager : CharacterWeaponSlotManager
     }
     #endregion
 
-    #region Handle Weapon's Poise Bonus
-
-    public void GrantWeaponAttackingPoiseBonus()
-    {
-        playerStats.totalPoiseDefence = playerStats.totalPoiseDefence + attackingWeapon.offensivePoiseBonus;
-    }
-
-    public void ResetWeaponAttackingPoiseBonus() 
-    {
-        playerStats.totalPoiseDefence = playerStats.armorPoiseBonus;
-    }
-
-    #endregion
 }

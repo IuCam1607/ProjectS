@@ -7,6 +7,7 @@ public class EnemyStatsManager : CharacterStatsManager
     EnemyBossManager enemyBossManager;
     CapsuleCollider capsuleCollider;
     EnemyAnimatorManager enemyAnimatorManager;
+    EnemyManager enemyManager;
 
     public UIEnemyHealthBar enemyHealthBar;
 
@@ -14,11 +15,13 @@ public class EnemyStatsManager : CharacterStatsManager
 
     public bool isBoss;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         enemyBossManager = GetComponent<EnemyBossManager>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
+        enemyManager = GetComponent<EnemyManager>();
 
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
@@ -40,6 +43,9 @@ public class EnemyStatsManager : CharacterStatsManager
 
     public override void TakeDamageNoAnimation(int physicalDamage, int fireDamage)
     {
+        if (enemyManager.isInvulnerable)
+            return;
+
         base.TakeDamageNoAnimation(physicalDamage, fireDamage);
 
         if (!isBoss)
@@ -58,12 +64,12 @@ public class EnemyStatsManager : CharacterStatsManager
 
     }
 
-    public override void TakeDamage(int physicalDamage,int fireDamage, string damageAnimation = "Damage_01")
+    public override void TakeDamage(int physicalDamage,int fireDamage, string damageAnimation)
     {
-        if (isDead)
+        if (enemyManager.isInvulnerable)
             return;
 
-        base.TakeDamage(physicalDamage, fireDamage, damageAnimation = "Damage_01");
+        base.TakeDamage(physicalDamage, fireDamage, damageAnimation);
 
         if (!isBoss)
         {

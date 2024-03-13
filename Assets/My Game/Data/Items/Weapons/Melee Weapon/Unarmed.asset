@@ -16,30 +16,18 @@ MonoBehaviour:
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 0}
   itemDescription: 
-  itemID: 0
   isUnarmed: 1
+  weaponController: {fileID: 22100000, guid: dc691b5b92b50e643af671922ccf5c3c, type: 2}
+  weaponType: 3
+  offHandIdleAnimation: OH_Idle
   weaponModel: {fileID: 5612726425261628421, guid: dfe0aad1c634b3f45858fc9b9f329edb, type: 3}
-  TH_Idle: 
-  OH_Light_Attack_01: 
-  OH_Light_Attack_02: 
-  OH_Heavy_Attack_01: 
-  TH_Light_Attack_01: 
-  TH_Light_Attack_02: 
-  TH_Light_Attack_03: 
-  strengthREQ: 0
-  dexREQ: 0
-  intREQ: 0
-  faithREQ: 0
+  weapon_Art: 
   physicalDamage: 8
-  magicDamage: 0
   fireDamage: 0
-  lightningDamage: 0
-  holyDamage: 0
-  poiseDamage: 10
+  criticalDamageMultiplier: 4
+  poiseBreak: 0
+  offensivePoiseBonus: 0
+  physicalDamageAbsorption: 0
   baseStaminaCost: 5
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0
-  isSpellCaster: 0
-  isFaithCaster: 0
-  isPyroCaster: 0
-  isMeleeWeapon: 1

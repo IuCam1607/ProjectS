@@ -14,8 +14,9 @@ public class PlayerStatsManager : CharacterStatsManager
     [SerializeField] private float staminaRegenerationTimer = 0.5f;
     [SerializeField] float staminaRegenerationAmount;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         playerManager = GetComponent<PlayerManager>();
     }
 
@@ -34,7 +35,7 @@ public class PlayerStatsManager : CharacterStatsManager
         maxFocusPoint = SetMaxFocusFromFocusLevel();
         currentFocusPoint = maxFocusPoint;
         focusPointBar.SetMaxFocusPoint(maxFocusPoint);
-        focusPointBar.SetCurrentStamina(currentFocusPoint);
+        focusPointBar.SetCurrentFocusPoint(currentFocusPoint);
     }
 
     public override void HandlePoiseResetTimer()
@@ -57,26 +58,11 @@ public class PlayerStatsManager : CharacterStatsManager
         staminaBar.gameObject.SetActive(true);
     }
 
-    private float SetMaxHealthFromHealthLevel()
-    {
-        maxHealth = vitalityLevel * 10;
-        return maxHealth;
-    }
-
-    private float SetMaxStaminaFromEnduranceLevel()
-    {
-        maxStamina = enduranceLevel * 10;
-        return maxStamina;
-    }
-
-    private float SetMaxFocusFromFocusLevel()
-    {
-        maxFocusPoint = focusLevel * 10;
-        return maxFocusPoint;
-    }
-
     public override void TakeDamageNoAnimation(int physicalDamage, int fireDamage)
     {
+        if (playerManager.isInvulnerable)
+            return;
+
         base.TakeDamageNoAnimation(physicalDamage, fireDamage);
 
         healthBar.SetCurrentHealth(currentHealth);
@@ -87,7 +73,7 @@ public class PlayerStatsManager : CharacterStatsManager
         }
     }
 
-    public override void TakeDamage(int physicalDamage, int fireDamage, string damageAnimation = "Damage_01")
+    public override void TakeDamage(int physicalDamage, int fireDamage, string damageAnimation)
     {
         if (playerManager.isInvulnerable)
             return;
@@ -158,6 +144,17 @@ public class PlayerStatsManager : CharacterStatsManager
         healthBar.SetCurrentHealth(currentHealth);
     }
 
+    public void RestoreFocusPointPlayer(int restoreFpAmount)
+    {
+        currentFocusPoint += restoreFpAmount;
+        if (currentFocusPoint > maxFocusPoint)
+        {
+            currentFocusPoint = maxFocusPoint;
+        }
+
+        focusPointBar.SetCurrentFocusPoint(currentFocusPoint);
+    }
+
     public void DeductFocusPoints(int focusPoints)
     {
         currentFocusPoint -= focusPoints;
@@ -166,11 +163,11 @@ public class PlayerStatsManager : CharacterStatsManager
             currentFocusPoint = 0;
         }
 
-        focusPointBar.SetCurrentStamina(currentFocusPoint);
+        focusPointBar.SetCurrentFocusPoint(currentFocusPoint);
     }
 
     public void AddSouls(int souls)
     {
-        soulCount += souls;
+        currentBlood += souls;
     }
 }

@@ -16,22 +16,18 @@ MonoBehaviour:
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 0}
   itemDescription: 
-  itemID: 3
   isUnarmed: 1
+  weaponController: {fileID: 22100000, guid: dc691b5b92b50e643af671922ccf5c3c, type: 2}
+  weaponType: 1
+  offHandIdleAnimation: OH_Idle
   weaponModel: {fileID: 7128485576389618302, guid: 2c5ce1cd6bfb7b8489f4802a8eb41dc4, type: 3}
-  TH_Idle: TH_Idle_Sword_01
-  OH_Light_Attack_01: 
-  OH_Light_Attack_02: 
-  OH_Heavy_Attack_01: 
-  TH_Light_Attack_01: 
-  TH_Light_Attack_02: 
-  TH_Light_Attack_03: 
-  baseDamage: 25
+  weapon_Art: 
+  physicalDamage: 0
+  fireDamage: 0
   criticalDamageMultiplier: 4
+  poiseBreak: 0
+  offensivePoiseBonus: 0
+  physicalDamageAbsorption: 0
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0
-  isSpellCaster: 0
-  isFaithCaster: 1
-  isPyroCaster: 0
-  isMeleeWeapon: 0

@@ -17,14 +17,10 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 8e64a4113e234e24f82627d2208fefde, type: 3}
   itemDescription: 
   isUnarmed: 0
+  weaponController: {fileID: 22100000, guid: 246563f4fe41530458cde8e396335596, type: 2}
+  weaponType: 4
+  offHandIdleAnimation: OH_Idle
   weaponModel: {fileID: 5501387686025746793, guid: 80dd57b8a556a15429fb4f84aaace918, type: 3}
-  TH_Idle: TH_Idle_Sword_01
-  OH_Light_Attack_01: OH_Light_Attack_01
-  OH_Light_Attack_02: OH_Light_Attack_02
-  OH_Heavy_Attack_01: OH_Heavy_Attack_01
-  TH_Light_Attack_01: TH_Light_Attack_01
-  TH_Light_Attack_02: TH_Light_Attack_02
-  TH_Light_Attack_03: TH_Light_Attack_03
   weapon_Art: 
   physicalDamage: 20
   fireDamage: 0
@@ -35,8 +31,11 @@ MonoBehaviour:
   baseStaminaCost: 12
   lightAttackMultiplier: 1
   heavyAttackMultiplire: 2
-  isSpellCaster: 0
-  isFaithCaster: 0
-  isPyroCaster: 0
-  isMeleeWeapon: 1
-  isShieldWeapon: 0
+  tap_LM_Action: {fileID: 11400000, guid: 1ff7f66390bc9b94c99a6a25ef1801fa, type: 2}
+  hold_LM_Action: {fileID: 0}
+  tap_RM_Action: {fileID: 0}
+  hold_RM_Action: {fileID: 0}
+  tap_RT_Action: {fileID: 0}
+  hold_RT_Action: {fileID: 0}
+  tap_LT_Action: {fileID: 0}
+  hold_LT_Action: {fileID: 0}

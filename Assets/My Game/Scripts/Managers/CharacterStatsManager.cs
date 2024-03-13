@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class CharacterStatsManager : MonoBehaviour
 {
+    AnimatorManager animatorManager;
+
     [Header("Team I.D")]
     public int teamIDNumber = 0;
 
-    [Header("Levels")]
-    public float vitalityLevel = 10;
+    [Header("Character Levels")]
+    public int playerLevel = 1;
+
+    [Header("Stats Levels")]
+    public int vitalityLevel = 10;
     public int focusLevel = 10;
     public int enduranceLevel = 10;
+    public int poiseLevel = 10;
+    public int strengthLevel = 10;
+    public int dexterityLevel = 10;
+    public int intelligenceLevel = 10;
+    public int faithLevel = 10;
 
     [Header("Stats")]
     public float currentHealth;
@@ -36,16 +46,22 @@ public class CharacterStatsManager : MonoBehaviour
     public float physicalDamageAbsorptionHead;
     public float fireDamageAbsorptionHead;
 
-    public int soulCount = 0;
+    [Header("Blood Point")]
+    public int currentBlood = 0;
 
-    public virtual void Update()
+    protected virtual void Awake()
     {
-        HandlePoiseResetTimer();
+        animatorManager = GetComponent<AnimatorManager>();
     }
 
     private void Start()
     {
         totalPoiseDefence = armorPoiseBonus;
+    }
+
+    public virtual void Update()
+    {
+        HandlePoiseResetTimer();
     }
 
     public virtual void TakeDamageNoAnimation(int physicalDamage, int fireDamage)
@@ -69,7 +85,7 @@ public class CharacterStatsManager : MonoBehaviour
         }
     }
 
-    public virtual void TakeDamage(int physicalDamage, int fireDamage, string damageAnimation = "Damage_01")
+    public virtual void TakeDamage(int physicalDamage, int fireDamage, string damageAnimation)
     {
         if (isDead)
             return;
@@ -105,5 +121,23 @@ public class CharacterStatsManager : MonoBehaviour
         {
             totalPoiseDefence = armorPoiseBonus;
         }
+    }
+
+    public float SetMaxHealthFromHealthLevel()
+    {
+        maxHealth = vitalityLevel * 10;
+        return maxHealth;
+    }
+
+    public float SetMaxStaminaFromEnduranceLevel()
+    {
+        maxStamina = enduranceLevel * 10;
+        return maxStamina;
+    }
+
+    public float SetMaxFocusFromFocusLevel()
+    {
+        maxFocusPoint = focusLevel * 10;
+        return maxFocusPoint;
     }
 }

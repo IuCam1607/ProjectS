@@ -27,8 +27,8 @@ public class DamageCollider : MonoBehaviour
     public int lightningDamage;
     public int darkDamage;
 
-    [Header("Stamina Damage")]
-    public int staminaDamage;
+    bool shieldHasBeenHit;
+    protected string currentDamageAnimation;
 
     protected virtual void Awake()
     {
@@ -42,6 +42,7 @@ public class DamageCollider : MonoBehaviour
     {
         if (collision.tag == "Character")
         {
+            shieldHasBeenHit = false;
             CharacterStatsManager enemyStats = collision.GetComponent<CharacterStatsManager>();
             CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
             CharacterEffectManager enemyEffectManager = collision.GetComponent<CharacterEffectManager>();
@@ -52,17 +53,10 @@ public class DamageCollider : MonoBehaviour
 
             if (enemyCharacterManager != null)
             {
-                if (shield != null && enemyCharacterManager.isBlocking)
-                {
-                    float physicalDamageAfterBlock = physicalDamage - (physicalDamage * shield.blockingPhysicalDamageAbsorption) / 100;
-                    float fireDamageAfterBlock = fireDamage - (fireDamage * shield.blockingFireDamageAbsorption) / 100;
+                if (enemyStats.teamIDNumber == teamIDNumber)
+                    return;
 
-                    if (enemyStats != null)
-                    {
-                        enemyStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), 0, "Block Guard");
-                        return;
-                    }
-                }
+                CheckForBlock(enemyCharacterManager, enemyStats, shield);
             }
 
             if (enemyStats != null)
@@ -70,11 +64,18 @@ public class DamageCollider : MonoBehaviour
                 if (enemyStats.teamIDNumber == teamIDNumber)
                     return;
 
+                if (shieldHasBeenHit)
+                    return;
+
                 enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
                 enemyStats.totalPoiseDefence = enemyStats.totalPoiseDefence - poiseBreak;
                 Debug.Log("Player's Poise is currently: " + enemyStats.totalPoiseDefence);
 
                 Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+                Debug.Log("asd");
+                float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyCharacterManager.transform.forward, Vector3.up));
+                Debug.Log("Direction Hit From: " + directionHitFrom);
+                ChooseWhichDirectionDamageCameFrom(directionHitFrom);
                 enemyEffectManager.PlayBloodSplatterFX(contactPoint);
 
                 if (enemyStats.totalPoiseDefence > poiseBreak)
@@ -83,7 +84,7 @@ public class DamageCollider : MonoBehaviour
                 }
                 else
                 {
-                    enemyStats.TakeDamage(physicalDamage, 0);
+                    enemyStats.TakeDamage(physicalDamage, 0, currentDamageAnimation);
                 }
                 Debug.Log("Player Take Damage");
 
@@ -178,5 +179,49 @@ public class DamageCollider : MonoBehaviour
         } 
     }
 
+    protected virtual void CheckForBlock(CharacterManager enemyManager, CharacterStatsManager enemyStats, BlockingCollider shield)
+    {
+        if (shield != null && enemyManager.isBlocking)
+        {
+            float physicalDamageAfterBlock = physicalDamage - (physicalDamage * shield.blockingPhysicalDamageAbsorption) / 100;
+            float fireDamageAfterBlock = fireDamage - (fireDamage * shield.blockingFireDamageAbsorption) / 100;
 
+            if (enemyStats != null)
+            {
+                enemyStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), 0, "Block Guard");
+                shieldHasBeenHit = true;
+
+            }
+        }
+    }   
+
+    protected virtual void ChooseWhichDirectionDamageCameFrom(float direction)
+    {
+
+        if (direction >= 145 && direction <= 180)
+        {
+            currentDamageAnimation = "Damage_Forward_01";
+            Debug.Log("Damage Forward");
+        }
+        else if (direction <= -145 && direction >= -180)
+        {
+            currentDamageAnimation = "Damage_Forward_01";
+            Debug.Log("Damage Forward");
+        }
+        else if (direction >= -45 && direction <= 45)
+        {
+            currentDamageAnimation = "Damage_Back_01";
+            Debug.Log("Damage Back");
+        }
+        else if (direction >= -144 && direction <= -45)
+        {
+            currentDamageAnimation = "Damage_Right_01";
+            Debug.Log("Damage Right");
+        }
+        else if (direction >= 45 && direction <= 144)
+        {
+            currentDamageAnimation = "Damage_Left_01";
+            Debug.Log("Damage Left");
+        }
+    }
 }

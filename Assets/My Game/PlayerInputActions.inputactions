@@ -145,7 +145,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "Left Mouse",
                     "type": "Button",
                     "id": "ce5c1b0f-e4f9-48ab-a773-99b9543a3d2e",
                     "expectedControlType": "Button",
@@ -155,7 +155,7 @@
                 },
                 {
                     "name": "Critical Attack",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "0bf866d3-84f0-4983-a5d6-0dddc106ca7d",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -251,6 +251,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Ctrl",
+                    "type": "Button",
+                    "id": "1cf33501-db2c-43aa-9868-72866e8c94f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -294,7 +303,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "Left Mouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -416,6 +425,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Use Item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f25e1a9d-5177-48e4-9292-605440931e84",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ctrl",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

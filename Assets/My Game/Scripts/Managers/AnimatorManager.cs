@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XftWeapon;
+
 
 public class AnimatorManager : MonoBehaviour
 {
     protected CharacterStatsManager characterStatsManager;
     protected CharacterManager characterManager;
     public Animator animator;
-    
-
 
     protected virtual void Awake()
     {
         characterManager = GetComponent<CharacterManager>();
+        characterStatsManager = GetComponent<CharacterStatsManager>();
 
     }
 
@@ -23,12 +22,13 @@ public class AnimatorManager : MonoBehaviour
         characterManager.pendingCriticalDamage = 0;
     }
 
-    public virtual void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false)
+    public virtual void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false, bool mirrorAnim = false)
     {
         characterManager.applyRootMotion = applyRootMotion;
         animator.CrossFade(targetAnimation, 0.2f);
         characterManager.isPerformingAction = isPerformingAction;
         animator.SetBool("canRotate", canRotate);
+        animator.SetBool("isMirrored", mirrorAnim);
         //characterManager.canRotate = canRotate;
         characterManager.canMove = canMove;
     }
@@ -81,5 +81,4 @@ public class AnimatorManager : MonoBehaviour
     {
         characterManager.canBeRiposted = false;
     }
-
 }

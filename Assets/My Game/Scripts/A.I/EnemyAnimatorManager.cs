@@ -32,9 +32,9 @@ public class EnemyAnimatorManager : AnimatorManager
         }
     }
 
-    public override void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false)
+    public override void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false, bool mirrorAnim = false)
     {
-        base.PlayTargetActionAnimation(targetAnimation, isPerformingAction, applyRootMotion, canRotate, canMove);
+        base.PlayTargetActionAnimation(targetAnimation, isPerformingAction, applyRootMotion, canRotate, canMove, mirrorAnim);
     }
 
     public void InstantiateBossParticleFX()
@@ -55,7 +55,7 @@ public class EnemyAnimatorManager : AnimatorManager
 
             if (soulCountBar != null)
             {
-                soulCountBar.SetSoulCountText(playerStats.soulCount);
+                soulCountBar.SetSoulCountText(playerStats.currentBlood);
             }
         }
     }

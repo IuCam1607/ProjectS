@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
+    CharacterWeaponSlotManager characterWeaponSlotManager;
+    AnimatorManager animatorManager;
+
     [Header("Lock On Transform")]
     public Transform lockOnTransform;
 
@@ -21,6 +24,7 @@ public class CharacterManager : MonoBehaviour
     public bool isGrounded = true;
     public bool inventoryFlag;
     public bool isRolling = false;
+    public bool isTwoHandingWeapon;
 
 
     [Header("Combat Flags")]
@@ -39,4 +43,29 @@ public class CharacterManager : MonoBehaviour
     public bool isFiringSpell;
 
     public int pendingCriticalDamage;
+
+    protected virtual void Awake()
+    {
+        characterWeaponSlotManager = GetComponent<CharacterWeaponSlotManager>();
+        animatorManager = GetComponent<AnimatorManager>();
+    }
+
+    //protected virtual void FixedUpdate()
+    //{
+        
+    //}
+
+    //public virtual void UpdateWhichHandCharacterIsUsing(bool usingRightHand)
+    //{
+    //    if (usingRightHand)
+    //    {
+    //        isUsingRightHand = true;
+    //        isUsingLeftHand = false;
+    //    }
+    //    else
+    //    {
+    //        isUsingLeftHand = true;
+    //        isUsingRightHand = false;
+    //    }
+    //}
 }

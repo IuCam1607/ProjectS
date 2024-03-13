@@ -4,23 +4,35 @@ using UnityEngine;
 
 public class PlayerEffectManager : CharacterEffectManager
 {
+    PlayerInventoryManager playerInventory;
     PlayerStatsManager playerStats;
-    PlayerWeaponSlotManager weaponSlotManager;
+
     public GameObject currentParticleFX;
     public GameObject instantiatedFXModel;
     public int amountToBeHealed;
+    public int amountToBeManaRestored;
 
     private void Awake()
     {
+        playerInventory = GetComponent<PlayerInventoryManager>();
         playerStats = GetComponent<PlayerStatsManager>();
-        weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
     }
 
     public void HealPlayerFromEffect(int healAmount)
     {
-        playerStats.HealPlayer(amountToBeHealed);
-        GameObject healParticles = Instantiate(currentParticleFX, playerStats.transform);
-        Destroy(instantiatedFXModel.gameObject);
-        //weaponSlotManager.LoadBothWeaponOnSlots();
+        if (playerInventory.currentConsumable.isFlask)
+        {
+            if (playerInventory.currentConsumable.hpFlask)
+            {
+                playerStats.HealPlayer(amountToBeHealed);
+            }
+            else if (playerInventory.currentConsumable.fpFlask)
+            {
+                playerStats.RestoreFocusPointPlayer(amountToBeManaRestored);
+            }
+
+            GameObject healParticles = Instantiate(currentParticleFX, playerStats.transform);
+            Destroy(instantiatedFXModel.gameObject);
+        }
     }
 }

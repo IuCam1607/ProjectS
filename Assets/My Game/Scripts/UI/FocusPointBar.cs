@@ -29,7 +29,7 @@ public class FocusPointBar : MonoBehaviour
         }
     }
 
-    public void SetCurrentStamina(float maxFocusPoint)
+    public void SetCurrentFocusPoint(float maxFocusPoint)
     {
         slider.value = maxFocusPoint;
     }

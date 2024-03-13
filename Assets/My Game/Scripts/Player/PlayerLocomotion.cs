@@ -104,10 +104,8 @@ public class PlayerLocomotion : MonoBehaviour
     }
     public void HandleAllMovement()
     {
-        //if(player.isPerformingAction)
-        //{
-        //    return;
-        //}
+        if (player.playerStatsManager.isDead)
+            return;
 
         HandleGroundedMovement();
         HandleRotation();
@@ -356,10 +354,5 @@ public class PlayerLocomotion : MonoBehaviour
     private void HandleGroundCheck()
     {
         player.isGrounded = Physics.CheckSphere(player.transform.position, groundCheckSphereRadius, groundLayer);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawSphere(player.transform.position, groundCheckSphereRadius);
     }
 }

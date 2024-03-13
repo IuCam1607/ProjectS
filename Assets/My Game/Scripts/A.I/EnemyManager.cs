@@ -29,8 +29,9 @@ public class EnemyManager : CharacterManager
     public float currentRecoveryTime = 0;
     public bool isPhaseShifting;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         enemyLocomotion = GetComponent<EnemyLocomotionManager>();
         enemyAnimator = GetComponent<EnemyAnimatorManager>();
         enemyStats = GetComponent<EnemyStatsManager>();
@@ -55,13 +56,14 @@ public class EnemyManager : CharacterManager
             isPhaseShifting = enemyAnimator.animator.GetBool("isPhaseShifting");
         }
 
+        isUsingLeftHand = enemyAnimator.animator.GetBool("isUsingLeftHand");
+        isUsingRightHand = enemyAnimator.animator.GetBool("isUsingRightHand");
         isRotatingWithRootMotion = enemyAnimator.animator.GetBool("isRotatingWithRootMotion");
         isInteracting = enemyAnimator.animator.GetBool("isInteracting");      
         isInvulnerable = enemyAnimator.animator.GetBool("isInvulnerable");
-        canRotate = enemyAnimator.animator.GetBool("canRotate");
-        enemyAnimator.animator.SetBool("isDead", enemyStats.isDead);
         canDoCombo = enemyAnimator.animator.GetBool("canDoCombo");
         canRotate = enemyAnimator.animator.GetBool("canRotate");
+        enemyAnimator.animator.SetBool("isDead", enemyStats.isDead);
         if (enemyStats.isDead)
         {
             enemyRigidbody.isKinematic = true;

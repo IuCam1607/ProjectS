@@ -38,7 +38,7 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] bool sprintInput = false;
     [SerializeField] bool jumpInput = false;
     public bool shiftInput = false;
-    public bool attackInput = false;
+
     public bool interactInput = false;
     public bool selectInput;
     public bool lockOnInput = false;
@@ -46,6 +46,7 @@ public class PlayerInputManager : MonoBehaviour
     public bool switchLeftTargetInput = false;
     public bool twoHandInput = false;
     public bool criticalAttackInput = false;
+    public bool leftMouseInput = false;
     public bool rightMouseInput = false;
     public bool useItemInput = false;
 
@@ -109,7 +110,7 @@ public class PlayerInputManager : MonoBehaviour
             playerInputActions.PlayerActions.Selection.performed += i => selectInput = true;
             playerInputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
             playerInputActions.PlayerActions.UseItem.performed += i => useItemInput = true;
-            playerInputActions.PlayerActions.Attack.started += HandleLeftMouseInput;
+            playerInputActions.PlayerActions.LeftMouse.started += HandleLeftMouseInput;
             playerInputActions.PlayerActions.RightMouse.started += HandleRightMouseInput;
 
             playerInputActions.PlayerActions.TwoHand.performed += i =>  twoHandInput = true;
@@ -276,18 +277,6 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
 
-    //private void HandleQuickSlotsInput(InputAction.CallbackContext context)
-    //{
-    //    if(context.phase == InputActionPhase.Started)
-    //    {
-    //        if (playerInputActions.PlayerActions.Shift.ReadValue<float>() == 1f)
-    //        {
-    //            Debug.Log("Testtt");
-    //            player.playerInventoryManager.ChangeRightHandWeapon();
-    //        }
-    //    }
-    //}
-
     private void HandleJumpInput()
     {
         if (jumpInput)
@@ -302,7 +291,6 @@ public class PlayerInputManager : MonoBehaviour
     {
         if (interactInput)
         {
-            Debug.Log("E");
 
         }
     }
@@ -327,6 +315,7 @@ public class PlayerInputManager : MonoBehaviour
             }
         }
     }
+
 
     private void HandleLeftMouseInput(InputAction.CallbackContext context)
     {
@@ -380,11 +369,13 @@ public class PlayerInputManager : MonoBehaviour
             if (twoHandFlag)
             {
                 weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
+                player.isTwoHandingWeapon = true;
             }
             else
             {
                 weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
                 weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.leftWeapon, true);
+                player.isTwoHandingWeapon = false;
             }
         }
     }

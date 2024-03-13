@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ConsumableItem : Item
 {
+    [Header("Flask Type")]
+    public bool isFlask;
+    public bool hpFlask;
+    public bool fpFlask;
+
+
     [Header("Item Quantity")]
     public int maxItemAmount;
     public int currentItemAmount;

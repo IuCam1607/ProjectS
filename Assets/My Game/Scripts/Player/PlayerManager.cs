@@ -16,16 +16,16 @@ public class PlayerManager : CharacterManager
     [HideInInspector] public PlayerInventoryManager playerInventoryManager;
     [HideInInspector] public PlayerCombatManager playerCombatManager;
     [HideInInspector] public PlayerEquipmentManager playerEquipment;
+    [HideInInspector] public PlayerWeaponSlotManager playerWeaponSlotManager;
 
     [Header("UI")]
     InteractableUI interactableUI;
     public GameObject interactableUIGameObject;
     public GameObject itemInteractableGameObject;
 
-
-
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         DontDestroyOnLoad(this);
 
         characterController = GetComponent<CharacterController>();
@@ -38,6 +38,7 @@ public class PlayerManager : CharacterManager
         playerCombatManager = GetComponent<PlayerCombatManager>();
         playerAnimationManager = GetComponent<PlayerAnimatorManager>();
         playerEquipment = GetComponent<PlayerEquipmentManager>();
+        playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
     }
     private void Start()
     {
@@ -52,6 +53,7 @@ public class PlayerManager : CharacterManager
         isInvulnerable = playerAnimationManager.animator.GetBool("isInvulnerable");
         isFiringSpell = playerAnimationManager.animator.GetBool("isFiringSpell");
         canRotate = playerAnimationManager.animator.GetBool("canRotate");
+        playerAnimationManager.animator.SetBool("isTwoHandingWeapon", isTwoHandingWeapon);
         playerAnimationManager.animator.SetBool("isBlocking", isBlocking);
         playerAnimationManager.animator.SetBool("isDead", playerStatsManager.isDead);
 
@@ -61,10 +63,11 @@ public class PlayerManager : CharacterManager
         CheckForInteractableObject();
 
     }
-    private void FixedUpdate()
-    {
+    //protected override void FixedUpdate()
+    //{
 
-    }
+    //}
+
     private void LateUpdate()
     {
         PlayerCamera.instance.HandleAllCameraActions();

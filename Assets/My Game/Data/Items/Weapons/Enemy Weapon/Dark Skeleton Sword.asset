@@ -12,21 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03134139776692a4e90a1ebf537813e4, type: 3}
   m_Name: Dark Skeleton Sword
   m_EditorClassIdentifier: 
-  itemName: Bone Sword
+  itemName: Dark Skeleton Sword
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 0}
   itemDescription: 
   isUnarmed: 0
+  weaponController: {fileID: 0}
+  weaponType: 4
+  offHandIdleAnimation: OH_Idle
   weaponModel: {fileID: 8311479783263535469, guid: 126d1a1d182726a45a676a3dd27114a3, type: 3}
-  TH_Idle: 
-  OH_Light_Attack_01: 
-  OH_Light_Attack_02: 
-  OH_Heavy_Attack_01: 
-  TH_Light_Attack_01: 
-  TH_Light_Attack_02: 
-  TH_Light_Attack_03: 
   weapon_Art: 
-  baseDamage: 90
+  physicalDamage: 60
+  fireDamage: 0
   criticalDamageMultiplier: 4
   poiseBreak: 0
   offensivePoiseBonus: 0
@@ -34,8 +31,11 @@ MonoBehaviour:
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0
-  isSpellCaster: 0
-  isFaithCaster: 0
-  isPyroCaster: 0
-  isMeleeWeapon: 0
-  isShieldWeapon: 0
+  tap_LM_Action: {fileID: 0}
+  hold_LM_Action: {fileID: 0}
+  tap_RM_Action: {fileID: 0}
+  hold_RM_Action: {fileID: 0}
+  tap_RT_Action: {fileID: 0}
+  hold_RT_Action: {fileID: 0}
+  tap_LT_Action: {fileID: 0}
+  hold_LT_Action: {fileID: 0}

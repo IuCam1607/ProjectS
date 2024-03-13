@@ -14,8 +14,9 @@ public class SpellDamageCollider : DamageCollider
     Rigidbody rigidbody;
     private Vector3 impactNormal;
 
-    private void Awake()
+    protected override void Awake()
     {
+        damageCollider = GetComponent<Collider>();
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -37,10 +38,14 @@ public class SpellDamageCollider : DamageCollider
         {
             spellTarget = other.transform.GetComponent<CharacterStatsManager>();
 
-            if (spellTarget != null && spellTarget.teamIDNumber != teamIDNumber)
+            if (spellTarget != null)
             {
-                spellTarget.TakeDamage(0, fireDamage);
+                if (spellTarget.teamIDNumber != teamIDNumber)
+                {
+                    spellTarget.TakeDamage(0, fireDamage, currentDamageAnimation);
+                }
             }
+ 
 
             hasCollided = true;
             impactParticles = Instantiate(impactParticles, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal));

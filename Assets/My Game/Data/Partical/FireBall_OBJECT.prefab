@@ -49,7 +49,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -94,8 +94,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56bd6fbb2d91c14cbe36e6233a1bc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterManager: {fileID: 0}
+  weaponTrail: {fileID: 0}
   enableDamageColliderOnStartUp: 1
-  currentWeaponDamage: 50
+  teamIDNumber: 0
+  poiseBreak: 0
+  offensivePoiseDefence: 0
+  physicalDamage: 0
+  fireDamage: 70
+  magicDamage: 0
+  lightningDamage: 0
+  darkDamage: 0
   impactParticles: {fileID: 2256216497027429513, guid: a8a209abdc520294d9e91deac1f4de52, type: 3}
   projectileParticles: {fileID: 7609134237006879417, guid: 0e80cf41b2a80de49bc23971b7c76bf9, type: 3}
   muzzleParticles: {fileID: 2256216497027429513, guid: a8a209abdc520294d9e91deac1f4de52, type: 3}

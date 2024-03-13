@@ -82,9 +82,9 @@ public class PlayerCamera : MonoBehaviour
     {
         if (player.playerInput.isLockedOn == false && currentLockOnTarget == null)
         {
-            leftAndRightLookAngle += (playerInput.cameraHorizontalInput * leftAndRightRotationSpeed) * Time.deltaTime;
+            leftAndRightLookAngle += playerInput.cameraHorizontalInput * leftAndRightRotationSpeed * Time.deltaTime;
 
-            upAndDownLookAngle -= (playerInput.cameraVerticalInput * upAndDownRotationSpeed) * Time.deltaTime;
+            upAndDownLookAngle -= playerInput.cameraVerticalInput * upAndDownRotationSpeed * Time.deltaTime;
             upAndDownLookAngle = Mathf.Clamp(upAndDownLookAngle, minimunPivot, maximunPivot);
 
             Vector3 cameraRotation;

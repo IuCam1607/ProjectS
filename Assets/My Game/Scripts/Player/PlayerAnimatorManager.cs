@@ -43,14 +43,9 @@ public class PlayerAnimatorManager : AnimatorManager
         animator.SetFloat(horizontal, horizontalAmount, 0.1f, Time.deltaTime);
         animator.SetFloat(vertical, verticalAmount, 0.1f, Time.deltaTime);
     }
-    public override void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false)
+    public override void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false, bool mirrorAnim = false)
     {
-        base.PlayTargetActionAnimation(targetAnimation, isPerformingAction, applyRootMotion, canRotate, canMove);
-        //player.applyRootMotion = applyRootMotion;
-        //animator.CrossFade(targetAnimation, 0.2f);
-        //player.isPerformingAction = isPerformingAction;
-        //player.canRotate = canRotate;
-        //player.canMove = canMove;
+        base.PlayTargetActionAnimation(targetAnimation, isPerformingAction, applyRootMotion, canRotate, canMove , mirrorAnim);
     }
 
     public void ApplyJumpingVelocity()
@@ -70,4 +65,5 @@ public class PlayerAnimatorManager : AnimatorManager
         passThroughFogWall.fogEntranceCollider.enabled = false;
         passThroughFogWall.fogWallCollider.enabled = false;
     }
+
 }

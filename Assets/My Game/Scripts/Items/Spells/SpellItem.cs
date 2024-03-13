@@ -11,6 +11,7 @@ public class SpellItem : Item
 
     [Header("Spell Cost")]
     public int focusPointCost;
+    public float staminaCost;
 
     [Header("Spell Type")]
     public bool isFaithSpell;
@@ -23,7 +24,8 @@ public class SpellItem : Item
 
     public virtual void AttempToCastSpell(PlayerAnimatorManager playerAnimator, 
         PlayerStatsManager playerStats, 
-        PlayerWeaponSlotManager weaponSlotManager)
+        PlayerWeaponSlotManager weaponSlotManager,
+        bool isLeftHanded)
     {
         Debug.Log("You attemp to cast a Spell!");
     }
@@ -31,9 +33,11 @@ public class SpellItem : Item
     public virtual void SuccessfullyCastSpell(PlayerAnimatorManager playerAnimator, 
         PlayerStatsManager playerStats, 
         PlayerCamera playerCamera, 
-        PlayerWeaponSlotManager weaponSlotManager)
+        PlayerWeaponSlotManager weaponSlotManager,
+        bool isLeftHanded)
     {
         Debug.Log("You Successfully cast a Spell!");
         playerStats.DeductFocusPoints(focusPointCost);
+        playerStats.TakeStaminaCost(staminaCost);
     }
 }
