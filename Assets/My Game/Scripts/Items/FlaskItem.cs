@@ -12,22 +12,23 @@ public class FlaskItem : ConsumableItem
     [Header("Recovery FX")]
     public GameObject recoveryFX;
 
-    public override void AttempToConsumeItem(PlayerAnimatorManager playerAnimator, PlayerWeaponSlotManager weaponSlotManager, PlayerEffectManager playerEffectManager)
+    public override void AttempToConsumeItem(PlayerManager player)
     {
         if (currentItemAmount > 0)
-        {
+        { 
             currentItemAmount--;
-            playerAnimator.PlayTargetActionAnimation(consumeAnimation, isInteracting, false, true, true);
-            GameObject flask = Instantiate(itemModel, weaponSlotManager.rightHandSlot.transform);
-            playerEffectManager.currentParticleFX = recoveryFX;
-            playerEffectManager.amountToBeHealed = healthRecoveryAmount;
-            playerEffectManager.amountToBeManaRestored = focusPointRecoveryAmount;
-            playerEffectManager.instantiatedFXModel = flask;
-            weaponSlotManager.rightHandSlot.UnloadWeapon();
+            player.playerAnimationManager.PlayTargetActionAnimation(consumeAnimation, isInteracting, false, true, true);
+            player.PlaySFX(player.feedBackManager.drinkPotionSFX);
+            GameObject flask = Instantiate(itemModel, player.playerWeaponSlotManager.rightHandSlot.transform);
+            player.playerEffectManager.currentParticleFX = recoveryFX;
+            player.playerEffectManager.amountToBeHealed = healthRecoveryAmount;
+            player.playerEffectManager.amountToBeManaRestored = focusPointRecoveryAmount;
+            player.playerEffectManager.instantiatedFXModel = flask;
+            player.playerWeaponSlotManager.rightHandSlot.UnloadWeapon();
         }
         else
         {
-            playerAnimator.PlayTargetActionAnimation("Flask Empty", isInteracting, false, true, true);
+            player.playerAnimationManager.PlayTargetActionAnimation("Flask Empty", isInteracting, false, true, true);
         }
 
     }

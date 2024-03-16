@@ -745,12 +745,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3196676774133961425}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.436, z: 0}
+  m_LocalRotation: {x: -0.30945924, y: 0.38817596, z: 0.06868628, w: 0.8653534}
+  m_LocalPosition: {x: -0.2776171, y: 0.6937004, z: -0.39326632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2986434325072519651}
+  m_Father: {fileID: 8117592327548862445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3239553037166039202
 GameObject:
@@ -1091,7 +1091,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &6692041451831975015
 Transform:
@@ -1934,7 +1934,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7452217201429070171}
-  - {fileID: 3495112260813556080}
   - {fileID: 473555225296360028}
   - {fileID: 2812915412144845266}
   - {fileID: 5038640831627365708}
@@ -2024,6 +2023,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bc846ae73fb4b40906f74a705522c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterWeaponSlotManager: {fileID: 0}
+  characterStatsManager: {fileID: 0}
+  animatorManager: {fileID: 0}
+  characterInventoryManager: {fileID: 0}
+  animator: {fileID: 0}
   lockOnTransform: {fileID: 3495112260813556080}
   backStabCollider: {fileID: 7014032963333375927}
   riposteCollider: {fileID: 6160512768094654690}
@@ -2044,12 +2048,14 @@ MonoBehaviour:
   canDoCombo: 0
   isUsingRightHand: 0
   isUsingLeftHand: 0
+  isDead: 0
   isRotatingWithRootMotion: 0
   isFiringSpell: 0
   pendingCriticalDamage: 0
   enemyLocomotion: {fileID: 0}
   enemyAnimator: {fileID: 0}
   enemyStats: {fileID: 0}
+  enemyBossManager: {fileID: 0}
   currentState: {fileID: 439470458989482338}
   currentTarget: {fileID: 0}
   navMeshAgent: {fileID: 0}
@@ -2075,7 +2081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ccbcb29b25ee94b825c0fe13cf9dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!114 &4861159654630687620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2128,6 +2133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45951adbe822f9f4a95746aa78cbca4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
   teamIDNumber: 1
   playerLevel: 1
   vitalityLevel: 100
@@ -2149,10 +2155,9 @@ MonoBehaviour:
   armorPoiseBonus: 100000
   totalPoiseResetTime: 10
   poiseResetTimer: 0
-  isDead: 0
   physicalDamageAbsorptionHead: 0
   fireDamageAbsorptionHead: 0
-  bloodCount: 0
+  currentBlood: 0
   enemyHealthBar: {fileID: 0}
   soulsAwardedOnDeath: 10000
   isBoss: 1
@@ -2201,8 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossName: None
-  enemyStats: {fileID: 0}
-  enemyAnimator: {fileID: 0}
+  bossHealthBar: {fileID: 0}
   bossCombatStanceState: {fileID: 0}
   particleFX: {fileID: 7656275826651822486, guid: 41de439386b0d0e43b91ec94e35fffd6, type: 3}
 --- !u!1 &7910761763032446914
@@ -2337,6 +2341,7 @@ Transform:
   - {fileID: 2915137867817491842}
   - {fileID: 7690477769122263542}
   - {fileID: 8333020294179192683}
+  - {fileID: 3495112260813556080}
   m_Father: {fileID: 6356351098520771572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8321084258708915072

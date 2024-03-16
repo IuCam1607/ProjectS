@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Imlerith Helm
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 0}
+  itemID: 1003
   itemDescription: 
   physicalDefense: 15
   helmetModelName: Imlerith Helm

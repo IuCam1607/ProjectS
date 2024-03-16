@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Attack 02
   m_EditorClassIdentifier: 
   actionAnimation: Skeleton_Attack_02
-  canCombo: 0
+  rightHandedAction: 1
+  canCombo: 1
   comboAction: {fileID: 11400000, guid: a6909c3f1fd191c48b37a8b2e0bf66fa, type: 2}
   attackScore: 3
   recoveryTime: 2
   minimumAttackAngle: -35
   maximumAttackAngle: 35
   minimumDistanceNeededToAttack: 0
-  maximumDistanceNeededToAttack: 3
+  maximumDistanceNeededToAttack: 2

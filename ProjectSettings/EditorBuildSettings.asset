@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/My Game/Scenes/Character Movement.unity
-    guid: 84a74709f585a2d4fad75530fc8fb9e1
+    path: Assets/My Game/Scenes/Menu.unity
+    guid: b66394c1acab99147abe1dc4525eda71
+  - enabled: 1
+    path: Assets/My Game/Scenes/Lv 1.unity
+    guid: 327fcced0f457554da362eba8f0ae2a1
+  - enabled: 1
+    path: Assets/My Game/Scenes/Lv 2.unity
+    guid: ba803412904be14439a55856f698aaa7
+  - enabled: 1
+    path: Assets/Asset Download/Feel/MMTools/Tools/MMSceneLoading/LoadingScreens/LoadingScreen.unity
+    guid: 888394d52616e5e42b3b54c3f2bbd3eb
   m_configObjects: {}

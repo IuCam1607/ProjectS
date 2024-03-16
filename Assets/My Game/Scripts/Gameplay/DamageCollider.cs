@@ -48,7 +48,7 @@ public class DamageCollider : MonoBehaviour
             CharacterEffectManager enemyEffectManager = collision.GetComponent<CharacterEffectManager>();
             BlockingCollider shield = collision.GetComponentInChildren<BlockingCollider>();
 
-            if (enemyStats.isDead)
+            if (enemyCharacterManager.isDead)
                 return;
 
             if (enemyCharacterManager != null)
@@ -76,7 +76,11 @@ public class DamageCollider : MonoBehaviour
                 float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyCharacterManager.transform.forward, Vector3.up));
                 Debug.Log("Direction Hit From: " + directionHitFrom);
                 ChooseWhichDirectionDamageCameFrom(directionHitFrom);
-                enemyEffectManager.PlayBloodSplatterFX(contactPoint);
+                if (!enemyCharacterManager.isInvulnerable)
+                {
+                    enemyEffectManager.PlayBloodSplatterFX(contactPoint);
+                }
+
 
                 if (enemyStats.totalPoiseDefence > poiseBreak)
                 {

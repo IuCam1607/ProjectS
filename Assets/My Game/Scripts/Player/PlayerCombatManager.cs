@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerCombatManager : MonoBehaviour
 {
     PlayerManager player;
-    PlayerWeaponSlotManager weaponSlotManager;
-    public AnimatorManager animatorManager;
 
     LayerMask backStabLayer = 1 << 14;
     LayerMask riposteLayer = 1 << 15;
@@ -28,15 +26,12 @@ public class PlayerCombatManager : MonoBehaviour
 
     private void Awake()
     {
-        animatorManager = GetComponent<AnimatorManager>();  
-        weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
         player = GetComponent<PlayerManager>();
     }
 
     public void HandleLMAction()
     {
-        if (player.playerInventoryManager.rightWeapon.weaponType == WeaponType.StraightSword 
-            || player.playerInventoryManager.rightWeapon.weaponType == WeaponType.Unarmed)
+        if (player.playerInventoryManager.rightWeapon.weaponType == WeaponType.StraightSword)
         {
             PerformLMMeleeAction();
         }
@@ -56,8 +51,7 @@ public class PlayerCombatManager : MonoBehaviour
         }
         else
         { 
-            if ((player.playerInventoryManager.leftWeapon.weaponType == WeaponType.Shield
-            || player.playerInventoryManager.leftWeapon.weaponType == WeaponType.StraightSword))
+            if (player.playerInventoryManager.leftWeapon.weaponType == WeaponType.Shield)
             {
                 if (player.playerInput.shiftInput == true)
                 {
@@ -73,7 +67,7 @@ public class PlayerCombatManager : MonoBehaviour
             player.playerInventoryManager.leftWeapon.weaponType == WeaponType.FaithCaster)
             {
                 PerformMagicAction(player.playerInventoryManager.leftWeapon, true);
-                player.playerAnimationManager.animator.SetBool("isUsingLeftHand", true);
+                player.animator.SetBool("isUsingLeftHand", true);
             }
         }
     }
@@ -91,7 +85,7 @@ public class PlayerCombatManager : MonoBehaviour
 
         if (player.playerInput.comboFlag)
         {
-           player.playerAnimationManager.animator.SetBool("canDoCombo", false);
+           player.animator.SetBool("canDoCombo", false);
 
             if (player.isRolling || player.isJumping)
             {
@@ -104,6 +98,7 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 player.playerAnimationManager.PlayTargetActionAnimation(OH_Light_Attack_02, true, true);
                 lastAttack = OH_Light_Attack_02;
+                player.PlaySFX(weapon.oh_attack_sfx[1].audio, weapon.oh_attack_sfx[1].delay);
             }
             else if (lastAttack == OH_Light_Attack_02)
             {
@@ -113,11 +108,13 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 player.playerAnimationManager.PlayTargetActionAnimation(TH_Light_Attack_02, true, true);
                 lastAttack = TH_Light_Attack_02;
+                player.PlaySFX(weapon.th_attack_sfx[1].audio, weapon.th_attack_sfx[1].delay);
             }
             else if (lastAttack == TH_Light_Attack_02)
             {
                 player.playerAnimationManager.PlayTargetActionAnimation(TH_Light_Attack_03, true, true);
                 lastAttack = TH_Light_Attack_03;
+                player.PlaySFX(weapon.th_attack_sfx[2].audio, weapon.th_attack_sfx[2].delay);
             }
         }   
     }
@@ -132,17 +129,21 @@ public class PlayerCombatManager : MonoBehaviour
             return;
         }
 
-        weaponSlotManager.attackingWeapon = weapon;
+
+
+        player.playerWeaponSlotManager.attackingWeapon = weapon;
 
         if (player.playerInput.twoHandFlag)
         {
             player.playerAnimationManager.PlayTargetActionAnimation(TH_Light_Attack_01, true, true);
             lastAttack = TH_Light_Attack_01;
+            player.PlaySFX(weapon.oh_attack_sfx[0].audio, weapon.oh_attack_sfx[0].delay);
         }
         else
         {
             player.playerAnimationManager.PlayTargetActionAnimation(OH_Light_Attack_01, true, true);
             lastAttack = OH_Light_Attack_01;
+            player.PlaySFX(weapon.oh_attack_sfx[0].audio, weapon.oh_attack_sfx[0].delay);
         }
     }
 
@@ -156,7 +157,7 @@ public class PlayerCombatManager : MonoBehaviour
             return;
         }
 
-        weaponSlotManager.attackingWeapon = weapon;
+        player.playerWeaponSlotManager.attackingWeapon = weapon;
 
         if (player.playerInput.twoHandFlag)
         {
@@ -179,7 +180,7 @@ public class PlayerCombatManager : MonoBehaviour
             return;
         }
 
-        weaponSlotManager.attackingWeapon = weapon;
+        player.playerWeaponSlotManager.attackingWeapon = weapon;
 
         if (player.playerInput.twoHandFlag)
         {
@@ -210,7 +211,7 @@ public class PlayerCombatManager : MonoBehaviour
             else
             {
                 player.playerInput.comboFlag = true;
-                player.playerAnimationManager.animator.SetBool("isUsingRightHand", true);
+                player.animator.SetBool("isUsingRightHand", true);
                 HandleWeaponCombo(player.playerInventoryManager.rightWeapon);
                 player.playerInput.comboFlag = false;
             }
@@ -226,7 +227,7 @@ public class PlayerCombatManager : MonoBehaviour
             if (player.isPerformingAction || player.canDoCombo)
                 return;
 
-            player.playerAnimationManager.animator.SetBool("isUsingRightHand", true);
+            player.animator.SetBool("isUsingRightHand", true);
             HandleLightAttack(player.playerInventoryManager.rightWeapon);
         }
     }
@@ -242,7 +243,7 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 if (player.playerStatsManager.currentFocusPoint >= player.playerInventoryManager.currentSpell.focusPointCost)
                 {
-                    player.playerInventoryManager.currentSpell.AttempToCastSpell(player.playerAnimationManager, player.playerStatsManager, weaponSlotManager, isLeftHanded);
+                    player.playerInventoryManager.currentSpell.AttempToCastSpell(player.playerAnimationManager, player.playerStatsManager, player.playerWeaponSlotManager, isLeftHanded);
                 }
                 else
                 {
@@ -256,7 +257,7 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 if (player.playerStatsManager.currentFocusPoint >= player.playerInventoryManager.currentSpell.focusPointCost)
                 {
-                    player.playerInventoryManager.currentSpell.AttempToCastSpell(player.playerAnimationManager, player.playerStatsManager, weaponSlotManager, isLeftHanded);
+                    player.playerInventoryManager.currentSpell.AttempToCastSpell(player.playerAnimationManager, player.playerStatsManager, player.playerWeaponSlotManager, isLeftHanded);
                 }
                 else
                 {
@@ -298,8 +299,8 @@ public class PlayerCombatManager : MonoBehaviour
 
     private void SuccesfullyCastSpell()
     {
-        player.playerInventoryManager.currentSpell.SuccessfullyCastSpell(player.playerAnimationManager, player.playerStatsManager, PlayerCamera.instance, weaponSlotManager, player.isUsingLeftHand);
-        player.playerAnimationManager.animator.SetBool("isFiringSpell", true);
+        player.playerInventoryManager.currentSpell.SuccessfullyCastSpell(player.playerAnimationManager, player.playerStatsManager, PlayerCamera.instance, player.playerWeaponSlotManager, player.isUsingLeftHand);
+        player.animator.SetBool("isFiringSpell", true);
     }
 
     public void AttemptBackStabOrRiposte()
@@ -312,7 +313,7 @@ public class PlayerCombatManager : MonoBehaviour
             transform.TransformDirection(Vector3.forward), out hit, 0.5f, backStabLayer))
         { 
             CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
-            DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
+            DamageCollider rightWeapon = player.playerWeaponSlotManager.rightHandDamageCollider;
 
             if (enemyCharacterManager != null)
             {
@@ -331,14 +332,14 @@ public class PlayerCombatManager : MonoBehaviour
 
                 player.playerAnimationManager.PlayTargetActionAnimation("Back Stab", true);
                 enemyCharacterManager.GetComponentInChildren<EnemyAnimatorManager>().PlayTargetActionAnimation("Back Stabbed", true, false, false);
-                enemyCharacterManager.GetComponentInChildren<EnemyAnimatorManager>().animator.SetBool("isInteracting", true);
+                enemyCharacterManager.GetComponentInChildren<EnemyManager>().animator.SetBool("isInteracting", true);
             }
         }
         else if (Physics.Raycast(player.playerInput.criticalAttackCastStartPoint.position,
             transform.TransformDirection(Vector3.forward), out hit, 0.5f, riposteLayer))
         {
             CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
-            DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
+            DamageCollider rightWeapon = player.playerWeaponSlotManager.rightHandDamageCollider;
 
             if (enemyCharacterManager != null && enemyCharacterManager.canBeRiposted)
             {
@@ -358,7 +359,7 @@ public class PlayerCombatManager : MonoBehaviour
 
                 player.playerAnimationManager.PlayTargetActionAnimation("Riposte", true);
                 enemyCharacterManager.GetComponentInChildren<EnemyAnimatorManager>().PlayTargetActionAnimation("Riposted", true, false, false);
-                enemyCharacterManager.GetComponentInChildren<EnemyAnimatorManager>().animator.SetBool("isInteracting", true);
+                enemyCharacterManager.GetComponentInChildren<EnemyManager>().animator.SetBool("isInteracting", true);
             }
 
         }

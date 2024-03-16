@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Knight's Templar Helm
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 0}
+  itemID: 1001
   itemDescription: 
   physicalDefense: 30
   helmetModelName: Knight's Templar Helm

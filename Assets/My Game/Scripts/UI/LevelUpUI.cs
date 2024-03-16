@@ -10,7 +10,6 @@ public class LevelUpUI : MonoBehaviour
     public PlayerManager playerManager;
 
     public Button confirmLevelUpButton;
-    public Button exitButton;
 
     [Header("Player Level")]
     public int currentPlayerLevel;
@@ -66,7 +65,9 @@ public class LevelUpUI : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log(playerManager.playerStatsManager);
+        PlayerUIManager.instance.isUIActive = true;
+
+        Debug.Log(PlayerUIManager.instance.isUIActive);
 
         currentPlayerLevel = playerManager.playerStatsManager.playerLevel;
         currentPlayerLevelText.text = currentPlayerLevel.ToString();
@@ -123,6 +124,8 @@ public class LevelUpUI : MonoBehaviour
         currentPoiseLevelText.text = playerManager.playerStatsManager.poiseLevel.ToString();
         projectedPoiseLevelText.text = playerManager.playerStatsManager.poiseLevel.ToString();
 
+        currentBloodCellsText.text = playerManager.playerStatsManager.currentBlood.ToString();
+
         UpdateProjectedPlayerLevel();
     }
 
@@ -143,7 +146,20 @@ public class LevelUpUI : MonoBehaviour
         playerManager.playerStatsManager.maxStamina = playerManager.playerStatsManager.SetMaxStaminaFromEnduranceLevel();
 
         playerManager.playerStatsManager.currentBlood = playerManager.playerStatsManager.currentBlood - bloodCelssRequiredToLevelUP;
+        PlayerUIManager.instance.bloodCount.text = playerManager.playerStatsManager.currentBlood.ToString();
 
+        playerManager.playerStatsManager.healthBar.SetMaxHealth(playerManager.playerStatsManager.SetMaxHealthFromHealthLevel());
+        playerManager.playerStatsManager.healthBar.SetCurrentHealth(playerManager.playerStatsManager.SetMaxHealthFromHealthLevel());
+
+        playerManager.playerStatsManager.focusPointBar.SetMaxFocusPoint(playerManager.playerStatsManager.SetMaxFocusFromFocusLevel());
+        playerManager.playerStatsManager.focusPointBar.SetCurrentFocusPoint(playerManager.playerStatsManager.SetMaxFocusFromFocusLevel());
+
+        playerManager.playerStatsManager.staminaBar.SetMaxStamina(playerManager.playerStatsManager.SetMaxStaminaFromEnduranceLevel());
+        playerManager.playerStatsManager.staminaBar.SetCurrentStamina(playerManager.playerStatsManager.SetMaxStaminaFromEnduranceLevel());
+
+        playerManager.playerStatsManager.RefreshHUD();
+
+        PlayerUIManager.instance.isUIActive = false;
         gameObject.SetActive(false);
     }
 
@@ -153,9 +169,6 @@ public class LevelUpUI : MonoBehaviour
         {
             bloodCelssRequiredToLevelUP = Mathf.RoundToInt((projectedPlayerLevel * baseLevelUpCost) * 1.5f);
         }
-
-        currentBloodCellsText.text = playerManager.playerStatsManager.currentBlood.ToString();
-        bloodCelssRequiredToLevelUPText.text = bloodCelssRequiredToLevelUP.ToString();
     }
 
     #region Button
@@ -287,6 +300,12 @@ public class LevelUpUI : MonoBehaviour
         }
     }
 
+    public void OnClickExitButton()
+    {
+        PlayerUIManager.instance.isUIActive = false;
+        gameObject.SetActive(false);
+    }
+
     #endregion
 
     #region Slider
@@ -308,6 +327,7 @@ public class LevelUpUI : MonoBehaviour
         projectedPlayerLevelText.text = projectedPlayerLevel.ToString();
 
         CalculateBloodCostToLevelUp();
+        bloodCelssRequiredToLevelUPText.text = bloodCelssRequiredToLevelUP.ToString();
 
         if (playerManager.playerStatsManager.currentBlood < bloodCelssRequiredToLevelUP)
         {

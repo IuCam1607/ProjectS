@@ -10,6 +10,8 @@ public class TitleScreenManager : MonoBehaviour
     [Header("Menu")]
     [SerializeField] GameObject titleScreenMainMenu;
     [SerializeField] GameObject titleScreenLoadMenu;
+    [SerializeField] GameObject loadingScreen;
+    [SerializeField] Slider loadingSlider;
 
     [Header("Buttons")]
     [SerializeField] Button loadMenuReturnButton;
@@ -32,11 +34,6 @@ public class TitleScreenManager : MonoBehaviour
         }
 
     }
-
-    //public void StartNewGame()
-    //{
-    //    WorldSaveGameManager.instance.AttemptToCreateNewGame();
-    //}
 
     public void OpenLoadGameMenu()
     {

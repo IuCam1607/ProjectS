@@ -4,31 +4,27 @@ using UnityEngine;
 
 public class EnemyAnimatorManager : AnimatorManager
 {
-    EnemyBossManager enemyBossManager;
     EnemyManager enemyManager;
 
     protected override void Awake()
     {
         base.Awake();
         enemyManager = GetComponent<EnemyManager>();
-        enemyBossManager = GetComponent<EnemyBossManager>();
-        characterManager = GetComponent<CharacterManager>();
-        animator = GetComponent<Animator>();
-        animator.applyRootMotion = true;
+        character = GetComponent<CharacterManager>();
     }
 
     private void OnAnimatorMove()
     {        
         float delta = Time.deltaTime;
         enemyManager.enemyRigidbody.drag = 0;
-        Vector3 deltaPosition = animator.deltaPosition;
+        Vector3 deltaPosition = enemyManager.animator.deltaPosition;
         deltaPosition.y = 0;
         Vector3 velocity = deltaPosition / delta;
         enemyManager.enemyRigidbody.velocity = velocity;
 
         if (enemyManager.isRotatingWithRootMotion)
         {
-            enemyManager.transform.rotation *= animator.deltaRotation;
+            enemyManager.transform.rotation *= enemyManager.animator.deltaRotation;
         }
     }
 
@@ -41,7 +37,7 @@ public class EnemyAnimatorManager : AnimatorManager
     {
         BossFXTransform bossFXTransform = GetComponentInChildren<BossFXTransform>();
 
-        GameObject phaseFX = Instantiate(enemyBossManager.particleFX, bossFXTransform.transform);
+        GameObject phaseFX = Instantiate(enemyManager.enemyBossManager.particleFX, bossFXTransform.transform);
     }
 
     public void AwardSoulsOnDeath()

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Scarlet Shield
   pickupIcon: {fileID: 21300000, guid: 95d92323985fff34d93f41487ce4aa16, type: 3}
   itemIcon: {fileID: 21300000, guid: 7e79658c83e1edd41b29f45e11370e8d, type: 3}
+  itemID: 7
   itemDescription: 
   isUnarmed: 0
   weaponController: {fileID: 22100000, guid: dc691b5b92b50e643af671922ccf5c3c, type: 2}
@@ -31,3 +32,11 @@ MonoBehaviour:
   baseStaminaCost: 20
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0
+  tap_LM_Action: {fileID: 0}
+  hold_LM_Action: {fileID: 0}
+  tap_RM_Action: {fileID: 0}
+  hold_RM_Action: {fileID: 0}
+  tap_RT_Action: {fileID: 0}
+  hold_RT_Action: {fileID: 0}
+  tap_LT_Action: {fileID: 0}
+  hold_LT_Action: {fileID: 0}

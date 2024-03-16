@@ -11,6 +11,13 @@ public class PlayerUIPopUPManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI youDiedPopUpText;
     [SerializeField] CanvasGroup youDiedPopUpCanvasGroup;
 
+    [SerializeField] GameObject bossDefeatedPopUpGameObject;
+    [SerializeField] TextMeshProUGUI bossDefeatedPopUpBackgroundText;
+    [SerializeField] TextMeshProUGUI bossDefeatedPopUpText;
+    [SerializeField] CanvasGroup bossDefeatedPopUpCanvasGroup;
+
+
+
     public void SendYouDiedPopUp()
     {
         youDiedPopUpGameObject.SetActive(true);
@@ -18,6 +25,15 @@ public class PlayerUIPopUPManager : MonoBehaviour
         StartCoroutine(StretchPopUpTextOverTime(youDiedPopUpBackgroundText, 8, 19f));
         StartCoroutine(FadeInPopUpOverTime(youDiedPopUpCanvasGroup, 5));
         StartCoroutine(WaitThenFadeOutPopUpOverTime(youDiedPopUpCanvasGroup, 2, 5));
+    }
+
+    public void SendBossDefeatedPopUp()
+    {
+        bossDefeatedPopUpGameObject.SetActive(true);
+        bossDefeatedPopUpBackgroundText.characterSpacing = 0;
+        StartCoroutine(StretchPopUpTextOverTime(bossDefeatedPopUpBackgroundText, 8, 19f));
+        StartCoroutine(FadeInPopUpOverTime(bossDefeatedPopUpCanvasGroup, 5));
+        StartCoroutine(WaitThenFadeOutPopUpOverTime(bossDefeatedPopUpCanvasGroup, 2, 5));
     }
 
     private IEnumerator StretchPopUpTextOverTime(TextMeshProUGUI text, float duration, float stretchAmount)

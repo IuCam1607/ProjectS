@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyStatsManager : CharacterStatsManager
 {
-    EnemyBossManager enemyBossManager;
+    EnemyManager enemy;
     CapsuleCollider capsuleCollider;
-    EnemyAnimatorManager enemyAnimatorManager;
-    EnemyManager enemyManager;
 
     public UIEnemyHealthBar enemyHealthBar;
 
@@ -18,10 +17,8 @@ public class EnemyStatsManager : CharacterStatsManager
     protected override void Awake()
     {
         base.Awake();
-        enemyBossManager = GetComponent<EnemyBossManager>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
-        enemyManager = GetComponent<EnemyManager>();
+        enemy = GetComponent<EnemyManager>();
 
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
@@ -35,69 +32,109 @@ public class EnemyStatsManager : CharacterStatsManager
         }
     }
 
-    private float SetMaxHealthFromHealthLevel()
-    {
-        maxHealth = vitalityLevel * 10;
-        return maxHealth;
-    }
-
     public override void TakeDamageNoAnimation(int physicalDamage, int fireDamage)
     {
-        if (enemyManager.isInvulnerable)
+        if (enemy.isInvulnerable)
             return;
 
         base.TakeDamageNoAnimation(physicalDamage, fireDamage);
+        enemy.PlaySFX(enemy.feedBackManager.hitSFX);
 
         if (!isBoss)
         {
             enemyHealthBar.SetHealth(Mathf.RoundToInt(currentHealth));
         }
-        else if (isBoss && enemyBossManager != null)
+        else if (isBoss && enemy.enemyBossManager != null)
         {
-            enemyBossManager.UpdateBossHealthBar(Mathf.RoundToInt(currentHealth), Mathf.RoundToInt(maxHealth));
+            enemy.enemyBossManager.UpdateBossHealthBar(Mathf.RoundToInt(currentHealth), Mathf.RoundToInt(maxHealth));
         }
 
         if (currentHealth <= 0)
         {
-            HandleDeath();
+            if (isBoss)
+            {
+                StartCoroutine(ProcessDeathEvent());
+            }
+            else
+            {
+                HandleDeath();
+            }
         }
-
     }
 
     public override void TakeDamage(int physicalDamage,int fireDamage, string damageAnimation)
     {
-        if (enemyManager.isInvulnerable)
+        if (enemy.isInvulnerable)
             return;
 
         base.TakeDamage(physicalDamage, fireDamage, damageAnimation);
+        enemy.PlaySFX(enemy.feedBackManager.hitSFX);
 
         if (!isBoss)
         {
             enemyHealthBar.SetHealth(Mathf.RoundToInt(currentHealth));
         }
-        else if (isBoss && enemyBossManager != null)
+        else if (isBoss && enemy.enemyBossManager != null)
         {
-            enemyBossManager.UpdateBossHealthBar(Mathf.RoundToInt(currentHealth), Mathf.RoundToInt(maxHealth));
+            enemy.enemyBossManager.UpdateBossHealthBar(Mathf.RoundToInt(currentHealth), Mathf.RoundToInt(maxHealth));
         }
 
-        enemyAnimatorManager.PlayTargetActionAnimation(damageAnimation, true);
+        enemy.enemyAnimator.PlayTargetActionAnimation(damageAnimation, true);
 
         if (currentHealth <= 0)
         {
-            HandleDeath();
+            if (isBoss)
+            {
+                StartCoroutine(ProcessDeathEvent());
+            }
+            else
+            {
+                HandleDeath();
+            }
         }
+    }
+
+    public IEnumerator ProcessDeathEvent(bool manuallySelectDeathAnimation = false)
+    {
+        PlayerUIManager.instance.playerUIPopUPManager.SendBossDefeatedPopUp();
+
+        currentHealth = 0;
+        enemy.isDead = true;
+
+        if (!manuallySelectDeathAnimation)
+        {
+            enemy.enemyAnimator.PlayTargetActionAnimation("Death", true);
+        }
+
+        AudioManager.instance.StopBGM();
+        enemy.enemyBossManager.bossHealthBar.gameObject.SetActive(false);
+        enemy.footStepManager.SetActive(false);
+
+        List<FogWall> fogWall = FindObjectsOfType<FogWall>().ToList();
+
+        if (fogWall != null)
+        {
+            foreach (var fog in fogWall)
+            {
+                fog.DeactivateFogWall();
+            }
+        }
+
+        yield return null;
     }
 
     public void GuardBreak()
     {
-        enemyAnimatorManager.PlayTargetActionAnimation("Guard Break", true);
+        enemy.enemyAnimator.PlayTargetActionAnimation("Guard Break", true);
         totalPoiseDefence = armorPoiseBonus;
     }
 
     private void HandleDeath()
     {
         currentHealth = 0;
-        enemyAnimatorManager.PlayTargetActionAnimation("Death", true);
-        isDead = true;
+        enemy.enemyAnimator.PlayTargetActionAnimation("Death", true);
+        enemy.PlaySFX(enemy.feedBackManager.deadSFX);
+        enemy.footStepManager.SetActive(false);
+        enemy.isDead = true;
     }
 }

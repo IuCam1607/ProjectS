@@ -5,21 +5,18 @@ using UnityEngine;
 public class PlayerInventoryManager : CharacterInventoryManager
 {
     PlayerManager player;
-    PlayerWeaponSlotManager playerWeaponSlotManager;
 
     public List<WeaponItem> weaponInventory;
 
     private void Awake()
     {
         player = GetComponent<PlayerManager>();
-        playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
     }
 
     protected override void Start()
     {
-        rightWeapon = weaponsInRightHandSlots[0];
-        leftWeapon = weaponsInLeftHandSlots[0];
-        playerWeaponSlotManager.LoadBothWeaponOnSlots();
+        base.Start();
+        player.playerWeaponSlotManager.LoadBothWeaponOnSlots();
     }
 
     public void ChangeRightWeapon()
@@ -31,7 +28,7 @@ public class PlayerInventoryManager : CharacterInventoryManager
         if (rightHandWeaponIndex == 0 && weaponsInRightHandSlots[0] != null)
         {
             rightWeapon = weaponsInRightHandSlots[rightHandWeaponIndex];
-            playerWeaponSlotManager.LoadWeaponOnSlot(weaponsInRightHandSlots[rightHandWeaponIndex], false);
+            player.playerWeaponSlotManager.LoadWeaponOnSlot(weaponsInRightHandSlots[rightHandWeaponIndex], false);
         }
 
         else if (rightHandWeaponIndex == 0 && weaponsInRightHandSlots[0] == null)
@@ -42,7 +39,7 @@ public class PlayerInventoryManager : CharacterInventoryManager
         else if (rightHandWeaponIndex == 1 && weaponsInRightHandSlots[1] != null)
         {
             rightWeapon = weaponsInRightHandSlots[rightHandWeaponIndex];
-            playerWeaponSlotManager.LoadWeaponOnSlot(weaponsInRightHandSlots[rightHandWeaponIndex], false);
+            player.playerWeaponSlotManager.LoadWeaponOnSlot(weaponsInRightHandSlots[rightHandWeaponIndex], false);
         }
 
         else if (rightHandWeaponIndex == 1 && weaponsInRightHandSlots[1] == null)
@@ -53,8 +50,8 @@ public class PlayerInventoryManager : CharacterInventoryManager
         if (rightHandWeaponIndex > weaponsInRightHandSlots.Length - 1)
         {
             rightHandWeaponIndex = -1;
-            rightWeapon = playerWeaponSlotManager.unarmedWeapon;
-            playerWeaponSlotManager.LoadWeaponOnSlot(playerWeaponSlotManager.unarmedWeapon, false);
+            rightWeapon = player.playerWeaponSlotManager.unarmedWeapon;
+            player.playerWeaponSlotManager.LoadWeaponOnSlot(player.playerWeaponSlotManager.unarmedWeapon, false);
         }
     }
 
@@ -67,7 +64,7 @@ public class PlayerInventoryManager : CharacterInventoryManager
         if (leftHandWeaponIndex == 0 && weaponsInLeftHandSlots[0] != null)
         {
             leftWeapon = weaponsInLeftHandSlots[leftHandWeaponIndex];
-            playerWeaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[leftHandWeaponIndex], true);
+            player.playerWeaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[leftHandWeaponIndex], true);
         }
 
         else if (leftHandWeaponIndex == 0 && weaponsInLeftHandSlots[0] == null)
@@ -77,8 +74,8 @@ public class PlayerInventoryManager : CharacterInventoryManager
 
         else if (leftHandWeaponIndex == 1 && weaponsInLeftHandSlots[1] != null)
         {
-            leftWeapon = weaponsInRightHandSlots[leftHandWeaponIndex];
-            playerWeaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[leftHandWeaponIndex], true);
+            leftWeapon = weaponsInLeftHandSlots[leftHandWeaponIndex];
+            player.playerWeaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[leftHandWeaponIndex], true);
         }
 
         else if (leftHandWeaponIndex == 1 && weaponsInLeftHandSlots[1] == null)
@@ -89,8 +86,8 @@ public class PlayerInventoryManager : CharacterInventoryManager
         if (leftHandWeaponIndex > weaponsInLeftHandSlots.Length - 1)
         {
             leftHandWeaponIndex = -1;
-            leftWeapon = playerWeaponSlotManager.unarmedWeapon;
-            playerWeaponSlotManager.LoadWeaponOnSlot(playerWeaponSlotManager.unarmedWeapon, true);
+            leftWeapon = player.playerWeaponSlotManager.unarmedWeapon;
+            player.playerWeaponSlotManager.LoadWeaponOnSlot(player.playerWeaponSlotManager.unarmedWeapon, true);
         }
     }
 }

@@ -1,3 +1,5 @@
+using MoreMountains.Feedbacks;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,13 +38,16 @@ public class WeaponItem : Item
     public float lightAttackMultiplier;
     public float heavyAttackMultiplire;
 
-    [Header("Item Actions")]
-    public ItemAction tap_LM_Action;
-    public ItemAction hold_LM_Action;
-    public ItemAction tap_RM_Action;
-    public ItemAction hold_RM_Action;
-    public ItemAction tap_RT_Action;
-    public ItemAction hold_RT_Action;
-    public ItemAction tap_LT_Action;
-    public ItemAction hold_LT_Action;
+    public AudioFeedBack[] oh_attack_sfx;
+    public AudioFeedBack[] th_attack_sfx;
+}
+
+[Serializable]
+public class AudioFeedBack
+{
+    public AudioClip audio;
+    
+    [Range(0, 1)] public float minVolume = 1;
+    [Range(0, 1)] public float maxVolume = 1;
+    public float delay;
 }

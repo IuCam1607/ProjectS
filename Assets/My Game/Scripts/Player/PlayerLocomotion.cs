@@ -5,11 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerLocomotion : MonoBehaviour
 {
-    public PlayerManager player;
-    private PlayerStatsManager playerStatsManager;
-
-    public PlayerInputManager playerInput;
-    //public PlayerCamera playerCamera;
+    PlayerManager player;
 
     [HideInInspector] public float verticalMovement;
     [HideInInspector] public float horizontalMovement;
@@ -54,9 +50,6 @@ public class PlayerLocomotion : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<PlayerManager>();
-        playerInput = GetComponent<PlayerInputManager>();
-        playerStatsManager = GetComponent<PlayerStatsManager>();
-        //playerCamera = FindAnyObjectByType<PlayerCamera>();
     }
 
     private void Start()
@@ -86,7 +79,7 @@ public class PlayerLocomotion : MonoBehaviour
             }
 
             inAirTime += Time.deltaTime;
-            player.playerAnimationManager.animator.SetFloat("InAirTime", inAirTime);
+            player.animator.SetFloat("InAirTime", inAirTime);
 
             yVelocity.y += gravityForce * Time.deltaTime;
         }
@@ -97,14 +90,14 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void GetVerticalAndHorizontalInputs()
     {
-        verticalMovement = playerInput.verticalInput;
-        horizontalMovement = playerInput.horizontalInput;
-        moveAmount = playerInput.moveAmount;
+        verticalMovement = player.playerInput.verticalInput;
+        horizontalMovement = player.playerInput.horizontalInput;
+        moveAmount = player.playerInput.moveAmount;
 
     }
     public void HandleAllMovement()
     {
-        if (player.playerStatsManager.isDead)
+        if (player.isDead)
             return;
 
         HandleGroundedMovement();
@@ -138,11 +131,11 @@ public class PlayerLocomotion : MonoBehaviour
         }
         else
         {
-            if (playerInput.moveAmount > 0.5f)
+            if (player.playerInput.moveAmount > 0.5f)
             {
                 player.characterController.Move(moveDirection * runningSpeed * Time.deltaTime);
             }
-            else if (playerInput.moveAmount <= 0.5f)
+            else if (player.playerInput.moveAmount <= 0.5f)
             {
                 player.characterController.Move(moveDirection * walkingSpeed * Time.deltaTime);
             }
@@ -163,8 +156,8 @@ public class PlayerLocomotion : MonoBehaviour
         {
             Vector3 freeFallDirection;
 
-            freeFallDirection = PlayerCamera.instance.transform.forward * playerInput.verticalInput;
-            freeFallDirection = freeFallDirection + PlayerCamera.instance.transform.right * playerInput.horizontalInput;
+            freeFallDirection = PlayerCamera.instance.transform.forward * player.playerInput.verticalInput;
+            freeFallDirection = freeFallDirection + PlayerCamera.instance.transform.right * player.playerInput.horizontalInput;
             freeFallDirection.y = 0;
 
             player.characterController.Move(freeFallDirection * freeFallSpeed * Time.deltaTime);
@@ -175,7 +168,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (player.canRotate)
         {
-            if (playerInput.isLockedOn)
+            if (player.playerInput.isLockedOn)
             {
                 if (isSprinting || player.isRolling || player.isJumping)
                 {
@@ -239,7 +232,7 @@ public class PlayerLocomotion : MonoBehaviour
             isSprinting = false;
         }
 
-        if(playerStatsManager.currentStamina <= 0)
+        if(player.playerStatsManager.currentStamina <= 0)
         {
             isSprinting = false;
             return;
@@ -258,27 +251,27 @@ public class PlayerLocomotion : MonoBehaviour
 
             if (isSprinting)
             {
-                playerStatsManager.TakeStaminaCost(sprintingStaminaCost);
+                player.playerStatsManager.TakeStaminaCost(sprintingStaminaCost);
             }
         }
     }
 
     public void AttemptToPerformDodge()
     {
-        if(player.isPerformingAction) 
+        if(player.isPerformingAction || !player.isGrounded) 
         {
             return;
         }
 
-        if(playerStatsManager.currentStamina <= 0)
+        if(player.playerStatsManager.currentStamina <= 0)
         {
             return;
         }    
 
-        if(playerInput.moveAmount > 0)
+        if(player.playerInput.moveAmount > 0)
         {
-            rollDirection = PlayerCamera.instance.cameraObject.transform.forward * playerInput.verticalInput;
-            rollDirection += PlayerCamera.instance.cameraObject.transform.right * playerInput.horizontalInput;
+            rollDirection = PlayerCamera.instance.cameraObject.transform.forward * player.playerInput.verticalInput;
+            rollDirection += PlayerCamera.instance.cameraObject.transform.right * player.playerInput.horizontalInput;
 
             rollDirection.y = 0;
             rollDirection.Normalize();
@@ -287,7 +280,8 @@ public class PlayerLocomotion : MonoBehaviour
             player.transform.rotation = playerRotation;
 
             player.playerAnimationManager.PlayTargetActionAnimation("Roll_Forward_01", true, true);
-            playerStatsManager.TakeStaminaCost(dodgeStaminaCost);
+            player.PlaySFX(player.feedBackManager.rollSFX);
+            player.playerStatsManager.TakeStaminaCost(dodgeStaminaCost);
             player.isRolling = true;
         }
         else
@@ -296,7 +290,7 @@ public class PlayerLocomotion : MonoBehaviour
                 return;
 
             player.playerAnimationManager.PlayTargetActionAnimation("Back_Step_01", true, true);
-            playerStatsManager.TakeStaminaCost(backStepStaminaCost);
+            player.playerStatsManager.TakeStaminaCost(backStepStaminaCost);
         }
     }
 
@@ -307,7 +301,7 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         }
 
-        if (playerStatsManager.currentStamina <= 0)
+        if (player.playerStatsManager.currentStamina <= 0)
         {
             return;
         }
@@ -327,8 +321,8 @@ public class PlayerLocomotion : MonoBehaviour
         player.isJumping = true;
  
 
-        jumpDirection = PlayerCamera.instance.cameraObject.transform.forward * playerInput.verticalInput;
-        jumpDirection += PlayerCamera.instance.cameraObject.transform.right * playerInput.horizontalInput;
+        jumpDirection = PlayerCamera.instance.cameraObject.transform.forward * player.playerInput.verticalInput;
+        jumpDirection += PlayerCamera.instance.cameraObject.transform.right * player.playerInput.horizontalInput;
         jumpDirection.y = 0;
 
         if(jumpDirection != Vector3.zero)
@@ -337,16 +331,16 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 jumpDirection *= 1.5f;
             }
-            else if (playerInput.moveAmount > 0.5)
+            else if (player.playerInput.moveAmount > 0.5)
             {
                 jumpDirection *= 1f;
             }
-            else if (playerInput.moveAmount <= 0.5)
+            else if (player.playerInput.moveAmount <= 0.5)
             {
                 jumpDirection *= 0.5f;
             }
 
-            playerStatsManager.TakeStaminaCost(jumpStaminaCost);
+            player.playerStatsManager.TakeStaminaCost(jumpStaminaCost);
 
         }
     }

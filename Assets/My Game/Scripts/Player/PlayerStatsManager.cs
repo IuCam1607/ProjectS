@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerStatsManager : CharacterStatsManager
 {
-    private PlayerManager playerManager;
+    private PlayerManager player;
     public StaminaBar staminaBar;
     public HealthBar healthBar;
     public FocusPointBar focusPointBar;
@@ -17,7 +17,10 @@ public class PlayerStatsManager : CharacterStatsManager
     protected override void Awake()
     {
         base.Awake();
-        playerManager = GetComponent<PlayerManager>();
+        player = GetComponent<PlayerManager>();
+        healthBar = FindAnyObjectByType<HealthBar>();
+        staminaBar = FindAnyObjectByType<StaminaBar>();
+        focusPointBar = FindAnyObjectByType<FocusPointBar>();
     }
 
     private void Start()
@@ -44,7 +47,7 @@ public class PlayerStatsManager : CharacterStatsManager
         {
             poiseResetTimer -= Time.deltaTime;
         }
-        else if (poiseResetTimer <= 0 && !playerManager.isPerformingAction)
+        else if (poiseResetTimer <= 0 && !player.isPerformingAction)
         {
             totalPoiseDefence = armorPoiseBonus;
         }
@@ -54,16 +57,19 @@ public class PlayerStatsManager : CharacterStatsManager
     {
         healthBar.gameObject.SetActive(false);
         healthBar.gameObject.SetActive(true);
+        focusPointBar.gameObject.SetActive(false);
+        focusPointBar.gameObject.SetActive(true);
         staminaBar.gameObject.SetActive(false);
         staminaBar.gameObject.SetActive(true);
     }
 
     public override void TakeDamageNoAnimation(int physicalDamage, int fireDamage)
     {
-        if (playerManager.isInvulnerable)
+        if (player.isInvulnerable)
             return;
 
         base.TakeDamageNoAnimation(physicalDamage, fireDamage);
+        player.PlaySFX(player.feedBackManager.hitSFX);
 
         healthBar.SetCurrentHealth(currentHealth);
 
@@ -75,14 +81,15 @@ public class PlayerStatsManager : CharacterStatsManager
 
     public override void TakeDamage(int physicalDamage, int fireDamage, string damageAnimation)
     {
-        if (playerManager.isInvulnerable)
+        if (player.isInvulnerable)
             return;
 
         base.TakeDamage(physicalDamage, fireDamage, damageAnimation);
+        player.PlaySFX(player.feedBackManager.hitSFX);
 
         healthBar.SetCurrentHealth(currentHealth);
         Debug.Log("Player Health: " + currentHealth);
-        playerManager.playerAnimationManager.PlayTargetActionAnimation(damageAnimation, true);
+        player.playerAnimationManager.PlayTargetActionAnimation(damageAnimation, true);
 
         if (currentHealth <= 0)
         {
@@ -98,7 +105,7 @@ public class PlayerStatsManager : CharacterStatsManager
 
     public void RegenerateStamina()
     {
-        if (playerManager.isPerformingAction || playerManager.playerLocomotion.isSprinting || playerManager.isJumping)
+        if (player.isPerformingAction || player.playerLocomotion.isSprinting || player.isJumping)
         {
             staminaRegenerationTimer = 1f;
             return;
@@ -123,14 +130,17 @@ public class PlayerStatsManager : CharacterStatsManager
         PlayerUIManager.instance.playerUIPopUPManager.SendYouDiedPopUp();
 
         currentHealth = 0;
-        playerManager.playerStatsManager.isDead = true;
+        player.isDead = true;
+        player.PlaySFX(player.feedBackManager.deadSFX);
+        AudioManager.instance.StopBGM();
 
         if (!manuallySelectDeathAnimation)
         {
-            playerManager.playerAnimationManager.PlayTargetActionAnimation("Dead_01", true);
+            player.playerAnimationManager.PlayTargetActionAnimation("Dead_01", true);
         }
 
         yield return new WaitForSeconds(5);
+        WorldSaveGameManager.instance.LoadGame();
     }
 
     public void HealPlayer(int healAmount)
@@ -170,4 +180,5 @@ public class PlayerStatsManager : CharacterStatsManager
     {
         currentBlood += souls;
     }
+
 }

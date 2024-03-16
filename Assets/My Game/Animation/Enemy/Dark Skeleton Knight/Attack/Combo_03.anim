@@ -137473,6 +137473,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.3
+    functionName: PlaySFXNoDelay
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: e218e0614f1b7a9489f56ca4446500ab, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.53333336
     functionName: CloseDamageCollider
     data: 
@@ -137484,6 +137491,13 @@ AnimationClip:
     functionName: OpenDamageCollider
     data: 
     objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.3
+    functionName: PlaySFXNoDelay
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 6d6d516e218d6fa4db0739920221cb5c, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

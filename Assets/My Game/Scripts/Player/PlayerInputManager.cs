@@ -6,15 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInputManager : MonoBehaviour
 {
-    public static PlayerInputManager instance;
-
     private PlayerInputActions playerInputActions;
-    private PlayerInventoryManager playerInventoryManager;
-    private PlayerWeaponSlotManager weaponSlotManager;
-    private BlockingCollider blockingCollider;
 
     public PlayerManager player;
-    
 
     [Header("Player Camera Input")]
     [SerializeField] private Vector2 cameraInput;
@@ -59,42 +53,13 @@ public class PlayerInputManager : MonoBehaviour
 
     private void Awake()
     {
-        playerInventoryManager = GetComponent<PlayerInventoryManager>();
-        weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
-        blockingCollider = GetComponentInChildren<BlockingCollider>();
-
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        player = GetComponent<PlayerManager>();
     }
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
 
-        //SceneManager.activeSceneChanged += OnSceneChange;
-        player = GetComponent<PlayerManager>();
-
-        //instance.enabled = false;
     }
-
-    //private void OnSceneChange(Scene oldScene, Scene newScene)
-    //{
-    //    if (newScene.buildIndex == WorldSaveGameManager.instance.GetWorldSceneIndex())
-    //    {
-    //        instance.enabled = true;
-    //    }
-    //    else
-    //    {
-    //        instance.enabled = false;
-    //    }
-    //}
 
     private void OnEnable()
     {
@@ -160,15 +125,7 @@ public class PlayerInputManager : MonoBehaviour
         HandleCriticalAttackInput();
         HandleUseConsumableItem();
 
-        if (playerInputActions.PlayerActions.RightMouse.ReadValue<float>() == 0f)
-        {
-            player.isBlocking = false;
-
-            if (blockingCollider.blockingCollider.enabled)
-            {
-                blockingCollider.DisableBlockingCollider();
-            }
-        }
+        HandleBlocking();
     }
 
     // Movement
@@ -212,6 +169,9 @@ public class PlayerInputManager : MonoBehaviour
     // Lock On
     private void HandleLockOnInput()
     {
+        if (PlayerUIManager.instance.isUIActive)
+            return;
+
         if (lockOnInput && !isLockedOn)
         {
             lockOnInput = false;
@@ -301,7 +261,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             player.inventoryFlag = !player.inventoryFlag;
 
-            if(player.inventoryFlag )
+            if(player.inventoryFlag)
             {
                 PlayerUIManager.instance.OpenSelectWindow();
                 PlayerUIManager.instance.UpdateUI();
@@ -316,14 +276,16 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
 
-
     private void HandleLeftMouseInput(InputAction.CallbackContext context)
     {
+        if (PlayerUIManager.instance.isUIActive)
+            return;
+
         if (context.phase == InputActionPhase.Started)
         {
             if (playerInputActions.PlayerActions.Shift.ReadValue<float>() == 1f)
             {
-                player.playerCombatManager.HandleHeavyAttack(playerInventoryManager.rightWeapon);
+                player.playerCombatManager.HandleHeavyAttack(player.playerInventoryManager.rightWeapon);
             }
             else
             {
@@ -334,6 +296,9 @@ public class PlayerInputManager : MonoBehaviour
 
     public void HandleRightMouseInput(InputAction.CallbackContext context)
     {
+        if (PlayerUIManager.instance.isUIActive)
+            return;
+
         if (context.phase == InputActionPhase.Started)
         {
             if (playerInputActions.PlayerActions.Shift.ReadValue<float>() == 1f)
@@ -353,8 +318,6 @@ public class PlayerInputManager : MonoBehaviour
                 player.playerCombatManager.HandleRMAction();
                 
             }
-
-
         }
     }
 
@@ -368,13 +331,13 @@ public class PlayerInputManager : MonoBehaviour
 
             if (twoHandFlag)
             {
-                weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
+                player.playerWeaponSlotManager.LoadWeaponOnSlot(player.playerInventoryManager.rightWeapon, false);
                 player.isTwoHandingWeapon = true;
             }
             else
             {
-                weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
-                weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.leftWeapon, true);
+                player.playerWeaponSlotManager.LoadWeaponOnSlot(player.playerInventoryManager.leftWeapon, true);
+                player.playerWeaponSlotManager.LoadWeaponOnSlot(player.playerInventoryManager.rightWeapon, false);
                 player.isTwoHandingWeapon = false;
             }
         }
@@ -382,24 +345,42 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HandleCriticalAttackInput()
     {
-        if (criticalAttackInput)
+        if (PlayerUIManager.instance.isUIActive || criticalAttackInput)
         {
             criticalAttackInput = false;
             player.playerCombatManager.AttemptBackStabOrRiposte();
-
         }
-    }   
+    }
+
+    private void HandleBlocking()
+    {
+        if (PlayerUIManager.instance.isUIActive)
+            return;
+
+        if (playerInputActions.PlayerActions.RightMouse.ReadValue<float>() == 0f)
+        {
+            player.isBlocking = false;
+
+            if (player.blockingCollider != null)
+            {
+                if (player.blockingCollider.blockingCollider.enabled)
+                {
+                    player.blockingCollider.DisableBlockingCollider();
+                }
+            }
+        }
+    }
 
     public void OnSwitchRightWeaponPerform(InputAction.CallbackContext context)
     {
         scrollUp = context.ReadValue<float>();
 
-        if (player.isPerformingAction || player.isJumping || !player.isGrounded)
+        if (PlayerUIManager.instance.isUIActive || player.isPerformingAction || player.isJumping || !player.isGrounded)
             return;
 
         if (scrollUp > 0 && shiftInput)
         {
-            playerInventoryManager.ChangeRightWeapon();
+            player.playerInventoryManager.ChangeRightWeapon();
         }
     }
 
@@ -407,24 +388,24 @@ public class PlayerInputManager : MonoBehaviour
     {
         scrollDown = context.ReadValue<float>();
 
-        if (player.isPerformingAction || player.isJumping || !player.isGrounded)
+        if (PlayerUIManager.instance.isUIActive || player.isPerformingAction || player.isJumping || !player.isGrounded)
             return;
 
         if (scrollDown > 0 && shiftInput)
         {
-            playerInventoryManager.ChangeLeftWeapon();
+            player.playerInventoryManager.ChangeLeftWeapon();
         }
     }
 
     private void HandleUseConsumableItem()
     {
-        if (player.isPerformingAction || !player.isGrounded)
+        if (PlayerUIManager.instance.isUIActive || player.isPerformingAction || !player.isGrounded)
             return;
 
         if (useItemInput)
         {
             useItemInput = false;
-            playerInventoryManager.currentConsumable.AttempToConsumeItem(player.playerAnimationManager, weaponSlotManager, player.playerEffectManager);
+            player.playerInventoryManager.currentConsumable.AttempToConsumeItem(player);
         }
     }
 }

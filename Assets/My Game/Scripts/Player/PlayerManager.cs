@@ -1,12 +1,16 @@
+using MoreMountains.Feedbacks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : CharacterManager
 {
+    public static PlayerManager instance;
+
+    [Header("Player")]
     [HideInInspector] public PlayerAnimatorManager playerAnimationManager;
     [HideInInspector] public CharacterController characterController;
     [HideInInspector] public PlayerLocomotion playerLocomotion;
@@ -17,61 +21,85 @@ public class PlayerManager : CharacterManager
     [HideInInspector] public PlayerCombatManager playerCombatManager;
     [HideInInspector] public PlayerEquipmentManager playerEquipment;
     [HideInInspector] public PlayerWeaponSlotManager playerWeaponSlotManager;
+    [HideInInspector] public FeedBackManager feedBackManager;
+
+    [Header("Colliders")]
+    [HideInInspector] public BlockingCollider blockingCollider;
+
+    public CharacterSaveData characterSaveData;
 
     [Header("UI")]
     InteractableUI interactableUI;
     public GameObject interactableUIGameObject;
     public GameObject itemInteractableGameObject;
 
+
+
     protected override void Awake()
     {
-        base.Awake();
-        DontDestroyOnLoad(this);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
+        base.Awake();
+
+        interactableUI = FindAnyObjectByType<InteractableUI>();
+
+        feedBackManager = GetComponent<FeedBackManager>();
         characterController = GetComponent<CharacterController>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerInput = GetComponent<PlayerInputManager>();
         playerStatsManager = GetComponent<PlayerStatsManager>();
         playerEffectManager = GetComponent<PlayerEffectManager>();
         playerInventoryManager = GetComponent<PlayerInventoryManager>();
-        interactableUI = FindAnyObjectByType<InteractableUI>();
         playerCombatManager = GetComponent<PlayerCombatManager>();
         playerAnimationManager = GetComponent<PlayerAnimatorManager>();
         playerEquipment = GetComponent<PlayerEquipmentManager>();
         playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
+        animator = GetComponent<Animator>();
+        feedBack = GetComponent<MMF_Player>();
+        sfx = feedBack.GetFeedbackOfType<MMF_MMSoundManagerSound>();
+
+        WorldSaveGameManager.instance.player = this;
     }
     private void Start()
     {
 
     }
+
     private void Update()
     {
-        playerAnimationManager.animator.SetBool("isGrounded", isGrounded);
-        canDoCombo = playerAnimationManager.animator.GetBool("canDoCombo");
-        isUsingRightHand = playerAnimationManager.animator.GetBool("isUsingRightHand");
-        isUsingLeftHand = playerAnimationManager.animator.GetBool("isUsingLeftHand");
-        isInvulnerable = playerAnimationManager.animator.GetBool("isInvulnerable");
-        isFiringSpell = playerAnimationManager.animator.GetBool("isFiringSpell");
-        canRotate = playerAnimationManager.animator.GetBool("canRotate");
-        playerAnimationManager.animator.SetBool("isTwoHandingWeapon", isTwoHandingWeapon);
-        playerAnimationManager.animator.SetBool("isBlocking", isBlocking);
-        playerAnimationManager.animator.SetBool("isDead", playerStatsManager.isDead);
+        canDoCombo = animator.GetBool("canDoCombo");
+        isUsingRightHand = animator.GetBool("isUsingRightHand");
+        isUsingLeftHand = animator.GetBool("isUsingLeftHand");
+        isInvulnerable = animator.GetBool("isInvulnerable");
+        isFiringSpell = animator.GetBool("isFiringSpell");
+        canRotate = animator.GetBool("canRotate");
+
+        animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("isTwoHandingWeapon", isTwoHandingWeapon);
+        animator.SetBool("isBlocking", isBlocking);
+        animator.SetBool("isDead", isDead);
 
         playerInput.HandleAllInputs();
         playerStatsManager.RegenerateStamina();
 
         CheckForInteractableObject();
-
     }
-    //protected override void FixedUpdate()
-    //{
 
-    //}
+    protected void FixedUpdate()
+    {
+        playerInput.interactInput = false;
+    }
 
     private void LateUpdate()
     {
         PlayerCamera.instance.HandleAllCameraActions();
-        playerInput.interactInput = false;
         playerInput.selectInput = false;
     }
 
@@ -125,7 +153,6 @@ public class PlayerManager : CharacterManager
 
     public void OpenChestInteraction(Transform playerStandsHereWhenOpeningChest)
     {
-
         transform.position = playerStandsHereWhenOpeningChest.transform.position;
         playerAnimationManager.PlayTargetActionAnimation("Open Chest", true);
     }
@@ -142,23 +169,52 @@ public class PlayerManager : CharacterManager
 
     #endregion
 
+    #region Save/Load
+
+    public void SaveCharacterDataToCurrentSaveData(ref CharacterSaveData currentCharacterSaveData)
+    {
+        currentCharacterSaveData.characterName = playerStatsManager.characterName;
+        currentCharacterSaveData.characterLevel = playerStatsManager.playerLevel;
+
+        currentCharacterSaveData.currentPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+
+        //Equipment
+        currentCharacterSaveData.currentRightHandWeaponID = playerInventoryManager.rightWeapon.itemID;
+        currentCharacterSaveData.currentLeftHandWeaponID = playerInventoryManager.leftWeapon.itemID;
+
+        if (playerInventoryManager.currentHelmetEquipment != null)
+        {
+            currentCharacterSaveData.currentHeadGearItemID = playerInventoryManager.currentHelmetEquipment.itemID;
+        }
+        else
+        {
+            currentCharacterSaveData.currentHeadGearItemID = -1;
+        }
+    }
+
+    public void LoadCharacterDataFromCurrentCharacterSaveData(ref CharacterSaveData currentCharacterSaveData)
+    {
+        transform.position = currentCharacterSaveData.currentPosition;
+
+        playerStatsManager.characterName = currentCharacterSaveData.characterName;
+        playerStatsManager.playerLevel = currentCharacterSaveData.characterLevel;
 
 
 
+        // Equipment
+        playerInventoryManager.rightWeapon = WorldItemDataBase.instance.GetWeaponItemByItemID(currentCharacterSaveData.currentRightHandWeaponID);
+        playerInventoryManager.leftWeapon = WorldItemDataBase.instance.GetWeaponItemByItemID(currentCharacterSaveData.currentLeftHandWeaponID);
+        playerWeaponSlotManager.LoadBothWeaponOnSlots();
 
+        EquipmentItem headEquipmentItem = WorldItemDataBase.instance.GetEquipmentItemByItemID(currentCharacterSaveData.currentHeadGearItemID);
 
-    //public void SaveGameDataToCurrentCharacterData(ref CharacterSaveData currentCharacterData)
-    //{
-    //    currentCharacterData.characterName = characterName.ToString();
-    //    currentCharacterData.xPosition = transform.position.x;
-    //    currentCharacterData.yPosition = transform.position.y;
-    //    currentCharacterData.zPosition = transform.position.z;
-    //}
+        if (headEquipmentItem != null)
+        {
+            playerInventoryManager.currentHelmetEquipment = headEquipmentItem as HelmetEquipment;
+            playerEquipment.EquipAllEquipmentModelsOnStart();
+        }
+    }
 
-    //public void LoadGameDataFromCurrentCharacterData(ref CharacterSaveData currentCharacterData)
-    //{
-    //    characterName = currentCharacterData.characterName;
-    //    Vector3 myPosition = new Vector3(currentCharacterData.xPosition, currentCharacterData.yPosition, currentCharacterData.zPosition);
-    //    transform.position = myPosition;
-    //}
+    #endregion
 }

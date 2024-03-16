@@ -13,9 +13,8 @@ public class PlayerAnimatorManager : AnimatorManager
     protected override void Awake()
     {
         base.Awake();
-        characterManager = GetComponent<CharacterManager>();
+        character = GetComponent<CharacterManager>();
         player = GetComponent<PlayerManager>();
-        animator = GetComponent<Animator>();
 
         vertical = Animator.StringToHash("Vertical");
         horizontal = Animator.StringToHash("Horizontal");
@@ -25,9 +24,9 @@ public class PlayerAnimatorManager : AnimatorManager
     {
         if(player.applyRootMotion)
         {
-            Vector3 velocity = animator.deltaPosition;
+            Vector3 velocity = player.animator.deltaPosition;
             player.characterController.Move(velocity);
-            player.transform.rotation *= animator.deltaRotation;
+            player.transform.rotation *= player.animator.deltaRotation;
         }
     }
 
@@ -40,9 +39,10 @@ public class PlayerAnimatorManager : AnimatorManager
         {
             verticalAmount = 2;
         }
-        animator.SetFloat(horizontal, horizontalAmount, 0.1f, Time.deltaTime);
-        animator.SetFloat(vertical, verticalAmount, 0.1f, Time.deltaTime);
+        player.animator.SetFloat(horizontal, horizontalAmount, 0.1f, Time.deltaTime);
+        player.animator.SetFloat(vertical, verticalAmount, 0.1f, Time.deltaTime);
     }
+
     public override void PlayTargetActionAnimation(string targetAnimation, bool isPerformingAction, bool applyRootMotion = true, bool canRotate = false, bool canMove = false, bool mirrorAnim = false)
     {
         base.PlayTargetActionAnimation(targetAnimation, isPerformingAction, applyRootMotion, canRotate, canMove , mirrorAnim);
@@ -52,7 +52,6 @@ public class PlayerAnimatorManager : AnimatorManager
     {
         player.playerLocomotion.yVelocity.y = Mathf.Sqrt(player.playerLocomotion.jumpHeight * -2 * player.playerLocomotion.gravityForce);
     }
-
 
     public void EnableCollision()
     {

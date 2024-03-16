@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerUIManager : MonoBehaviour
 {
     public static PlayerUIManager instance;
 
-    PlayerManager player;
+    public PlayerManager player;
     public EquipmentWindowUI equipmentWindowUI;
 
-    private QuickSlotsUI quickSlotsUI;
+    public QuickSlotsUI quickSlotsUI;
 
     public TextMeshProUGUI bloodCount;
+
+    public bool isUIActive = false;
 
     [Header("UI Windows")]
     public GameObject hudWindow;
@@ -20,6 +23,7 @@ public class PlayerUIManager : MonoBehaviour
     public GameObject equipmentScreenWindow;
     public GameObject weaponInventoryWindow;
     public GameObject levelUpWindow;
+    public GameObject doorWindow;
 
     [Header("Equipment Window Slot Selected")]
     public bool rightHandSlot01Selected;
@@ -55,7 +59,30 @@ public class PlayerUIManager : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+
+    }
+
+    private void Update()
+    {
+        if (!isUIActive)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        if (player == null)
+        {
+            player = FindAnyObjectByType<PlayerManager>();
+        }
+    }
+
+    public void Setup()
+    {
         quickSlotsUI.UpdateCurrentSpellIcon(player.playerInventoryManager.currentSpell);
         quickSlotsUI.UpdateCurrentConsumableIcon(player.playerInventoryManager.currentConsumable);
         equipmentWindowUI.LoadWeaponOnEquipmentScreen(player.playerInventoryManager);
@@ -86,11 +113,13 @@ public class PlayerUIManager : MonoBehaviour
 
     public void OpenSelectWindow()
     {
+        isUIActive = true;
         selectWindow.SetActive(true);
     }
 
     public void CloseSelectWindow()
     {
+        isUIActive = false;
         selectWindow.SetActive(false);
     }
 

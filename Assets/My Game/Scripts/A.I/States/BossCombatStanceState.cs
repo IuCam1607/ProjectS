@@ -8,13 +8,13 @@ public class BossCombatStanceState : CombatStanceState
     public bool hasPhaseShifted;
     public EnemyAttackAction[] secondPhaseAttacks;
 
-    protected override void GetNewAttack(EnemyManager enemyManager)
+    protected override void GetNewAttack(EnemyManager enemy)
     {
         if (hasPhaseShifted)
         {
-            Vector3 targetsDirection = enemyManager.currentTarget.transform.position - transform.position;
+            Vector3 targetsDirection = enemy.currentTarget.transform.position - transform.position;
             float viewableAngle = Vector3.Angle(targetsDirection, transform.forward);
-            float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+            float distanceFromTarget = Vector3.Distance(enemy.currentTarget.transform.position, enemy.transform.position);
 
             int maxScore = 0;
 
@@ -62,7 +62,7 @@ public class BossCombatStanceState : CombatStanceState
         }
         else
         {
-            base.GetNewAttack(enemyManager);
+            base.GetNewAttack(enemy);
 
         }
 

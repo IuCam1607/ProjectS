@@ -32,7 +32,6 @@ public class HandEquipmentSlotUI : MonoBehaviour
         weapon = null;
         icon.sprite = null;
         icon.enabled = false;
-        gameObject.SetActive(false);
     }
 
     public void SelectThisSlot()

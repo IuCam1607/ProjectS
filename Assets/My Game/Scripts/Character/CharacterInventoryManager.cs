@@ -15,9 +15,10 @@ public class CharacterInventoryManager : MonoBehaviour
     public HelmetEquipment currentHelmetEquipment;
 
     [Header("Quick Slots Weapon")]
-    public int rightHandWeaponIndex;
+    public int rightHandWeaponIndex = 0;
     public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1];
-    public int leftHandWeaponIndex;
+
+    public int leftHandWeaponIndex = 0;
     public WeaponItem[] weaponsInLeftHandSlots = new WeaponItem[1];
 
 

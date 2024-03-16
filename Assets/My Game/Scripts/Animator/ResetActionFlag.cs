@@ -25,7 +25,7 @@ public class ResetActionFlag : StateMachineBehaviour
             player.isPerformingAction = false;
             player.applyRootMotion = false;
             player.canMove = true;
-            player.playerAnimationManager.animator.SetBool("canRotate", true);
+            player.animator.SetBool("canRotate", true);
             player.isJumping = false;
             player.canDoCombo = false;
             player.isRolling = false;

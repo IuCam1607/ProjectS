@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Dark Skeleton Knight's Helm
   pickupIcon: {fileID: 0}
   itemIcon: {fileID: 0}
+  itemID: 1002
   itemDescription: 
   physicalDefense: 25
   helmetModelName: Dark Skeleton Knight's Helm

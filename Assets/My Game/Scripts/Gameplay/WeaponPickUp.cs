@@ -6,7 +6,12 @@ using UnityEngine.UI;
 
 public class WeaponPickUp : Interactable
 {
+    [Header("World Item ID")]
+    [SerializeField] int itemID;
+
+
     public WeaponItem weapon;
+    
 
     public override void Interact(PlayerManager playerManager)
     {

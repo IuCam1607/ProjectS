@@ -132860,4 +132860,25 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1.8333334
+    functionName: PlaySFXNoDelay
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: d986513cea159e5429623d7feafabbc8, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.3333335
+    functionName: AwardSoulsOnDeath
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.4
+    functionName: PlaySFXNoDelay
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: d4ff41c155e8d4c4dac30058f65c0335, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

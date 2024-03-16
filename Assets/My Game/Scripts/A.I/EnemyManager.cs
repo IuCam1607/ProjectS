@@ -1,5 +1,7 @@
+using MoreMountains.Feedbacks;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +10,8 @@ public class EnemyManager : CharacterManager
     public EnemyLocomotionManager enemyLocomotion;
     public EnemyAnimatorManager enemyAnimator;
     public EnemyStatsManager enemyStats;
+    public EnemyBossManager enemyBossManager;
+    public FeedBackManager feedBackManager;
 
     public State currentState;
     public CharacterStatsManager currentTarget;
@@ -32,13 +36,20 @@ public class EnemyManager : CharacterManager
     protected override void Awake()
     {
         base.Awake();
+        enemyBossManager = GetComponent<EnemyBossManager>();
         enemyLocomotion = GetComponent<EnemyLocomotionManager>();
         enemyAnimator = GetComponent<EnemyAnimatorManager>();
         enemyStats = GetComponent<EnemyStatsManager>();
         enemyRigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        feedBackManager = GetComponent<FeedBackManager>();
+        feedBack = GetComponent<MMF_Player>();
+        sfx = feedBack.GetFeedbackOfType<MMF_MMSoundManagerSound>();
+
         backStabCollider = GetComponentInChildren<CriticalDamageCollider>();
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
         navMeshAgent.enabled = false;
+        animator.applyRootMotion = true;
     }
 
     private void Start()
@@ -53,18 +64,18 @@ public class EnemyManager : CharacterManager
 
         if (enemyStats.isBoss)
         {
-            isPhaseShifting = enemyAnimator.animator.GetBool("isPhaseShifting");
+            isPhaseShifting = animator.GetBool("isPhaseShifting");
         }
 
-        isUsingLeftHand = enemyAnimator.animator.GetBool("isUsingLeftHand");
-        isUsingRightHand = enemyAnimator.animator.GetBool("isUsingRightHand");
-        isRotatingWithRootMotion = enemyAnimator.animator.GetBool("isRotatingWithRootMotion");
-        isInteracting = enemyAnimator.animator.GetBool("isInteracting");      
-        isInvulnerable = enemyAnimator.animator.GetBool("isInvulnerable");
-        canDoCombo = enemyAnimator.animator.GetBool("canDoCombo");
-        canRotate = enemyAnimator.animator.GetBool("canRotate");
-        enemyAnimator.animator.SetBool("isDead", enemyStats.isDead);
-        if (enemyStats.isDead)
+        isUsingLeftHand = animator.GetBool("isUsingLeftHand");
+        isUsingRightHand = animator.GetBool("isUsingRightHand");
+        isRotatingWithRootMotion = animator.GetBool("isRotatingWithRootMotion");
+        isInteracting = animator.GetBool("isInteracting");      
+        isInvulnerable = animator.GetBool("isInvulnerable");
+        canDoCombo = animator.GetBool("canDoCombo");
+        canRotate = animator.GetBool("canRotate");
+        animator.SetBool("isDead", isDead);
+        if (isDead)
         {
             enemyRigidbody.isKinematic = true;
             navMeshAgent.enabled = false;
@@ -82,7 +93,7 @@ public class EnemyManager : CharacterManager
     {
         if (currentState != null)
         {
-            State nextState = currentState.Tick(this, enemyStats, enemyAnimator);
+            State nextState = currentState.Tick(this);
 
             if (nextState != null)
             {

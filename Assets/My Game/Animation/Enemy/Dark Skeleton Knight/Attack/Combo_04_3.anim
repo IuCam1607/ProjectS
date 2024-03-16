@@ -71398,6 +71398,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.46666667
+    functionName: PlaySFXNoDelay
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 2536a893f7b9a994995fd38b4adda7e9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.6666667
     functionName: CloseDamageCollider
     data: 

@@ -8,6 +8,7 @@ public class Item : ScriptableObject
     public string itemName;
     public Sprite pickupIcon;
     public Sprite itemIcon;
+    public int itemID;
 
     [TextArea] public string itemDescription;
 

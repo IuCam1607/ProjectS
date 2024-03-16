@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,13 +7,12 @@ public class PlayerCamera : MonoBehaviour
 {
     public static PlayerCamera instance;
 
-    public PlayerInputManager playerInput;
     public Camera cameraObject;
     public PlayerManager player;
     public Transform cameraPivotTransform;
 
     [Header("Camera Setting")]
-    private float cameraSmoothSpeed = 1;
+    [SerializeField] private float cameraSmoothSpeed = 1;
     [SerializeField] private float leftAndRightRotationSpeed;
     [SerializeField] private float upAndDownRotationSpeed;
     [SerializeField] private float minimunPivot = -30;
@@ -52,19 +51,25 @@ public class PlayerCamera : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         player = FindAnyObjectByType<PlayerManager>();
-        playerInput = FindAnyObjectByType<PlayerInputManager>();
     }
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
         cameraZPosition = cameraObject.transform.position.z;
         environmentLayer = LayerMask.NameToLayer("Environment");
     }
 
+    private void Update()
+    {
+        if (player == null)
+        {
+            player = FindObjectOfType<PlayerManager>();
+        }
+    }
+
     public void HandleAllCameraActions()
     {
-        
         if(player != null)
         {
             HandleFollowTarget();
@@ -82,9 +87,9 @@ public class PlayerCamera : MonoBehaviour
     {
         if (player.playerInput.isLockedOn == false && currentLockOnTarget == null)
         {
-            leftAndRightLookAngle += playerInput.cameraHorizontalInput * leftAndRightRotationSpeed * Time.deltaTime;
+            leftAndRightLookAngle += player.playerInput.cameraHorizontalInput * leftAndRightRotationSpeed * Time.deltaTime;
 
-            upAndDownLookAngle -= playerInput.cameraVerticalInput * upAndDownRotationSpeed * Time.deltaTime;
+            upAndDownLookAngle -= player.playerInput.cameraVerticalInput * upAndDownRotationSpeed * Time.deltaTime;
             upAndDownLookAngle = Mathf.Clamp(upAndDownLookAngle, minimunPivot, maximunPivot);
 
             Vector3 cameraRotation;
@@ -107,7 +112,7 @@ public class PlayerCamera : MonoBehaviour
 
             if(nearestLockOnTarget == null)
             {
-                playerInput.isLockedOn = false;
+                player.playerInput.isLockedOn = false;
                 return;
             }
 
@@ -205,7 +210,7 @@ public class PlayerCamera : MonoBehaviour
                 nearestLockOnTarget = availableTargets[k];
             }
 
-            if (playerInput.isLockedOn)
+            if (player.playerInput.isLockedOn)
             {
                 if(currentLockOnTarget != null)
                 {
@@ -213,7 +218,7 @@ public class PlayerCamera : MonoBehaviour
                     //var distanceFromLeftTarget = currentLockOnTarget.transform.position.x - availableTargets[k].transform.position.x;
                     //var distanceFromRightTarget = currentLockOnTarget.transform.position.x + availableTargets[k].transform.position.x;
 
-                    Vector3 relativeEnemyPosition = playerInput.transform.InverseTransformPoint(availableTargets[k].transform.position);
+                    Vector3 relativeEnemyPosition = player.playerInput.transform.InverseTransformPoint(availableTargets[k].transform.position);
                     var distanceFromLeftTarget = relativeEnemyPosition.x;
                     var distanceFromRightTarget = relativeEnemyPosition.x;
 

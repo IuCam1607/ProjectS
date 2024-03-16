@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Straight Sword
   pickupIcon: {fileID: 21300000, guid: 4bf4c1460e893fd49bca40bce0cf1fa1, type: 3}
   itemIcon: {fileID: 21300000, guid: 8e64a4113e234e24f82627d2208fefde, type: 3}
+  itemID: 1
   itemDescription: 
   isUnarmed: 0
   weaponController: {fileID: 22100000, guid: 246563f4fe41530458cde8e396335596, type: 2}
@@ -31,11 +32,15 @@ MonoBehaviour:
   baseStaminaCost: 12
   lightAttackMultiplier: 1
   heavyAttackMultiplire: 2
-  tap_LM_Action: {fileID: 11400000, guid: 1ff7f66390bc9b94c99a6a25ef1801fa, type: 2}
-  hold_LM_Action: {fileID: 0}
-  tap_RM_Action: {fileID: 0}
-  hold_RM_Action: {fileID: 0}
-  tap_RT_Action: {fileID: 0}
-  hold_RT_Action: {fileID: 0}
-  tap_LT_Action: {fileID: 0}
-  hold_LT_Action: {fileID: 0}
+  oh_attack_sfx:
+  - audio: {fileID: 8300000, guid: c62d0b783e3c16745a2766c9740aa0f3, type: 3}
+    delay: 0.5
+  - audio: {fileID: 8300000, guid: 2536a893f7b9a994995fd38b4adda7e9, type: 3}
+    delay: 0.5
+  th_attack_sfx:
+  - audio: {fileID: 8300000, guid: 900b7c71920005344ba68f6195393688, type: 3}
+    delay: 0.5
+  - audio: {fileID: 8300000, guid: 6d6d516e218d6fa4db0739920221cb5c, type: 3}
+    delay: 0.5
+  - audio: {fileID: 8300000, guid: 30bca2240e95edc4bab7087099c471de, type: 3}
+    delay: 0.5
