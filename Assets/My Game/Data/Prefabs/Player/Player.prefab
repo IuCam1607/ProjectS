@@ -3538,7 +3538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Kid
   teamIDNumber: 0
-  playerLevel: 14
+  playerLevel: 1
   vitalityLevel: 10
   focusLevel: 10
   enduranceLevel: 10
@@ -3585,12 +3585,12 @@ MonoBehaviour:
   currentHelmetEquipment: {fileID: 11400000, guid: 28e8f8468e98d68498d1e37036c33070, type: 2}
   rightHandWeaponIndex: 0
   weaponsInRightHandSlots:
+  - {fileID: 11400000, guid: 75fb547fb6b8ce64985ce5e8aec0ff74, type: 2}
   - {fileID: 11400000, guid: 04aa8dd14dc2ae9479cd235af5c8e54b, type: 2}
-  - {fileID: 11400000, guid: 00cddfe2cf13a964aa9fbb3e7b367277, type: 2}
   leftHandWeaponIndex: 0
   weaponsInLeftHandSlots:
   - {fileID: 11400000, guid: 3e096fccc91ffe847a228e644d5b3a0c, type: 2}
-  - {fileID: 11400000, guid: 75fb547fb6b8ce64985ce5e8aec0ff74, type: 2}
+  - {fileID: 11400000, guid: bb55a47ee742674429a649ab42eed208, type: 2}
   weaponInventory: []
 --- !u!114 &6550698984910307241
 MonoBehaviour:
@@ -3976,6 +3976,26 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 3ada96a903988b24cae39fbeff1c7201, type: 3}
     minVolume: 0.5
     maxVolume: 0.5
+    delay: 0
+  roarSFX:
+    audio: {fileID: 0}
+    minVolume: 1
+    maxVolume: 1
+    delay: 0
+  bornfireSFX:
+    audio: {fileID: 8300000, guid: a782705dee7999e43bc4e69129c1fc55, type: 3}
+    minVolume: 0.3
+    maxVolume: 0.3
+    delay: 0
+  pickUpItemSFX:
+    audio: {fileID: 8300000, guid: 73fa16bcbd1012c45a5431cded4eba9d, type: 3}
+    minVolume: 0.3
+    maxVolume: 0.3
+    delay: 0
+  blockSFX:
+    audio: {fileID: 8300000, guid: 30abfd0f07544754a87550cddac2e872, type: 3}
+    minVolume: 0.3
+    maxVolume: 0.3
     delay: 0
 --- !u!1 &3300431132010350438
 GameObject:

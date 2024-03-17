@@ -12,6 +12,7 @@ public class BombDamageCollider : DamageCollider
     public Rigidbody bombRigidbody;
     private bool hasCollided = false;
     public GameObject impactParticles;
+    public AudioSource explosionSFX;
 
     protected override void Awake()
     {
@@ -36,6 +37,7 @@ public class BombDamageCollider : DamageCollider
                     character.TakeDamage(0, explosionDamage, currentDamageAnimation);
                 }
             }
+            explosionSFX.PlayOneShot(explosionSFX.clip);
 
             Destroy(impactParticles, 5f);
             Destroy(transform.parent.parent.gameObject);

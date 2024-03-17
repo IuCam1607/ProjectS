@@ -97519,9 +97519,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.06666667
-    functionName: PlaySFX
+    functionName: PlaySFXNoDelay
     data: 
-    objectReferenceParameter: {fileID: 8300000, guid: 9d5e9f8bd1896e34398960877c547461, type: 3}
+    objectReferenceParameter: {fileID: 8300000, guid: 2536a893f7b9a994995fd38b4adda7e9, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

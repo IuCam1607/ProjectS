@@ -7,6 +7,7 @@ public class SpellDamageCollider : DamageCollider
     public GameObject impactParticles;
     public GameObject projectileParticles;
     public GameObject muzzleParticles;
+    public AudioSource fireBallSFX;
 
     private bool hasCollided = false;
 
@@ -49,6 +50,7 @@ public class SpellDamageCollider : DamageCollider
 
             hasCollided = true;
             impactParticles = Instantiate(impactParticles, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal));
+            fireBallSFX.PlayOneShot(fireBallSFX.clip);
 
             Destroy(projectileParticles);
             Destroy(impactParticles, 5f);

@@ -32,6 +32,7 @@ public class WeaponPickUp : Interactable
 
         playerLocomotion.moveDirection = Vector3.zero;
         playerAnimation.PlayTargetActionAnimation("Pick Up Item", true);
+        playerManager.PlaySFX(playerManager.feedBackManager.pickUpItemSFX);
         playerInventory.weaponInventory.Add(weapon);
         playerManager.itemInteractableGameObject.GetComponentInChildren<TextMeshProUGUI>().text = weapon.itemName;
         playerManager.itemInteractableGameObject.GetComponentInChildren<RawImage>().texture = weapon.pickupIcon.texture;

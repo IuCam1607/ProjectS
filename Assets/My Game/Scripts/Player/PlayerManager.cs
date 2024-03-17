@@ -103,13 +103,17 @@ public class PlayerManager : CharacterManager
         playerInput.selectInput = false;
     }
 
-    public void ReviveCharacter()
+    public void RestoreCharacter()
     {
         playerStatsManager.currentHealth = playerStatsManager.maxHealth;
         playerStatsManager.currentStamina = playerStatsManager.maxStamina;
-        playerStatsManager.healthBar.SetCurrentHealth(playerStatsManager.currentHealth);
+        playerStatsManager.currentFocusPoint = playerStatsManager.maxFocusPoint;
 
-        playerAnimationManager.PlayTargetActionAnimation("Empty", false);
+        playerStatsManager.healthBar.SetCurrentHealth(playerStatsManager.currentHealth);
+        playerStatsManager.staminaBar.SetCurrentStamina(playerStatsManager.currentStamina);
+        playerStatsManager.focusPointBar.SetCurrentFocusPoint(playerStatsManager.currentFocusPoint);
+
+        playerInventoryManager.currentConsumable.currentItemAmount = playerInventoryManager.currentConsumable.maxItemAmount;
     }
 
     #region Player Interactions

@@ -10,6 +10,7 @@ public class OpenChest : Interactable
     public Transform playerStandingPosition;
     public GameObject itemSpawner;
     public WeaponItem itemInChest;
+    public AudioSource openChestSFX;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class OpenChest : Interactable
 
         playerManager.OpenChestInteraction(playerStandingPosition);
         animator.Play("Chest Open");
+        openChestSFX.PlayOneShot(openChestSFX.clip);
         StartCoroutine(SpawnItemInChest());
 
         WeaponPickUp weaponPickUp = itemSpawner.GetComponent<WeaponPickUp>();
@@ -42,7 +44,8 @@ public class OpenChest : Interactable
     private IEnumerator SpawnItemInChest()
     {
         yield return new WaitForSeconds(1f);
-        Instantiate(itemSpawner, transform);
+
         Destroy(openChest);
+        Instantiate(itemSpawner, transform.parent);
     }
 }

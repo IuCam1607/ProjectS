@@ -63,6 +63,11 @@ public class LevelUpUI : MonoBehaviour
     public TextMeshProUGUI currentPoiseLevelText;
     public TextMeshProUGUI projectedPoiseLevelText;
 
+    private void Awake()
+    {
+        playerManager = FindAnyObjectByType<PlayerManager>();
+    }
+
     private void OnEnable()
     {
         PlayerUIManager.instance.isUIActive = true;

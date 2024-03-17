@@ -85,10 +85,18 @@ public class PlayerStatsManager : CharacterStatsManager
             return;
 
         base.TakeDamage(physicalDamage, fireDamage, damageAnimation);
-        player.PlaySFX(player.feedBackManager.hitSFX);
+
+        if (player.isBlocking)
+        {
+            player.PlaySFX(player.feedBackManager.blockSFX);
+        }
+        else
+        {
+            player.PlaySFX(player.feedBackManager.hitSFX);
+        }
+
 
         healthBar.SetCurrentHealth(currentHealth);
-        Debug.Log("Player Health: " + currentHealth);
         player.playerAnimationManager.PlayTargetActionAnimation(damageAnimation, true);
 
         if (currentHealth <= 0)

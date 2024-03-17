@@ -6,8 +6,6 @@ public class CharacterWeaponSlotManager : MonoBehaviour
 {
     protected CharacterManager character;
 
-    
-
     [Header("Unarmed Weapon")]
     public WeaponItem unarmedWeapon;
 

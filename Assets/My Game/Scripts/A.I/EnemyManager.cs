@@ -12,6 +12,9 @@ public class EnemyManager : CharacterManager
     public EnemyStatsManager enemyStats;
     public EnemyBossManager enemyBossManager;
     public FeedBackManager feedBackManager;
+    public GameObject combatCollider;
+    public GameObject combatTransform;
+    public CapsuleCollider enemyCollider;
 
     public State currentState;
     public CharacterStatsManager currentTarget;
@@ -43,6 +46,7 @@ public class EnemyManager : CharacterManager
         enemyRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         feedBackManager = GetComponent<FeedBackManager>();
+        enemyCollider = GetComponent<CapsuleCollider>();
         feedBack = GetComponent<MMF_Player>();
         sfx = feedBack.GetFeedbackOfType<MMF_MMSoundManagerSound>();
 

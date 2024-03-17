@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pyromancy Flame
   m_EditorClassIdentifier: 
   itemName: Pyromancy Flame
-  pickupIcon: {fileID: 0}
+  pickupIcon: {fileID: 21300000, guid: 2cec1d7caf8f8f940a055eb4770ed096, type: 3}
   itemIcon: {fileID: 21300000, guid: fccaf7793f5d04344bb5b187e1f0177f, type: 3}
   itemID: 5
   itemDescription: 
@@ -32,11 +32,5 @@ MonoBehaviour:
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplire: 0
-  tap_LM_Action: {fileID: 0}
-  hold_LM_Action: {fileID: 0}
-  tap_RM_Action: {fileID: 0}
-  hold_RM_Action: {fileID: 0}
-  tap_RT_Action: {fileID: 0}
-  hold_RT_Action: {fileID: 0}
-  tap_LT_Action: {fileID: 0}
-  hold_LT_Action: {fileID: 0}
+  oh_attack_sfx: []
+  th_attack_sfx: []

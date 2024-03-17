@@ -2957,6 +2957,9 @@ MonoBehaviour:
   enemyStats: {fileID: 0}
   enemyBossManager: {fileID: 0}
   feedBackManager: {fileID: 0}
+  combatCollider: {fileID: 7134999234366373942}
+  combatTransform: {fileID: 1306828558502732735}
+  enemyCollider: {fileID: 0}
   currentState: {fileID: 7669638412075047907}
   currentTarget: {fileID: 0}
   navMeshAgent: {fileID: 0}
@@ -3121,6 +3124,21 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 63d84bb523ecd674fbcb71ba15c7c243, type: 3}
     minVolume: 0.3
     maxVolume: 0.3
+    delay: 0
+  bornfireSFX:
+    audio: {fileID: 0}
+    minVolume: 1
+    maxVolume: 1
+    delay: 0
+  pickUpItemSFX:
+    audio: {fileID: 0}
+    minVolume: 1
+    maxVolume: 1
+    delay: 0
+  blockSFX:
+    audio: {fileID: 0}
+    minVolume: 1
+    maxVolume: 1
     delay: 0
 --- !u!114 &359665140822572509
 MonoBehaviour:

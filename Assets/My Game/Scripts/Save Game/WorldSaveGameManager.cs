@@ -10,9 +10,6 @@ public class WorldSaveGameManager : MonoBehaviour
     [SerializeField] int worldSceneIndex = 1;
     public PlayerManager player;
 
-    [Header("Save Data Writer")]
-    SaveGameDataWriter saveGameDataWriter;
-
     [Header("Current Character Data")]
     public CharacterSaveData currentCharacterSaveData;
     [SerializeField] private string fileName;

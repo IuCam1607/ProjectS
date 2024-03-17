@@ -50,7 +50,7 @@ public class PlayerUIManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        player = FindAnyObjectByType<PlayerManager>();
+        
         weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
         playerUIHudManager = GetComponentInChildren<PlayerUIHudManager>();
         playerUIPopUPManager = GetComponentInChildren<PlayerUIPopUPManager>();
@@ -59,7 +59,7 @@ public class PlayerUIManager : MonoBehaviour
 
     private void Start()
     {
-
+        player = FindAnyObjectByType<PlayerManager>();
     }
 
     private void Update()
@@ -109,6 +109,11 @@ public class PlayerUIManager : MonoBehaviour
             }
         }
         #endregion
+    }
+
+    public void CloseButton()
+    {
+        isUIActive = false;
     }
 
     public void OpenSelectWindow()

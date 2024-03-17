@@ -134,6 +134,12 @@ public class EnemyStatsManager : CharacterStatsManager
         currentHealth = 0;
         enemy.enemyAnimator.PlayTargetActionAnimation("Death", true);
         enemy.PlaySFX(enemy.feedBackManager.deadSFX);
+        enemy.enemyCollider.isTrigger = true;
+        enemy.enemyRigidbody.isKinematic = true;
+        enemy.combatCollider.SetActive(false);
+        enemy.combatTransform.SetActive(false);
+        enemy.currentState.gameObject.SetActive(false);
+        enemy.navMeshAgent.gameObject.SetActive(false);
         enemy.footStepManager.SetActive(false);
         enemy.isDead = true;
     }
